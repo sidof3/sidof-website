@@ -1,0 +1,45 @@
+
+
+/* Hero */
+
+.hero {
+  min-height: 100vh;
+  padding-top: 100px; /* to offset fixed navbar */
+  background: linear-gradient(135deg, #fff 0%, #ffe6ef 100%);
+}
+
+.text-pink {
+  color: #e91e63;
+}
+
+/* Buttons */
+.btn-pink {
+  background-color: #e91e63;
+  color: #fff;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+.btn-pink:hover {
+  background-color: #d81b60;
+}
+
+.btn-outline-pink {
+  border: 2px solid #e91e63;
+  color: #e91e63;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+.btn-outline-pink:hover {
+  background-color: #e91e63;
+  color: #fff;
+}
+
+/* Hero image */
+.hero-img {
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Hero end */

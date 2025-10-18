@@ -1,0 +1,25 @@
+.technical-services {
+  background-color: #fff;
+}
+
+.text-pink {
+  color: #e91e63;
+}
+
+.skill-card {
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.2);
+}
+
+.icon i {
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover .icon i {
+  transform: scale(1.1);
+}

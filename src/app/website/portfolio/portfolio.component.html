@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<section id="portfolio " class="py-5 bg-light   mt-5">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold text-uppercase">My Projects</h2>
+
+    <!-- Filter Buttons -->
+    <div class="d-flex justify-content-center mb-5 flex-wrap gap-2">
+      @for (category of categories; track category) {
+        <button
+          type="button"
+          class="btn"
+          [class.btn-pink]="activeCategory === category"
+          [class.text-white]="activeCategory === category"
+          [class.btn-outline-pink]="activeCategory !== category"
+          (click)="setCategory(category)"
+        >
+          {{ category }}
+        </button>
+      }
+    </div>
+
+    <!-- Project Cards -->
+    <div class="row g-4">
+      @for (project of filteredProjects; track project.title) {
+        <div class="col-lg-4 col-md-6" [@cardAnimation]>
+          <div class="card shadow-sm h-100 border-0">
+            <img
+              [src]="project.image"
+              [alt]="project.title"
+              class="card-img-top images"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ project.title }}</h5>
+              <p class="card-text text-muted">{{ project.description }}</p>
+
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                @for (tech of project.technologies; track tech) {
+                  <span class="badge bg-pink text-white">{{ tech }}</span>
+                }
+              </div>
+
+              @if (project.demoUrl) {
+                <a
+                  [href]="project.demoUrl"
+                  target="_blank"
+                  class="btn btn-outline-pink btn-sm me-2"
+                  >Live Demo</a
+                >
+              }
+
+              @if (project.githubUrl) {
+                <a
+                  [href]="project.githubUrl"
+                  target="_blank"
+                  class="btn btn-outline-dark btn-sm"
+                  >GitHub</a
+                >
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+
+<router-outlet></router-outlet>

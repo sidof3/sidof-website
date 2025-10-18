@@ -1,0 +1,27 @@
+<section class="technical-services py-5" id="technical-services">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-pink">Technical Skills</h2>
+            <p class="text-muted">
+                My technical stack combines powerful backend technologies and modern frontend frameworks
+                to build robust, scalable, and elegant web applications.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Card Template -->
+            @for (tech of techSkills; track $index) {
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 text-center p-4 skill-card">
+                    <div class="icon mb-3">
+                        <i [class]="tech.icon"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">{{ tech.name }}</h5>
+                    <p class="text-muted">{{ tech.description }}</p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+<router-outlet></router-outlet>

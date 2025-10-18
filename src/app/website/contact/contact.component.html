@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+
+<section id="contact" class="py-5 bg-light text-center mt-5">
+  <div class="container">
+    <h2 class="fw-bold mb-4 text-pink">Contact Me</h2>
+    <p class="mb-5">
+      Let’s discuss your project, partnership, or idea. I’m always open to collaboration and new opportunities.
+    </p>
+
+    <div class="row justify-content-center">
+      <!-- Contact Info -->
+      <div class="col-md-4 text-start mb-4">
+        <h5 class="fw-semibold mb-3 text-pink">Get in Touch</h5>
+        <p><i class="bi bi-envelope-fill me-2 text-pink"></i>
+          <a href="mailto:sidof&#64;sidof.xyz" class="text-decoration-none text-dark">sidof&#64;sidof.xyz</a>
+        </p>
+        <p><i class="bi bi-telephone-fill me-2 text-pink"></i> +237 6 96 44 46 53</p>
+        <p><i class="bi bi-geo-alt-fill me-2 text-pink"></i> Yaoundé, Cameroon</p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-md-6">
+        <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="text-start p-4 rounded shadow bg-white">
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" id="name" name="name" class="form-control" ngModel required />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" id="email" name="email" class="form-control" ngModel required />
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" class="form-control" rows="4" ngModel required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-pink w-100 fw-semibold" [disabled]="contactForm.invalid">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<app-footer></app-footer>

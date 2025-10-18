@@ -1,0 +1,29 @@
+.about-section {
+  background-color: #fdfdfd;
+  padding-top: 100px;
+}
+
+.text-pink {
+  color: #e91e63;
+}
+
+.about-img {
+  max-width: 80%;
+  border: 5px solid #ffe6ef;
+  transition: transform 0.3s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.03);
+}
+
+.btn-pink {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+.btn-pink:hover {
+  background-color: #d81b60;
+}

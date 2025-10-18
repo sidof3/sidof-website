@@ -1,0 +1,40 @@
+.section-title {
+  font-weight: 700;
+  color: #e91e63;
+}
+
+.text-pink {
+  color: #e91e63;
+}
+
+.land-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.land-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.land-title {
+  color: #e91e63;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+.contact-box {
+  background-color: #fff0f6;
+  border: 1px solid #f8bbd0;
+  border-radius: 12px;
+}
+
+.contact-box a {
+  text-decoration: none;
+}

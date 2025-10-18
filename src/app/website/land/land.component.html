@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+
+<section class="lands container py-5 mt-5">
+  <div class="text-center mb-5">
+    <h2 class="section-title">TERRAINS TITRÉS À VENDRE – YAOUNDÉ</h2>
+    <p class="section-subtitle text-muted">
+      (Disponibilités & Prix)
+    </p>
+  </div>
+
+  <div class="row g-4">
+    @for (land of lands; track land.name) {
+      <div class="col-md-6">
+        <div class="card land-card h-100 p-4">
+          <h4 class="land-title">{{ land.name }}</h4>
+          <p><i class="bi bi-geo-alt-fill text-pink"></i> <strong>Localisation :</strong> {{ land.location }}</p>
+
+          <ul class="mb-2">
+            @for (feature of land.features; track feature) {
+              <li>{{ feature }}</li>
+            }
+          </ul>
+
+          <p><strong>Superficie :</strong> {{ land.surface }}</p>
+          <p class="text-pink fw-bold"><i class="bi bi-cash"></i> Prix : {{ land.price }}</p>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="contact-box mt-5 text-center p-4 rounded shadow-sm">
+    <h5>📩 Contactez-nous dès maintenant pour plus d’informations ou pour visiter les sites !</h5>
+    <p class="mb-1">📞 <strong>+237 696 44 46 53</strong></p>
+    <p>✉️ <a href="mailto:sidof&#64;sidof.xyz" class="text-pink">sidof&#64;sidof.xyz</a></p>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<!--  NAVBAR -->
+<app-navbar></app-navbar>
+<!-- END NAVBAR -->
+<section class="services-page container py-5 mt-5">
+  <div class="text-center mb-5">
+    <h2 class="section-title">My Professional Services</h2>
+    <p class="section-subtitle text-muted">
+      I provide both technical and business-oriented solutions.
+    </p>
+  </div>
+
+  @for (category of categories; track category.key) {
+    <div class="service-category mb-5">
+      <h3 class="category-title mb-4">{{ category.label }}</h3>
+
+      <div class="row g-4">
+        @for (service of services; track service.title) {
+          @if (service.category === category.key) {
+            <div class="col-md-6 col-lg-4">
+              <div class="card service-card h-100 text-center p-4">
+                <div class="icon-wrapper mb-3">
+                  <i class="{{ service.icon }}"></i>
+                </div>
+                <h5 class="card-title">{{ service.title }}</h5>
+                <p class="card-text text-muted">{{ service.description }}</p>
+              </div>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  }
+</section>

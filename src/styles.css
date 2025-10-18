@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*npm install @fortawesome/fontawesome-free */
+
+
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+/* --- GLOBAL COLOR VARIABLES --- */
+
+
+:root {
+  --primary-color: #e91e63;
+  --primary-dark: #ad1457;
+  --accent-color: #ff80ab;
+  --text-color: #333333;
+}
+
+/* --- GENERAL STYLE OVERRIDES --- */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  background-color: #fff;
+}
+ html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Navbar customization */
+.navbar {
+  background-color: #fff !important;
+  border-bottom: 2px solid var(--accent-color);
+}
+.navbar-brand {
+  color: var(--primary-color) !important;
+}
+.nav-link:hover {
+  color: var(--primary-dark) !important;
+}
+
+
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border: none !important;
+}
+.btn-primary:hover {
+  background-color: var(--primary-dark) !important;
+}
+
+
+
+/* Footer */
+footer {
+  background-color: var(--primary-dark);
+}
+footer a:hover {
+  color: var(--accent-color) !important;
+}
+
