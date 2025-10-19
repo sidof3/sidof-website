@@ -57,3 +57,14 @@ h1, h2, h3, h4, h5 {
   transform: translateY(-4px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
+
+
+
+
+/* ===== FORM ELEMENTS ===== */
+input, textarea, select {
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem;
+  padding: 10px 15px;
+  transition: border-color 0.3s ease;
+} 
