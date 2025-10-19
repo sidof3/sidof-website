@@ -1,7 +1,6 @@
 footer {
-  font-size: 0.9rem;
+  width: 100%;
 }
-footer a:hover {
+.text-pink {
   color: #ff4081;
-  text-decoration: none;
 }

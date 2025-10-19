@@ -28,6 +28,18 @@ export class PortfolioComponent {
   categories = ['All', 'Full Stack', 'Frontend', 'Backend'];
 
   projects = [
+
+
+    {
+      title: 'School App',
+      description:
+        'Full-stack web app built with Spring Boot, Angular 16, JWT security',
+      technologies: ['Angular', 'Spring Boot', 'PostgreSQL', 'Bootstrap 5'],
+      category: 'Full Stack',
+      image: '/projects/school_1.png',
+      githubUrl: 'https://github.com/sidofdountio/sekou-api',
+      demoUrl: 'https://youtu.be/2jYycKMFjy8'
+    },
     {
       title: 'E-Commerce Platform',
       description:
@@ -36,7 +48,7 @@ export class PortfolioComponent {
       category: 'Full Stack',
       image: '/projects/ecommerce-1.png',
       githubUrl: 'https://github.com/yourusername/ecommerce-app',
-      demoUrl: 'https://your-demo-link.com'
+      demoUrl: 'https://web.facebook.com/share/r/1GrZ7bJRpr/'
     },
     {
       title: 'Security API',
@@ -44,8 +56,9 @@ export class PortfolioComponent {
         'Spring Security 6 with JWT, refresh tokens, and role-based access control.',
       technologies: ['Spring Boot', 'Java', 'JWT', 'Docker'],
       category: 'Backend',
-      image: 'assets/img/projects/security.png',
-      githubUrl: 'https://github.com/yourusername/security-demo'
+      image: '/projects/security.png',
+      githubUrl: 'https://github.com/sidof3/fatApi',
+       demoUrl: 'https://'
     },
     {
       title: 'Angular Dashboard',
@@ -53,8 +66,8 @@ export class PortfolioComponent {
         'Responsive admin dashboard using Angular 17 and Angular Material.',
       technologies: ['Angular 17', 'Material', 'REST API'],
       category: 'Frontend',
-      image: 'assets/img/projects/dashboard.png',
-      githubUrl: 'https://github.com/yourusername/dashboard'
+      image: '/projects/dashboard.png',
+      githubUrl: 'https://github.com/martialdongmo/fastgaz-frontend'
     }
   ];
 

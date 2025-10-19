@@ -1,58 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+/* 🌸 SIDOF Global Theme */
 
-/*npm install @fortawesome/fontawesome-free */
-
-
-/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
-
-/* --- GLOBAL COLOR VARIABLES --- */
-
-
+/* ===== COLORS ===== */
 :root {
-  --primary-color: #e91e63;
-  --primary-dark: #ad1457;
-  --accent-color: #ff80ab;
-  --text-color: #333333;
+  --sidof-pink: #ff4081;
+  --sidof-pink-light: #ff77a9;
+  --sidof-dark: #212529;
+  --sidof-light: #f8f9fa;
 }
 
-/* --- GENERAL STYLE OVERRIDES --- */
+/* ===== GLOBAL TEXT ===== */
 body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-color);
-  background-color: #fff;
-}
- html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-/* Navbar customization */
-.navbar {
-  background-color: #fff !important;
-  border-bottom: 2px solid var(--accent-color);
-}
-.navbar-brand {
-  color: var(--primary-color) !important;
-}
-.nav-link:hover {
-  color: var(--primary-dark) !important;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background-color: var(--sidof-light);
+  color: var(--sidof-dark);
 }
 
-
-
-/* Buttons */
-.btn-primary {
-  background-color: var(--primary-color) !important;
-  border: none !important;
-}
-.btn-primary:hover {
-  background-color: var(--primary-dark) !important;
+/* ===== PINK UTILITY CLASSES ===== */
+.text-pink {
+  color: var(--sidof-pink) !important;
 }
 
-
-
-/* Footer */
-footer {
-  background-color: var(--primary-dark);
-}
-footer a:hover {
-  color: var(--accent-color) !important;
+.bg-pink {
+  background-color: var(--sidof-pink) !important;
 }
 
+.btn-pink {
+  background-color: var(--sidof-pink);
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.btn-pink:hover {
+  background-color: var(--sidof-pink-light);
+  color: #fff;
+}
+
+/* ===== SECTION SPACING ===== */
+section {
+  padding: 80px 0;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  color: var(--sidof-dark);
+}
+
+/* ===== CARD STYLING ===== */
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}

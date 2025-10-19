@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top py-3 ">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top py-3">
   <div class="container">
     <!-- Logo + Brand -->
-    <a class="navbar-brand d-flex align-items-center" routerLink="/">
-      <img src="sidof-logo-1.png" alt="Logo" width="40" height="40" class="me-2">
+    <a class="navbar-brand d-flex align-items-center" routerLink="/home">
+      <img src="sidof-logo-1.png" alt="SIDOF Logo" width="40" height="40" class="me-2">
       <span class="fw-bold text-pink">SIDOF</span>
     </a>
 
@@ -22,16 +22,28 @@
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="/lands">Land</a></li>
-
-        <li class="nav-item"><a class="nav-link" routerLink="/portfolio">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/about">About</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/services" routerLinkActive="active">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/lands" routerLinkActive="active">Lands</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+        </li>
       </ul>
+
+      <!-- Call to action -->
       <a routerLink="/contact" class="btn btn-pink ms-lg-3">Hire Me</a>
-      <!-- wa.me/237696444653 -->
     </div>
   </div>
 </nav>
