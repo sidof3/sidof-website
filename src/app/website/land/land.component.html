@@ -2,7 +2,7 @@
 
 <section class="lands container py-5 mt-5">
   <div class="text-center mb-5">
-    <h2 class="section-title">TERRAINS TITRÉS À VENDRE – YAOUNDÉ</h2>
+    <h4 class="section-title">TERRAINS TITRÉS À VENDRE – YAOUNDÉ</h4>
     <p class="section-subtitle text-muted">
       (Disponibilités & Prix)
     </p>
@@ -13,6 +13,16 @@
       <div class="col-md-6">
         <div class="card land-card h-100 p-4">
           <h4 class="land-title">{{ land.name }}</h4>
+
+           <!-- 🎥 Video -->
+          <div class="mb-3 ratio ratio-16x9">
+            <iframe
+              [src]="getSafeVideoUrl(land.videoUrl)"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          
           <p><i class="bi bi-geo-alt-fill text-pink"></i> <strong>Localisation :</strong> {{ land.location }}</p>
 
           <ul class="mb-2">

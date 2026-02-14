@@ -9,14 +9,14 @@
           Hi, I'm <span class="text-pink">Sidof</span> 👋
         </h1>
         <h2 class="mb-4">
-          Full Stack Java Developer & Creative Entrepreneur
+          Software project magement &  Entrepreneur
         </h2>
         <p class="lead text-muted mb-4">
           I build modern web apps using <strong>Java, Spring Boot, Angular, Docker</strong> and more.
           I also offer services in <strong>real estate, interior design, and digital marketing</strong>.
         </p>
         <div class="d-flex gap-3">
-          <a routerLink="/contact" class="btn btn-pink px-4 py-2">Hire Me</a>
+          <a routerLink="/contact" class="btn btn-pink px-4 py-2">Contact Me</a>
           <a routerLink="/portfolio" class="btn btn-outline-pink px-4 py-2">View Portfolio</a>
         </div>
       </div>
@@ -28,16 +28,70 @@
     </div>
   </div>
 </section>
-<!-- 💡 Optional Enhancements
-Add typewriter animation for “Full Stack Java Developer”
-Add Framer Motion or Animate.css for smooth fade-in effects
-Add scroll-down icon to guide the user to next section -->
-
 <!-- end hero -->
 
 <!-- TECHNICAL SECTIOND -->
  <app-technical-services></app-technical-services>
 <!-- END TECHNICAL SECTIOND -->
+
+<!-- SECTION EXPERIENCE -->
+  <app-experience></app-experience>
+ <!-- SECTION EXPERIENCE END -->
+
+
+
+
+<!-- Section what customer say about us -->
+
+<section id="testimonials" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-pink text-uppercase">What Clients Say</h2>
+      <p class="text-muted">Testimonials from clients and collaborators I’ve worked with.</p>
+    </div>
+
+    <div class="testimonials-slider">
+      @for ( t of testimonials; track t.name) {
+        <div class="testimonial-card shadow-sm p-4 rounded">
+          <div class="d-flex align-items-center mb-3">
+            <img  [src]="t.avatarUrl" alt="{{t.name}}" class="rounded-circle me-3 avatar">
+            <div>
+              <h5 class="mb-0">{{ t.name }}</h5>
+              <small class="text-muted">{{ t.role }}</small>
+            </div>
+          </div>
+          <p class="text-muted">"{{ t.message }}"</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- END Section what customer say about us -->
+
+<!-- PARTHNER SECTIOND -->
+
+<section id="partners" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-pink text-uppercase">Our Partners</h2>
+      <p class="text-muted">Companies and organizations we proudly collaborate with.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center align-items-center">
+      @for ( partner of partners; track partner.name) {
+        <div class="col-4 col-md-2 text-center">
+          <img [src]="partner.logoUrl" [alt]="partner.name" class="img-fluid partner-logo">
+        </div>
+      } @empty {
+        <p class="text-center text-muted">No partners to display.</p>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- END PARTHNER SECTIOND -->
+
 
 
 

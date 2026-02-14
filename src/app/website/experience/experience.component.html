@@ -1,0 +1,30 @@
+<section class="experience py-5 bg-light" id="experience">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-pink text-uppercase">Experience Timeline</h2>
+      <p class="text-muted">A snapshot of my career growth, roles, and technical expertise.</p>
+    </div>
+
+    <div class="timeline">
+      @for (exp of experiences; track exp.role; let i = $index, let odd = $odd) {
+        <div class="timeline-item" [class.right]="odd">
+          <div class="timeline-content shadow-sm">
+            <h5 class="fw-bold mb-1">{{ exp.role }}</h5>
+            <h6 class="text-pink mb-2">{{ exp.company }} | {{ exp.period }} | {{ exp.location }}</h6>
+            <p class="text-muted">{{ exp.description }}</p>
+
+            @if (exp.skills?.length) {
+              <div class="mt-2">
+                @for (skill of exp.skills; track skill) {
+                  <span class="badge bg-pink text-white me-1 mb-1">{{ skill }}</span>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      } @empty {
+        <p class="text-center text-muted">No experience to show.</p>
+      }
+    </div>
+  </div>
+</section>

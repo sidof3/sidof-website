@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { RouterOutlet } from "@angular/router";
 import { trigger, transition, style, animate } from '@angular/animations';
+import { ExperienceComponent } from "../experience/experience.component";
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [NavbarComponent, RouterOutlet],
+  imports: [ExperienceComponent],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css',
    animations: [
@@ -28,7 +29,6 @@ export class PortfolioComponent {
   categories = ['All', 'Full Stack', 'Frontend', 'Backend'];
 
   projects = [
-
 
     {
       title: 'School App',
