@@ -1,32 +1,59 @@
-.apartment-card {
-  border-radius: 1rem;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.fur-hero {
+  min-height: 45vh;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--sidof-bg-soft) 100%);
+  display: flex;
+  align-items: center;
 }
 
-.apartment-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+.fur-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
 }
 
-.text-pink {
-  color: #e83e8c;
+.fur-card:hover {
+  box-shadow: 0 12px 24px rgba(233, 30, 99, 0.1);
 }
 
-.btn-outline-pink {
-  border: 1px solid #e83e8c;
-  color: #e83e8c;
+.fur-fallback-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
-.btn-outline-pink:hover {
-  background-color: #e83e8c;
-  color: #fff;
+.fur-media-placeholder {
+  height: 220px;
+  background: var(--sidof-bg-soft);
+  color: var(--sidof-pink);
+  font-size: 0.95rem;
 }
 
-ul {
-  padding-left: 1.2rem;
+.fur-features {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--sidof-text-muted);
 }
 
-ul li {
-  list-style: disc;
+.fur-features li {
+  margin-bottom: 0.25rem;
+}
+
+.fur-features li i {
+  color: var(--sidof-pink);
+  margin-right: 0.5rem;
+  width: 1rem;
+}
+
+.fur-price {
+  color: var(--sidof-pink);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .fur-hero {
+    min-height: auto;
+    padding: 3rem 0;
+  }
 }

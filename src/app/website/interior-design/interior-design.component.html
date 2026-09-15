@@ -1,0 +1,200 @@
+<!-- Hero -->
+<section class="int-hero d-flex align-items-center" id="int-hero">
+  <div class="container text-center text-lg-start">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold mb-3">
+          Interior <span class="int-accent">Design</span>
+        </h1>
+        <p class="lead text-muted mb-4">
+          We design and style spaces that feel like home — for residents in Cameroon
+          and clients abroad building or furnishing their property from a distance.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a routerLink="/contact" class="int-btn px-4 py-2">Book a Consultation</a>
+          <a href="https://wa.me/237696444653" target="_blank" rel="noopener" class="int-btn-outline px-4 py-2">
+            <i class="fa-brands fa-whatsapp me-2"></i>WhatsApp Us
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center mt-5 mt-lg-0">
+        <img src="interior-design/hero-interior.jpg" alt="Interior design showcase" class="img-fluid int-hero-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="int-why-us" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold int-accent">Why Choose Sidof for Interior Design</h2>
+      <p class="text-muted">Thoughtful design, quality sourcing, and full-service execution — wherever you are.</p>
+    </div>
+    <div class="row g-4 mb-5">
+      @for (point of whyUs; track point.title) {
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card h-100 p-4 rounded text-center">
+            <i class="{{ point.icon }} why-icon mb-2"></i>
+            <h6 class="fw-bold mb-2">{{ point.title }}</h6>
+            <p class="text-muted small mb-0">{{ point.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Introduction Video -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center mb-4">
+          <h4 class="fw-bold int-accent">{{ introVideo.title }}</h4>
+          <p class="text-muted">{{ introVideo.description }}</p>
+        </div>
+        <div class="video-wrapper rounded shadow-sm overflow-hidden">
+          <iframe
+            [src]="videoEmbedUrl"
+            title="Sidof Interior Design Introduction"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="int-services" class="py-5 int-bg-soft">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold int-accent">Our Interior Design Services</h2>
+    </div>
+    <div class="row g-4">
+      @for (service of services; track service.title) {
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card h-100 p-4 rounded shadow-sm">
+            <i class="{{ service.icon }} service-icon mb-3"></i>
+            <h5 class="fw-bold mb-2">{{ service.title }}</h5>
+            <p class="text-muted mb-0">{{ service.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- OUR PROCESS -->
+<section id="int-process" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold int-accent">Our Process</h2>
+    </div>
+    <div class="row g-4 text-center">
+      @for (step of process; track step.title; let i = $index) {
+        <div class="col-md-3 col-6">
+          <div class="process-step p-3">
+            <div class="process-number mb-2">{{ i + 1 }}</div>
+            <h6 class="fw-bold">{{ step.title }}</h6>
+            <p class="text-muted small mb-0">{{ step.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section id="int-areas" class="py-5 int-bg-soft">
+  <div class="container text-center">
+    <h2 class="fw-bold int-accent mb-2">Where We Work in Cameroon</h2>
+    <p class="text-muted mb-4">Currently serving these areas, with more locations added regularly.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      @for (area of serviceAreas; track area) {
+        <span class="area-badge px-3 py-2 rounded-pill">
+          <i class="fa-solid fa-location-dot me-2"></i>{{ area }}
+        </span>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- INTERNATIONAL CLIENTS -->
+<section id="int-locations" class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold int-accent mb-2">Trusted by Clients Abroad</h2>
+    <p class="text-muted mb-4">We've already designed and styled homes for clients living in:</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      @for (loc of clientLocations; track loc.country) {
+        <span class="location-badge px-3 py-2 rounded-pill">
+          <span class="me-2">{{ loc.flag }}</span>{{ loc.country }}
+        </span>
+      }
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FEATURED PROJECTS -->
+<section id="int-projects" class="py-5 int-bg-soft">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold int-accent">Featured Projects</h2>
+      <p class="text-muted">Room-by-room views of spaces we've designed and styled.</p>
+    </div>
+
+    @for (project of projects; track project.location) {
+      <div class="mb-5">
+        <h4 class="fw-bold mb-4">
+          <i class="fa-solid fa-location-dot int-accent me-2"></i>{{ project.location }}
+        </h4>
+        <div class="row g-3">
+          @for (room of project.rooms; track room.label) {
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="room-card rounded overflow-hidden">
+                <img [src]="room.imageUrl" [alt]="room.label + ' - ' + project.location" class="room-img">
+                <div class="room-label">{{ room.label }}</div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section id="int-testimonial" class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 text-center">
+        <i class="fa-solid fa-quote-left testimonial-quote-icon mb-3"></i>
+        <p class="testimonial-message mb-4">"{{ testimonial.message }}"</p>
+        <div class="d-flex align-items-center justify-content-center">
+          <img [src]="testimonial.avatarUrl" [alt]="testimonial.name" class="rounded-circle me-3 testimonial-avatar">
+          <div class="text-start">
+            <h6 class="fw-bold mb-0">{{ testimonial.name }}</h6>
+            <small class="text-muted">
+              <i class="fa-solid fa-location-dot me-1"></i>{{ testimonial.location }}
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="int-cta" class="py-5 text-center int-bg-solid text-white">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Ready to Design Your Space?</h2>
+    <p class="mb-4">From Cameroon or abroad, let's create a space you'll love coming home to.</p>
+    <div class="d-flex justify-content-center flex-wrap gap-3">
+      <a routerLink="/contact" class="int-btn-light px-4 py-2">Book a Consultation</a>
+      <a href="https://wa.me/237696444653" target="_blank" rel="noopener" class="int-btn-outline-light px-4 py-2">
+        <i class="fa-brands fa-whatsapp me-2"></i>Contact on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>

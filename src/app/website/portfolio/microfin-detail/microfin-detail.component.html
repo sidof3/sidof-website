@@ -1,0 +1,256 @@
+<div class="project-detail-wrapper bg-light min-vh-100 py-5">
+  <div class="container">
+
+    <!-- Breadcrumb & Back Link -->
+    <div class="mb-4">
+      <a routerLink="/portfolio" class="btn btn-link text-decoration-none text-muted ps-0">
+        <i class="fa-solid fa-arrow-left me-2"></i>Back to Portfolio
+      </a>
+    </div>
+
+    <!-- Header Hero Banner -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-dark text-white mb-4 header-card">
+      <div class="row align-items-center">
+        
+        <div class="col-lg-8">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold">
+              <i class="fa-solid fa-code-branch me-1"></i> {{ project.status }}
+            </span>
+            <span class="badge bg-outline-light border px-3 py-2 rounded-pill">FinTech R&D</span>
+          </div>
+          <h1 class="display-5 fw-bold mb-2">{{ project.title }}</h1>
+          <p class="lead text-pink-soft mb-4">{{ project.subtitle }}</p>
+          
+          <div class="d-flex flex-wrap gap-3">
+            <a [href]="project.githubUrl" target="_blank" rel="noopener" class="btn btn-pink px-4 py-2 fw-semibold">
+              <i class="fa-brands fa-github me-2"></i>Explore GitHub Repository API
+            </a>
+
+            <a [href]="project.frontendUrl" target="_blank" rel="noopener" class="btn btn-pink px-4 py-2 fw-semibold">
+              <i class="fa-brands fa-github me-2"></i>Explore GitHub Repository APP
+            </a>
+
+            <a href="#architecture" (click)="setTab('architecture')" class="btn btn-outline-light px-4 py-2 fw-semibold">
+              <i class="fa-solid fa-layer-group me-2"></i>System Architecture
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0 text-center">
+          <div class="p-4 rounded-4 bg-white-10 backdrop-blur text-start border border-white-10">
+            <h6 class="fw-bold text-pink mb-2"><i class="fa-solid fa-shield-cat me-2"></i>Core Guarantees</h6>
+            <ul class="list-unstyled small mb-0 text-white-75">
+              <li class="mb-2"><i class="fa-solid fa-check text-pink me-2"></i>100% Immutable Transaction Ledger</li>
+              <li class="mb-2"><i class="fa-solid fa-check text-pink me-2"></i>Mandatory Dual-Signoff (Maker-Checker)</li>
+              <li><i class="fa-solid fa-check text-pink me-2"></i>Branch-Scoped Data Isolation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Metric Stat Cards -->
+    <div class="row g-3 mb-4">
+      @for (stat of project.stats; track stat.label) {
+        <div class="col-6 col-md-3">
+          <div class="card border-0 shadow-sm rounded-4 p-3 text-center bg-white h-100">
+            <div class="display-6 fw-bold text-pink mb-1">{{ stat.value }}</div>
+            <div class="fw-bold text-dark small">{{ stat.label }}</div>
+            <div class="micro-text text-muted">{{ stat.sub }}</div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="d-flex gap-2 border-bottom mb-4 pb-2 overflow-auto">
+      <button class="btn nav-tab-btn px-4 py-2 rounded-pill fw-semibold" 
+              [class.active]="activeTab() === 'overview'" 
+              (click)="setTab('overview')">
+        <i class="fa-solid fa-circle-info me-2"></i>Product Overview
+      </button>
+      <button class="btn nav-tab-btn px-4 py-2 rounded-pill fw-semibold" 
+              [class.active]="activeTab() === 'roles'" 
+              (click)="setTab('roles')">
+        <i class="fa-solid fa-users-gear me-2"></i>Role Matrix (RBAC)
+      </button>
+      <button class="btn nav-tab-btn px-4 py-2 rounded-pill fw-semibold" 
+              [class.active]="activeTab() === 'architecture'" 
+              (click)="setTab('architecture')">
+        <i class="fa-solid fa-microchip me-2"></i>Engineering & Stack
+      </button>
+      <button class="btn nav-tab-btn px-4 py-2 rounded-pill fw-semibold" 
+              [class.active]="activeTab() === 'roadmap'" 
+              (click)="setTab('roadmap')">
+        <i class="fa-solid fa-list-check me-2"></i>Module Status
+      </button>
+    </div>
+
+    <!-- TAB 1: PRODUCT OVERVIEW -->
+    @if (activeTab() === 'overview') {
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100">
+            <h4 class="fw-bold text-dark mb-3"><i class="fa-solid fa-triangle-exclamation text-warning me-2"></i>The Banking Problem</h4>
+            <p class="text-muted small">
+              Every bank and microfinance institution runs on the same hard problems: knowing exactly who a client is, moving money correctly and provably, and giving every action an unambiguous owner.
+            </p>
+            <p class="text-muted small">
+              Financial institutions — from single-branch microfinance lenders to multi-region banks — require that money is always accounted for, every sensitive action is traceable to a real person, and client access respects institutional hierarchy. Most small-scale banking software skips these guarantees to ship faster or bolts them on later as a costly rework.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100">
+            <h4 class="fw-bold text-dark mb-3"><i class="fa-solid fa-lightbulb text-pink me-2"></i>The MicroFin Solution</h4>
+            <p class="text-muted small">
+              MicroFin Manager was designed around these core financial guarantees from day one:
+            </p>
+            <ul class="list-unstyled small text-muted">
+              <li class="mb-2"><strong class="text-dark">Immutable Ledger:</strong> Money is recorded on a permanent, append-only ledger. Mistakes are corrected via visible reversing entries, never silent edits.</li>
+              <li class="mb-2"><strong class="text-dark">Shared Maker-Checker Engine:</strong> High-risk tasks (account opening, loan approval, unblocking) mandate sign-off from a second authorized user before executing.</li>
+              <li><strong class="text-dark">Strict Client Separation:</strong> Individual and Corporate clients have custom validation rules rather than a shared form with a checkbox.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- TAB 2: ROLE MATRIX -->
+    @if (activeTab() === 'roles') {
+      <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+        <h4 class="fw-bold text-dark mb-2">Branch Staff Access Matrix</h4>
+        <p class="text-muted small mb-4">The platform models physical branch operational roles with scoped privileges:</p>
+
+        <div class="row g-3">
+          @for (item of project.roles; track item.role) {
+            <div class="col-md-6 col-lg-3">
+              <div class="p-3 border rounded-4 bg-light h-100">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <div class="icon-square bg-pink-soft text-pink rounded-3 d-flex align-items-center justify-content-center">
+                    <i [class]="'fa-solid ' + item.icon"></i>
+                  </div>
+                  <h6 class="fw-bold mb-0 text-dark">{{ item.role }}</h6>
+                </div>
+                <p class="micro-text text-muted mb-0">{{ item.duty }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    <!-- TAB 3: ENGINEERING & STACK -->
+    @if (activeTab() === 'architecture') {
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100">
+            <h4 class="fw-bold text-dark mb-3"><i class="fa-solid fa-code text-pink me-2"></i>Engineering Approach</h4>
+            <p class="text-muted small">
+              Built on <strong>Java 21</strong> and <strong>Spring Boot 3</strong>, with <strong>PostgreSQL</strong> as the system of record. The backend enforces a strict layered architecture (Controllers -> Services -> Repositories -> DTOs) so business logic remains centrally governed and database entities never leak into API contracts.
+            </p>
+            <p class="text-muted small">
+              On the frontend, <strong>Angular 18+</strong> with <strong>Angular Signals</strong> is used for fine-grained reactive state handling, reducing rendering overhead when updating complex accounting grids and live transaction logs.
+            </p>
+
+            <div class="p-3 rounded-3 bg-light border">
+              <h6 class="fw-bold text-dark small mb-2"><i class="fa-solid fa-lock me-2 text-pink"></i>Security Architecture Highlights</h6>
+              <ul class="micro-text text-muted mb-0 ps-3">
+                <li>Multi-factor / One-Time Passcodes (OTP) for account step-up verification.</li>
+                <li>Automated lockout policies after repeated failed access attempts.</li>
+                <li>Individual token revocation (JWT blacklisting) for immediate session termination.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100">
+            <h4 class="fw-bold text-dark mb-3">Tech Stack Summary</h4>
+
+            <div class="mb-3">
+              <span class="fw-bold text-dark small d-block mb-1">Backend Core</span>
+              <div class="d-flex flex-wrap gap-1">
+                @for (t of project.techStack.backend; track t) {
+                  <span class="badge bg-light text-dark border micro-text">{{ t }}</span>
+                }
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <span class="fw-bold text-dark small d-block mb-1">Frontend UI</span>
+              <div class="d-flex flex-wrap gap-1">
+                @for (t of project.techStack.frontend; track t) {
+                  <span class="badge bg-light text-dark border micro-text">{{ t }}</span>
+                }
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <span class="fw-bold text-dark small d-block mb-1">Database & Persistence</span>
+              <div class="d-flex flex-wrap gap-1">
+                @for (t of project.techStack.database; track t) {
+                  <span class="badge bg-light text-dark border micro-text">{{ t }}</span>
+                }
+              </div>
+            </div>
+
+            <div>
+              <span class="fw-bold text-dark small d-block mb-1">DevOps & Tooling</span>
+              <div class="d-flex flex-wrap gap-1">
+                @for (t of project.techStack.devops; track t) {
+                  <span class="badge bg-light text-dark border micro-text">{{ t }}</span>
+                }
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- TAB 4: MODULE ROADMAP -->
+    @if (activeTab() === 'roadmap') {
+      <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+        <h4 class="fw-bold text-dark mb-4">Module Development Lifecycle</h4>
+
+        <div class="timeline-v">
+          <div class="timeline-v-item completed pb-4 border-start ps-4 position-relative">
+            <span class="timeline-v-badge bg-success text-white position-absolute rounded-circle text-center">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <h6 class="fw-bold text-dark mb-1">Identity, Auth & Access Control</h6>
+            <p class="small text-muted mb-0">Multi-factor OTP, session management, and granular permission mapping complete.</p>
+          </div>
+
+          <div class="timeline-v-item completed pb-4 border-start ps-4 position-relative">
+            <span class="timeline-v-badge bg-success text-white position-absolute rounded-circle text-center">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <h6 class="fw-bold text-dark mb-1">Branch Hierarchy & Client Models</h6>
+            <p class="small text-muted mb-0">Multi-region scoping and individual/corporate client data models active.</p>
+          </div>
+
+          <div class="timeline-v-item active pb-4 border-start ps-4 position-relative">
+            <span class="timeline-v-badge bg-warning text-dark position-absolute rounded-circle text-center">
+              <i class="fa-solid fa-spinner fa-spin"></i>
+            </span>
+            <h6 class="fw-bold text-dark mb-1">Ledger & Loan Re-architecture (In Progress)</h6>
+            <p class="small text-muted mb-0">Migrating existing loan modules directly onto the core immutable ledger foundation.</p>
+          </div>
+
+          <div class="timeline-v-item pending ps-4 position-relative">
+            <span class="timeline-v-badge bg-light border text-muted position-absolute rounded-circle text-center">
+              <i class="fa-solid fa-clock"></i>
+            </span>
+            <h6 class="fw-bold text-dark mb-1">Analytics, Notifications & Customer Support</h6>
+            <p class="small text-muted mb-0">Scoped and planned for final development sprint.</p>
+          </div>
+        </div>
+      </div>
+    }
+
+  </div>
+</div>

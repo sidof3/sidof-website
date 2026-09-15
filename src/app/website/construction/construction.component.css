@@ -1,0 +1,329 @@
+/* ==========================================================================
+   PAGE-SPECIFIC BLUE ACCENT (construction only — doesn't touch global pink)
+   ========================================================================== */
+:host {
+  --con-blue: #1A3C6E;
+  --con-blue-dark: #12294D;
+  --con-blue-soft: #F2F5FA;
+  --con-gold: #E0A526;
+}
+
+.con-accent {
+  color: var(--con-blue) !important;
+}
+
+.con-bg-soft {
+  background-color: var(--con-blue-soft) !important;
+}
+
+.con-bg-solid {
+  background-color: var(--con-blue) !important;
+}
+
+.con-btn {
+  display: inline-block;
+  background-color: var(--con-blue);
+  border: 1px solid var(--con-blue);
+  color: #FFFFFF;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.con-btn:hover {
+  background-color: var(--con-blue-dark);
+  border-color: var(--con-blue-dark);
+  color: #FFFFFF;
+}
+
+.con-btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid var(--con-blue);
+  color: var(--con-blue);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.con-btn-outline:hover {
+  background-color: var(--con-blue);
+  color: #FFFFFF;
+}
+
+.con-btn-light {
+  display: inline-block;
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  color: var(--con-blue);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.con-btn-light:hover {
+  background-color: var(--con-blue-soft);
+}
+
+.con-btn-outline-light {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.con-btn-outline-light:hover {
+  background-color: #FFFFFF;
+  color: var(--con-blue);
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.con-hero {
+  min-height: 80vh;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--con-blue-soft) 100%);
+}
+
+.con-hero-img {
+  max-height: 420px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ==========================================================================
+   WHY CHOOSE US
+   ========================================================================== */
+.why-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.why-icon {
+  font-size: 1.75rem;
+  color: var(--con-blue);
+  display: block;
+}
+
+/* ==========================================================================
+   PRESENTATION VIDEO
+   ========================================================================== */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================================================
+   SERVICES
+   ========================================================================== */
+.service-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(26, 60, 110, 0.1) !important;
+}
+
+.service-icon {
+  font-size: 2rem;
+  color: var(--con-blue);
+  display: block;
+}
+
+/* ==========================================================================
+   REMOTE MONITORING
+   ========================================================================== */
+.con-remote-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.con-remote-list li {
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.con-remote-list li i {
+  color: var(--con-blue);
+  margin-right: 0.5rem;
+  width: 1.2rem;
+}
+
+/* ==========================================================================
+   PROCESS
+   ========================================================================== */
+.process-step .process-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--con-blue);
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   PROJECTS
+   ========================================================================== */
+.project-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 12px 24px rgba(26, 60, 110, 0.1) !important;
+}
+
+.project-main-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+.project-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-status-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--con-blue);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+}
+
+.project-status-badge.status-ongoing {
+  background: var(--con-gold);
+}
+
+.project-thumbs {
+  background: var(--con-blue-soft);
+}
+
+.project-thumb {
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.project-thumb:hover {
+  opacity: 0.85;
+}
+
+.project-thumb.active {
+  opacity: 1;
+  border-color: var(--con-blue);
+}
+
+
+/* ==========================================================================
+   TRUSTED LOCATIONS
+   ========================================================================== */
+.location-badge {
+  background: #FFFFFF;
+  border: 1px solid var(--con-blue);
+  color: var(--con-blue);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   WHAT YOU AVOID / ADVANTAGES
+   ========================================================================== */
+.avoid-heading {
+  color: #B23A3A;
+}
+
+.advantage-heading {
+  color: green;
+}
+
+.avoid-icon {
+  color: #B23A3A;
+  font-size: 1.25rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.advantage-icon {
+  color: green;
+  font-size: 1.25rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+
+.testimonial-quote-icon {
+  font-size: 2rem;
+  color: var(--con-blue);
+  opacity: 0.3;
+}
+
+.testimonial-message {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--con-navy, #1A1A2E);
+}
+
+.testimonial-avatar {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  .project-main-img-wrap {
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .con-hero {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+}
+
+
+
+
+@media (min-width: 1024px) {
+  .con-hero-img {
+    margin-top: 50px;
+    max-height: 1200px; /* plus grand sur desktop */
+  }
+}
+
+

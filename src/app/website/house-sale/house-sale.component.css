@@ -1,0 +1,82 @@
+.hs-hero {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--sidof-bg-soft) 100%);
+}
+
+.hs-badge {
+  background: var(--sidof-pink);
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+}
+
+.hs-main-media {
+  height: 380px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.hs-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hs-thumb {
+  position: relative;
+  width: 90px;
+  height: 70px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+}
+
+.hs-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hs-thumb.active {
+  border-color: var(--sidof-pink);
+}
+
+.hs-video-thumb {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sidof-navy, #1A1A2E);
+  color: #FFFFFF;
+  font-size: 1.25rem;
+}
+
+.hs-thumb-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  text-align: center;
+  padding: 0.1rem 0;
+}
+
+.hs-feature-icon {
+  font-size: 1.75rem;
+  color: var(--sidof-pink);
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hs-main-media {
+    height: 260px;
+  }
+}

@@ -1,0 +1,141 @@
+<!-- Hero -->
+<section class="dev-hero d-flex align-items-center" id="dev-hero">
+  <div class="container text-center text-lg-start">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold mb-3">
+          Software <span class="text-pink">Development</span>
+        </h1>
+        <p class="lead text-muted mb-4">
+          We design, build, and operate scalable web and mobile applications —
+          from backend architecture to production deployment — using
+          <strong>Java, Spring Boot, Angular, Docker</strong> and modern DevOps practices.
+        </p>
+        <div class="d-flex gap-3">
+          <a routerLink="/contact" class="btn btn-pink px-4 py-2">Start a Project</a>
+          <a href="#projects" class="btn btn-outline-pink px-4 py-2">See Our Work</a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center mt-5 mt-lg-0">
+        <img src="hero-dev.png" alt="Software development at Sidof" class="img-fluid dev-hero-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES OFFERED -->
+<section id="dev-services" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-pink">Our Software Services</h2>
+      <p class="text-muted">Full-cycle development, from idea to production.</p>
+    </div>
+    <div class="row g-4">
+      @for (service of services; track service.title) {
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card h-100 p-4 rounded shadow-sm">
+            <div class="service-icon mb-3">{{ service.icon }}</div>
+            <h5 class="fw-bold mb-2">{{ service.title }}</h5>
+            <p class="text-muted mb-0">{{ service.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="tech-stack" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold text-pink mb-4">Technologies We Use</h2>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      @for (tech of techStack; track tech) {
+        <span class="tech-badge px-3 py-2 rounded-pill">{{ tech }}</span>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section id="dev-process" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-pink">How We Work</h2>
+      <p class="text-muted">A clear, Agile-driven process from first conversation to production support.</p>
+    </div>
+    <div class="row g-4 text-center">
+      @for (step of process; track step.title; let i = $index) {
+        <div class="col-md-3">
+          <div class="process-step p-3">
+            <div class="process-number mb-2">{{ i + 1 }}</div>
+            <h5 class="fw-bold">{{ step.title }}</h5>
+            <p class="text-muted mb-0">{{ step.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section id="projects" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-pink">Featured Projects</h2>
+      <p class="text-muted">Real applications we designed, built, and deployed end-to-end.</p>
+    </div>
+    <div class="row g-4">
+      @for (project of projects; track project.name) {
+        <div class="col-lg-4 col-md-6">
+          <div class="project-card h-100 rounded shadow-sm overflow-hidden">
+            <img [src]="project.imageUrl" [alt]="project.name" class="project-img">
+            <div class="p-4">
+              <h5 class="fw-bold mb-1">{{ project.name }}</h5>
+              <p class="text-muted small mb-2">{{ project.tagline }}</p>
+              <p class="text-muted mb-3">{{ project.description }}</p>
+              <div class="d-flex flex-wrap gap-1 mb-3">
+                @for (tech of project.tech; track tech) {
+                  <span class="tech-tag">{{ tech }}</span>
+                }
+              </div>
+              <div class="d-flex gap-3">
+                @if (project.webLink) {
+                  <a [href]="project.webLink" target="_blank" rel="noopener" class="btn-pink-link">Website</a>
+                }
+                @if (project.playStoreLink) {
+                  <a [href]="project.playStoreLink" target="_blank" rel="noopener" class="btn-pink-link">Play Store</a>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="dev-why-us" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-pink">Why Work With Sidof</h2>
+    </div>
+    <div class="row g-4 text-center">
+      @for (point of whyUs; track point.title) {
+        <div class="col-md-3">
+          <h5 class="fw-bold mb-2">{{ point.title }}</h5>
+          <p class="text-muted mb-0">{{ point.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="dev-cta" class="py-5 text-center bg-pink text-white">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Have a project in mind?</h2>
+    <p class="mb-4">Let's talk about how we can bring your idea to life.</p>
+    <a routerLink="/contact" class="btn btn-light px-4 py-2">Contact Us</a>
+  </div>
+</section>

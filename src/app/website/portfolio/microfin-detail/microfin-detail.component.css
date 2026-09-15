@@ -1,0 +1,102 @@
+:host {
+  --primary-pink: #d63384;
+  --primary-pink-hover: #b8256f;
+  --pink-soft: rgba(214, 51, 132, 0.1);
+}
+
+.text-pink {
+  color: var(--primary-pink) !important;
+}
+
+.text-pink-soft {
+  color: #f7a8ce !important;
+}
+
+.bg-pink {
+  background-color: var(--primary-pink) !important;
+}
+
+.bg-pink-soft {
+  background-color: var(--pink-soft) !important;
+}
+
+.micro-text {
+  font-size: 0.8rem;
+}
+
+/* Header & Glassmorphic touches */
+.header-card {
+  background: linear-gradient(135deg, #181b2a 0%, #2b1123 100%) !important;
+}
+
+.bg-white-10 {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.border-white-10 {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(8px);
+}
+
+/* Nav Tabs */
+.nav-tab-btn {
+  background: transparent;
+  color: #6c757d;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.nav-tab-btn:hover {
+  color: var(--primary-pink);
+  background: var(--pink-soft);
+}
+
+.nav-tab-btn.active {
+  background: var(--primary-pink);
+  color: #fff;
+}
+
+/* Icons */
+.icon-square {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+/* Vertical Timeline */
+.timeline-v-badge {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  left: -14px;
+  top: 0;
+  font-size: 0.75rem;
+}
+
+.timeline-v-item.completed {
+  border-color: #198754 !important;
+}
+
+.timeline-v-item.active {
+  border-color: #ffc107 !important;
+}
+
+.timeline-v-item.pending {
+  border-color: #dee2e6 !important;
+}
+
+/* Buttons */
+.btn-pink {
+  background-color: var(--primary-pink);
+  color: #fff;
+  border: 1px solid var(--primary-pink);
+}
+
+.btn-pink:hover {
+  background-color: var(--primary-pink-hover);
+  color: #fff;
+}

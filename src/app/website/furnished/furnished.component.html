@@ -1,78 +1,83 @@
-<section class="apartments container py-5 mt-5">
-  <div class="text-center mb-5">
-    <h2 class="section-title">APPARTEMENTS MEUBLÉS À LOUER – YAOUNDÉ</h2>
-    <p class="section-subtitle text-muted">(Disponibilités, Prix & Réservations)</p>
+<!-- Hero -->
+<section class="fur-hero d-flex align-items-center" id="fur-hero">
+  <div class="container text-center">
+    <h1 class="display-5 fw-bold mb-3">
+      Furnished <span class="text-pink">Apartments</span>
+    </h1>
+    <p class="lead text-muted col-lg-8 mx-auto mb-4">
+      Move-in-ready apartments and villas for short stays in Yaoundé — Wi-Fi, air
+      conditioning, secure parking, and everything you need, included.
+    </p>
+    <a href="#fur-listings" class="btn-pink px-4 py-2">View Available Apartments</a>
   </div>
+</section>
 
-  <div class="row g-4">
-    @for (apartment of apartments; track apartment.name) {
-      <div class="col-md-6">
-        <div class="card apartment-card h-100 overflow-hidden shadow-sm">
+<!-- LISTINGS -->
+<section id="fur-listings" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-pink">Available Apartments & Villas</h2>
+      <p class="text-muted">Fully furnished, ready for your stay.</p>
+    </div>
 
-          <!-- 🏠 Image or Video -->
-          @if (apartment.videoUrl) {
-            <div class="ratio ratio-16x9">
-              <iframe
-                [src]="getSafeVideoUrl(apartment.videoUrl)"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
-            </div>
-          } @else if (apartment.imageUrl) {
-            <img
-              [src]="apartment.imageUrl"
-              alt="{{ apartment.name }}"
-              class="img-fluid rounded-top"
-            />
-          }
+    <div class="row g-4">
+      @for (apt of apartments; track apt.name + apt.location + apt.price) {
+        <div class="col-lg-6">
+          <div class="fur-card h-100 rounded shadow-sm overflow-hidden">
 
-          <!-- Info section -->
-          <div class="card-body p-4">
-            <h4 class="apartment-title mb-2">{{ apartment.name }}</h4>
+            @if (apt.videoUrl) {
+              <div class="ratio ratio-16x9">
+                <iframe
+                  [src]="getSafeVideoUrl(apt.videoUrl)"
+                  title="{{ apt.name }} video tour"
+                  frameborder="0"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            } @else if (apt.imageUrl) {
+              <img [src]="apt.imageUrl" [alt]="apt.name" class="fur-fallback-img">
+            } @else {
+              <div class="fur-media-placeholder d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-image me-2"></i> Photos coming soon
+              </div>
+            }
 
-            <p class="mb-2">
-              <i class="bi bi-geo-alt-fill text-pink"></i>
-              <strong>Localisation :</strong> {{ apartment.location }}
-            </p>
+            <div class="p-4">
+              <h5 class="fw-bold mb-1">{{ apt.name }}</h5>
+              <p class="text-muted small mb-2">
+                <i class="fa-solid fa-location-dot text-pink me-1"></i>{{ apt.location }}
+              </p>
+              <p class="small mb-2"><strong>Layout:</strong> {{ apt.rooms }}</p>
 
-            <p><strong>Configuration :</strong> {{ apartment.rooms }}</p>
-
-            <ul class="mb-3">
-              @for (feature of apartment.features; track feature) {
-                <li>{{ feature }}</li>
-              }
-            </ul>
-
-            <p class="text-pink fw-bold fs-5">
-              <i class="bi bi-cash"></i> {{ apartment.price }}
-            </p>
-
-            <!-- Buttons -->
-            <div class="d-flex justify-content-between align-items-center mt-3">
-              
-                @if (apartment.whatsapp) {
-                    <a
-                
-                [href]="apartment.whatsapp"
-                target="_blank"
-                class="btn btn-success d-flex align-items-center gap-2"
-              >
-                <i class="bi bi-whatsapp"></i> Réserver
-              </a>
+              <ul class="fur-features mb-3">
+                @for (feature of apt.features; track feature) {
+                  <li><i class="fa-solid fa-check"></i>{{ feature }}</li>
                 }
+              </ul>
 
-              
+              <p class="fur-price fw-bold mb-3">
+                <i class="fa-solid fa-tag me-1"></i>{{ apt.price }}
+              </p>
+
+              <a [href]="getWhatsappLink(apt)" target="_blank" rel="noopener" class="btn-outline-pink px-4 py-2 w-100 text-center d-block">
+                <i class="fa-brands fa-whatsapp me-2"></i>Check Availability
+              </a>
             </div>
+
           </div>
         </div>
-      </div>
-    }
+      }
+    </div>
   </div>
+</section>
 
-  <!-- Global contact box -->
-  <div class="contact-box mt-5 text-center p-4 rounded shadow-sm">
-    <h5>📩 Contactez-nous pour réserver ou visiter nos appartements !</h5>
-    <p class="mb-1">📞 <strong>+237 696 44 46 53</strong></p>
-    <p>✉️ <a href="mailto:sidof&#64;sidof.xyz" class="text-pink">sidof&#64;sidof.xyz</a></p>
+<!-- CTA -->
+<section id="fur-cta" class="py-5 text-center bg-pink text-white">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Looking for a Longer Stay or Custom Booking?</h2>
+    <p class="mb-4">Contact us directly and we'll help you find the right fit.</p>
+    <a href="https://wa.me/237696444653" target="_blank" rel="noopener" class="btn btn-light px-4 py-2">
+      <i class="fa-brands fa-whatsapp me-2"></i>+237 696 44 46 53
+    </a>
   </div>
 </section>

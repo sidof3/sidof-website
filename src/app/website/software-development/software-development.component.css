@@ -1,0 +1,91 @@
+.dev-hero {
+  min-height: 80vh;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--sidof-bg-soft) 100%);
+}
+
+.dev-hero-img {
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.service-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(233, 30, 99, 0.08) !important;
+}
+
+.service-icon {
+  font-size: 2rem;
+}
+
+.tech-badge {
+  background: #FFFFFF;
+  border: 1px solid var(--sidof-pink);
+  color: var(--sidof-pink);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.process-step .process-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--sidof-pink);
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.project-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.tech-tag {
+  background: var(--sidof-bg-soft);
+  color: var(--sidof-text-muted);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.btn-pink-link {
+  color: var(--sidof-pink);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.btn-pink-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .dev-hero {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+}
+
+.status-badge {
+  background: var(--sidof-bg-soft);
+  color: var(--sidof-text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}

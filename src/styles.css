@@ -1,21 +1,24 @@
-/* 🌸 SIDOF Global Theme */
 
-/* ===== COLORS ===== */
+/* ==========================================================================
+   GLOBAL — Sidof brand
+   ========================================================================== */
 :root {
-  --sidof-pink: #ff4081;
-  --sidof-pink-light: #ff77a9;
-  --sidof-dark: #212529;
-  --sidof-light: #f8f9fa;
+  --sidof-pink: #E91E63;
+  --sidof-pink-dark: #C2185B;
+  --sidof-navy: #1A1A2E;
+  --sidof-bg-soft: #F8F7FA;
+  --sidof-text-muted: #6C6C80;
 }
 
-/* ===== GLOBAL TEXT ===== */
 body {
-  font-family: "Poppins", "Segoe UI", sans-serif;
-  background-color: var(--sidof-light);
-  color: var(--sidof-dark);
+  color: var(--sidof-navy);
+  background-color: #FFFFFF;
 }
 
-/* ===== PINK UTILITY CLASSES ===== */
+/* ==========================================================================
+   BRAND TEXT & BUTTON UTILITIES
+   (used across home, services, about, etc.)
+   ========================================================================== */
 .text-pink {
   color: var(--sidof-pink) !important;
 }
@@ -26,34 +29,71 @@ body {
 
 .btn-pink {
   background-color: var(--sidof-pink);
-  color: #fff;
-  border: none;
-  transition: background-color 0.3s ease;
+  border: 1px solid var(--sidof-pink);
+  color: #FFFFFF;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
+
 .btn-pink:hover {
-  background-color: var(--sidof-pink-light);
-  color: #fff;
+  background-color: var(--sidof-pink-dark);
+  border-color: var(--sidof-pink-dark);
+  color: #FFFFFF;
 }
 
-/* ===== SECTION SPACING ===== */
-section {
-  padding: 80px 0;
+.btn-outline-pink {
+  background-color: transparent;
+  border: 1px solid var(--sidof-pink);
+  color: var(--sidof-pink);
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* ===== HEADINGS ===== */
-h1, h2, h3, h4, h5 {
-  font-weight: 600;
-  color: var(--sidof-dark);
+.btn-outline-pink:hover {
+  background-color: var(--sidof-pink);
+  color: #FFFFFF;
 }
 
-/* ===== CARD STYLING ===== */
-.card {
-  border: none;
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ==========================================================================
+   SHARED SECTION UTILITIES
+   (reused across home + service detail pages: testimonials, partners, etc.)
+   ========================================================================== */
+.testimonial-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+
+.partner-logo {
+  max-height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY (site-wide)
+   ========================================================================== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--sidof-pink);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }

@@ -1,0 +1,291 @@
+/* ==========================================================================
+   PAGE-SPECIFIC TERRACOTTA ACCENT
+   ========================================================================== */
+:host {
+  --int-terracotta: #B5651D;
+  --int-terracotta-dark: #8B4513;
+  --int-sand: #FAF6F1;
+  --int-charcoal: #2B2320;
+}
+
+.int-accent {
+  color: var(--int-terracotta) !important;
+}
+
+.int-bg-soft {
+  background-color: var(--int-sand) !important;
+}
+
+.int-bg-solid {
+  background-color: var(--int-terracotta) !important;
+}
+
+.int-btn {
+  display: inline-block;
+  background-color: var(--int-terracotta);
+  border: 1px solid var(--int-terracotta);
+  color: #FFFFFF;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.int-btn:hover {
+  background-color: var(--int-terracotta-dark);
+  border-color: var(--int-terracotta-dark);
+  color: #FFFFFF;
+}
+
+.int-btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid var(--int-terracotta);
+  color: var(--int-terracotta);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.int-btn-outline:hover {
+  background-color: var(--int-terracotta);
+  color: #FFFFFF;
+}
+
+.int-btn-light {
+  display: inline-block;
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  color: var(--int-terracotta);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.int-btn-light:hover {
+  background-color: var(--int-sand);
+}
+
+.int-btn-outline-light {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.int-btn-outline-light:hover {
+  background-color: #FFFFFF;
+  color: var(--int-terracotta);
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.int-hero {
+  min-height: 80vh;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--int-sand) 100%);
+}
+
+.int-hero-img {
+  max-height: 420px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ==========================================================================
+   WHY CHOOSE US
+   ========================================================================== */
+.why-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.why-icon {
+  font-size: 1.75rem;
+  color: var(--int-terracotta);
+  display: block;
+}
+
+/* ==========================================================================
+   VIDEO
+   ========================================================================== */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================================================
+   SERVICES
+   ========================================================================== */
+.service-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(181, 101, 29, 0.1) !important;
+}
+
+.service-icon {
+  font-size: 2rem;
+  color: var(--int-terracotta);
+  display: block;
+}
+
+/* ==========================================================================
+   PROCESS
+   ========================================================================== */
+.process-step .process-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--int-terracotta);
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   SERVICE AREAS / LOCATIONS
+   ========================================================================== */
+.area-badge,
+.location-badge {
+  background: #FFFFFF;
+  border: 1px solid var(--int-terracotta);
+  color: var(--int-terracotta);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   PROJECTS
+   ========================================================================== */
+.project-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 12px 24px rgba(181, 101, 29, 0.1) !important;
+}
+
+.project-main-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+.project-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-thumbs {
+  background: var(--int-sand);
+}
+
+.project-thumb {
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.project-thumb:hover {
+  opacity: 0.85;
+}
+
+.project-thumb.active {
+  opacity: 1;
+  border-color: var(--int-terracotta);
+}
+
+/* ==========================================================================
+   TESTIMONIAL
+   ========================================================================== */
+.testimonial-quote-icon {
+  font-size: 2rem;
+  color: var(--int-terracotta);
+  opacity: 0.3;
+}
+
+.testimonial-message {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--int-charcoal);
+}
+
+.testimonial-avatar {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+}
+
+
+/* ==========================================================================
+   PROJECTS — ROOM GALLERY
+   ========================================================================== */
+.room-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.room-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.room-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(43, 35, 32, 0.85) 0%, rgba(43, 35, 32, 0) 100%);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 1.5rem 0.75rem 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .room-img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .int-hero {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+  .project-main-img-wrap {
+    height: 240px;
+  }
+}

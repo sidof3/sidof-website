@@ -1,98 +1,168 @@
-
-
-/* Hero */
-
+/* ==========================================================================
+   HERO
+   ========================================================================== */
 .hero {
-  min-height: 100vh;
-  padding-top: 100px; /* to offset fixed navbar */
-  background: linear-gradient(135deg, #fff 0%, #ffe6ef 100%);
+  min-height: 90vh;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--sidof-bg-soft) 100%);
 }
 
-.text-pink {
-  color: #e91e63;
-}
-
-/* Buttons */
-.btn-pink {
-  background-color: #e91e63;
-  color: #fff;
-  border-radius: 30px;
-  transition: 0.3s ease;
-}
-.btn-pink:hover {
-  background-color: #d81b60;
-}
-
-.btn-outline-pink {
-  border: 2px solid #e91e63;
-  color: #e91e63;
-  border-radius: 30px;
-  transition: 0.3s ease;
-}
-.btn-outline-pink:hover {
-  background-color: #e91e63;
-  color: #fff;
-}
-
-/* Hero image */
 .hero-img {
-  max-width: 90%;
-  border-radius: 20px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  max-height: 420px;
+  object-fit: contain;
 }
 
-
-/* Hero end */
-
-/* TESTIMONIALE */
-.testimonials-slider {
-  display: flex;
-  gap: 1.5rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 1rem;
+/* ==========================================================================
+   SERVICES OVERVIEW
+   ========================================================================== */
+.service-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
 }
 
-.testimonial-card {
-  flex: 0 0 300px;
-  scroll-snap-align: start;
-  background-color: #fff;
-  border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.service-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(233, 30, 99, 0.08) !important;
 }
 
-.avatar {
-  width: 50px;
-  height: 50px;
+.service-icon {
+  font-size: 2rem;
+  color: var(--sidof-pink);
+  display: block;
+}
+
+.btn-pink-link {
+  color: var(--sidof-pink);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.service-card:hover .btn-pink-link {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   WHY CHOOSE US (stats strip)
+   ========================================================================== */
+#why-us h3 {
+  font-size: 2.25rem;
+}
+
+#why-us p {
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   ABOUT SNAPSHOT
+   ========================================================================== */
+#about-snapshot img {
+  max-height: 380px;
+  width: 100%;
   object-fit: cover;
-  border: 2px solid #e91e63;
 }
 
-@media (max-width: 768px) {
-  .testimonials-slider {
+/* ==========================================================================
+   PORTFOLIO TEASER
+   ========================================================================== */
+#portfolio-teaser img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   FINAL CTA BANNER
+   ========================================================================== */
+#final-cta h2 {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   FLASH NEWS BANNER
+   ========================================================================== */
+.flash-banner {
+  background: linear-gradient(90deg, #FFF0F5 0%, #FFE4EE 100%);
+  border: 1px solid rgba(233, 30, 99, 0.2);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.flash-banner:hover {
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.15);
+  transform: translateY(-2px);
+}
+
+.flash-badge {
+  background: var(--sidof-pink);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  animation: pulse-flash 2s infinite;
+}
+
+.flash-cta {
+  color: var(--sidof-pink);
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+@keyframes pulse-flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@media (max-width: 576px) {
+  .flash-banner {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start !important;
+    gap: 0.75rem;
   }
-
-  .testimonial-card {
-    width: 90%;
+  .flash-cta {
+    align-self: flex-end;
   }
 }
-/* end testimonial */
 
-
-/* parthner */
-.partner-logo {
-  max-width: 100px;
-  transition: transform 0.3s ease, filter 0.3s ease;
+@media (prefers-reduced-motion: reduce) {
+  .flash-badge {
+    animation: none;
+  }
 }
 
-.partner-logo:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+
+  #why-us h3 {
+    font-size: 1.75rem;
+  }
+
+  #portfolio-teaser img {
+    height: 160px;
+  }
+}
+
+/* ==========================================================================
+   MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .service-card {
+    transition: none;
+  }
 }

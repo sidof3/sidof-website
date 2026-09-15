@@ -1,46 +1,93 @@
-
-
-<section class="lands container py-5 mt-5">
-  <div class="text-center mb-5">
-    <h4 class="section-title">TERRAINS TITRÉS À VENDRE – YAOUNDÉ</h4>
-    <p class="section-subtitle text-muted">
-      (Disponibilités & Prix)
+<!-- Hero -->
+<section class="land-hero d-flex align-items-center" id="land-hero">
+  <div class="container text-center">
+    <h1 class="display-5 fw-bold mb-3">
+      Titled Land <span class="land-accent">for Sale</span>
+    </h1>
+    <p class="lead text-muted col-lg-8 mx-auto mb-4">
+      Secure, titled plots of land in Yaoundé and surrounding areas — a solid investment
+      opportunity for buyers in Cameroon and abroad.
     </p>
+    <a href="#land-listings" class="land-btn px-4 py-2">View Available Land</a>
   </div>
+</section>
 
-  <div class="row g-4">
-    @for (land of lands; track land.name) {
-      <div class="col-md-6">
-        <div class="card land-card h-100 p-4">
-          <h4 class="land-title">{{ land.name }}</h4>
+<!-- LAND LISTINGS -->
+<section id="land-listings" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold land-accent">Available Plots</h2>
+      <p class="text-muted">Verified, titled land — availability and pricing below.</p>
+    </div>
 
-           <!-- 🎥 Video -->
-          <div class="mb-3 ratio ratio-16x9">
-            <iframe
-              [src]="getSafeVideoUrl(land.videoUrl)"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
-          </div>
-          
-          <p><i class="bi bi-geo-alt-fill text-pink"></i> <strong>Localisation :</strong> {{ land.location }}</p>
+    <div class="row g-4">
+      @for (land of lands; track land.name) {
+        <div class="col-lg-6">
+          <div class="land-card h-100 rounded shadow-sm overflow-hidden">
 
-          <ul class="mb-2">
-            @for (feature of land.features; track feature) {
-              <li>{{ feature }}</li>
+            @if (land.videoUrl) {
+              <div class="ratio ratio-16x9">
+                <iframe
+                  [src]="getSafeVideoUrl(land.videoUrl)"
+                  title="{{ land.name }} land video"
+                  frameborder="0"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            } @else {
+              <div class="land-video-placeholder d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-video-slash me-2"></i> Video coming soon
+              </div>
             }
-          </ul>
 
-          <p><strong>Superficie :</strong> {{ land.surface }}</p>
-          <p class="text-pink fw-bold"><i class="bi bi-cash"></i> Prix : {{ land.price }}</p>
+            <div class="p-4">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <h4 class="land-title mb-0">{{ land.name }}</h4>
+                @if (land.status) {
+                  <span class="status-badge">{{ land.status }}</span>
+                }
+              </div>
+
+              <p class="mb-2 small">
+                <i class="fa-solid fa-location-dot land-accent me-1"></i>
+                <strong>Location:</strong> {{ land.location }}
+              </p>
+
+              <ul class="land-features mb-3">
+                @for (feature of land.features; track feature) {
+                  <li><i class="fa-solid fa-check"></i>{{ feature }}</li>
+                }
+              </ul>
+
+              <p class="mb-1 small"><strong>Surface Area:</strong> {{ land.surface }}</p>
+              <p class="land-price fw-bold mb-3">
+                <i class="fa-solid fa-tag me-1"></i>{{ land.price }}
+              </p>
+
+              <a [href]="getWhatsappLink(land)" target="_blank" rel="noopener" class="land-btn-outline px-4 py-2 w-100 text-center d-block">
+                <i class="fa-brands fa-whatsapp me-2"></i>Ask About This Plot
+              </a>
+            </div>
+
+          </div>
         </div>
-      </div>
-    }
+      }
+    </div>
   </div>
+</section>
 
-  <div class="contact-box mt-5 text-center p-4 rounded shadow-sm">
-    <h5>📩 Contactez-nous dès maintenant pour plus d’informations ou pour visiter les sites !</h5>
-    <p class="mb-1">📞 <strong>+237 696 44 46 53</strong></p>
-    <p>✉️ <a href="mailto:sidof&#64;sidof.xyz" class="text-pink">sidof&#64;sidof.xyz</a></p>
+<!-- CONTACT CTA -->
+<section id="land-contact" class="py-5 text-center land-bg-solid text-white">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Interested in a Plot?</h2>
+    <p class="mb-4">Contact us today for more details or to arrange a site visit.</p>
+    <div class="d-flex justify-content-center flex-wrap gap-3">
+      <a href="https://wa.me/237696444653" target="_blank" rel="noopener" class="land-btn-light px-4 py-2">
+        <i class="fa-brands fa-whatsapp me-2"></i>+237 696 44 46 53
+      </a>
+      <a href="mailto:sidof@sidof.xyz" class="land-btn-outline-light px-4 py-2">
+        <i class="fa-solid fa-envelope me-2"></i>sidof&#64;sidof.xyz
+      </a>
+    </div>
   </div>
 </section>
