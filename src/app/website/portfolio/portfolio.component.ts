@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
+
+interface VideoDemo {
+  title: string;
+  project: string;
+  description: string;
+  youtubeId: string;
+}
 
 @Component({
   selector: 'app-portfolio',
@@ -16,8 +25,8 @@ export class PortfolioComponent {
     email: 'sidofdountio406@gmail.com',
     phone: '+237 696 444 653',
     location: 'Simbock, Yaoundé, Cameroon',
-    github: 'https://github.com/seedoph',
-    linkedin: 'https://linkedin.com/in/seedoph',
+    github: 'https://github.com/sidofdountio',
+    linkedin: 'https://www.linkedin.com/in/sidof-dountio/',
     summary: "Full Stack Java Developer with 4+ years of experience designing, building, and operating scalable web and mobile applications (Java, Spring Boot, Angular, Docker, Microservices). Proven track record leading projects end-to-end — requirements, architecture, dev, testing, deployment, and maintenance — as sole technical owner on live production systems.",
     openTo: 'Open to Full Stack Java, Backend Java, or Tech Lead / Technical Project Manager roles. Available for international relocation and remote work.'
   };
@@ -50,9 +59,9 @@ export class PortfolioComponent {
       badgeClass: 'bg-warning text-dark',
       icon: 'fa-solid fa-building-columns',
       images: [
-        'assets/projects/microfin-dashboard.jpg',
-        'assets/projects/microfin-roles.jpg',
-        'assets/projects/microfin-ledger.jpg'
+        '/software/microfin-dashboard.jpg',
+        '/software/microfin-roles.jpg',
+        '/software/microfin-ledger.jpg'
       ],
       description: 'A multi-branch core banking platform built to master domain-driven financial architecture and modern Angular features.',
       highlightsList: [
@@ -60,7 +69,7 @@ export class PortfolioComponent {
         'Powered by Java 21 & Spring Boot 3 with layered architecture and strict audit-ready immutability.',
         'Enforces Maker-Checker approval workflows across 9 distinct staff roles (Tellers to Auditors).'
       ],
-      githubLink: 'https://github.com/seedoph/microfin-manager',
+      githubLink: 'https://github.com/sidofdountio/microfin-manager',
       isPublicRepo: true
     },
     {
@@ -74,8 +83,8 @@ export class PortfolioComponent {
       icon: 'fa-solid fa-fire-flame-curved',
       images: [
         '/software/fastgaz-home.jpg',
-        'assets/projects/fastgaz-tracking.jpg',
-        'assets/projects/fastgaz-checkout.jpg'
+        '/software/fastgaz-tracking.jpg',
+        '/software/fastgaz-checkout.jpg'
       ],
       description: 'On-demand home gas delivery mobile application owned end-to-end from initial scoping through live operation.',
       highlightsList: [
@@ -98,8 +107,9 @@ export class PortfolioComponent {
       icon: 'fa-solid fa-store',
       images: [
         '/software/grouping-marketplace.jpg',
+        '/software/grouping-mobile.jpg',
         '/software/grouping-merchant.jpg',
-        'assets/projects/grouping-mobile.jpg'
+
       ],
       description: 'Multi-vendor e-commerce marketplace featuring group-buying logic and real-time order tracking.',
       highlightsList: [
@@ -122,7 +132,7 @@ export class PortfolioComponent {
       badgeClass: 'bg-primary',
       icon: 'fa-solid fa-piggy-bank',
       images: [
-        '/software/tontine-loans.jpg' ,
+        '/software/tontine-loans.jpg',
         '/software/tontine-overview.jpg'
       ],
       description: 'Digital community banking platform handling savings, loan management, and scheduled repayments.',
@@ -188,4 +198,55 @@ export class PortfolioComponent {
     { name: 'French', level: 'Native Speaker', icon: 'fa-solid fa-language' },
     { name: 'English', level: 'Intermediate / Working Proficiency', icon: 'fa-solid fa-language' }
   ];
+
+
+  videoDemos: VideoDemo[] = [
+    {
+      title: 'School management Demo',
+      project: 'Sekoo',
+      description: 'Demo illustration of a school management project developed using Java (Spring Boot) and TypeScript (Angular). GitHub and Docker were used for project management and deployment.',
+      youtubeId: '2jYycKMFjy8'
+    }
+    ,
+
+    {
+      title: 'Tontine Bank — App Walkthrough',
+      project: 'Tontine Bank',
+      description: 'Managing the end-to-end delivery of a digital community banking solution, overseeing business requirements, system architecture, Agile development, stakeholder coordination, and quality assurance. The platform digitalizes savings, loans, repayments, financial reporting, and member management with secure role-based access and audit capabilities using Spring Boot, Angular, PostgreSQL, and JWT authentication.',
+      youtubeId: '_G9KuK6wMu0 '
+    },
+    {
+      title: 'Tontine Bank — App Walkthrough',
+      project: 'Tontine Bank',
+      description: 'Managing the end-to-end delivery of a digital community banking solution, overseeing business requirements, system architecture, Agile development, stakeholder coordination, and quality assurance. The platform digitalizes savings, loans, repayments, financial reporting, and member management with secure role-based access and audit capabilities using Spring Boot, Angular, PostgreSQL, and JWT authentication.',
+      youtubeId: '-z-II-sY4aE'
+    },
+
+    {
+      title: 'FAST GAZ — App Walkthrough',
+      project: 'FAST GAZ',
+      description: 'Full demo of the gas delivery app: ordering flow, real-time tracking, and mobile payment integration.',
+      youtubeId: '' // ← remplace par ton vrai ID YouTube
+    },
+    {
+      title: 'GroupinG — Marketplace Demo',
+      project: 'GroupinG',
+      description: 'Walkthrough of the multi-vendor marketplace: group-buying logic, merchant dashboard, and order tracking.',
+      youtubeId: 'jyTc5kRzDVw' 
+    },
+    {
+      title: 'MicroFin Manager — System Overview',
+      project: 'MicroFin Manager',
+      description: 'Technical overview of the core banking platform: maker-checker workflows, immutable ledger, and role-based access.',
+      youtubeId: '' 
+    }
+  ];
+
+  constructor(private sanitizer: DomSanitizer) { }
+
+  getSafeVideoUrl(youtubeId: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(
+      `https://www.youtube.com/embed/${youtubeId}`
+    );
+  }
 }

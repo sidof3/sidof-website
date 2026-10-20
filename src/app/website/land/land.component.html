@@ -2,22 +2,22 @@
 <section class="land-hero d-flex align-items-center" id="land-hero">
   <div class="container text-center">
     <h1 class="display-5 fw-bold mb-3">
-      Titled Land <span class="land-accent">for Sale</span>
+      Terrains titrés <span class="land-accent">à vendre</span>
     </h1>
     <p class="lead text-muted col-lg-8 mx-auto mb-4">
-      Secure, titled plots of land in Yaoundé and surrounding areas — a solid investment
-      opportunity for buyers in Cameroon and abroad.
+      Des terrains titrés et sécurisés à Yaoundé et dans ses environs — une opportunité
+      d'investissement solide pour acheteurs au Cameroun et à l'étranger.
     </p>
-    <a href="#land-listings" class="land-btn px-4 py-2">View Available Land</a>
+    <a href="#land-listings" class="land-btn px-4 py-2">Voir les terrains disponibles</a>
   </div>
 </section>
 
-<!-- LAND LISTINGS -->
+<!-- TERRAINS DISPONIBLES -->
 <section id="land-listings" class="py-5">
   <div class="container">
     <div class="text-center mb-5">
-      <h2 class="fw-bold land-accent">Available Plots</h2>
-      <p class="text-muted">Verified, titled land — availability and pricing below.</p>
+      <h2 class="fw-bold land-accent">Terrains disponibles</h2>
+      <p class="text-muted">Terrains titrés et vérifiés — disponibilité et prix ci-dessous.</p>
     </div>
 
     <div class="row g-4">
@@ -29,14 +29,14 @@
               <div class="ratio ratio-16x9">
                 <iframe
                   [src]="getSafeVideoUrl(land.videoUrl)"
-                  title="{{ land.name }} land video"
+                  title="Vidéo du terrain {{ land.name }}"
                   frameborder="0"
                   allowfullscreen>
                 </iframe>
               </div>
             } @else {
               <div class="land-video-placeholder d-flex align-items-center justify-content-center">
-                <i class="fa-solid fa-video-slash me-2"></i> Video coming soon
+                <i class="fa-solid fa-video-slash me-2"></i> Vidéo bientôt disponible
               </div>
             }
 
@@ -50,7 +50,7 @@
 
               <p class="mb-2 small">
                 <i class="fa-solid fa-location-dot land-accent me-1"></i>
-                <strong>Location:</strong> {{ land.location }}
+                <strong>Localisation :</strong> {{ land.location }}
               </p>
 
               <ul class="land-features mb-3">
@@ -59,13 +59,13 @@
                 }
               </ul>
 
-              <p class="mb-1 small"><strong>Surface Area:</strong> {{ land.surface }}</p>
+              <p class="mb-1 small"><strong>Superficie :</strong> {{ land.surface }}</p>
               <p class="land-price fw-bold mb-3">
                 <i class="fa-solid fa-tag me-1"></i>{{ land.price }}
               </p>
 
               <a [href]="getWhatsappLink(land)" target="_blank" rel="noopener" class="land-btn-outline px-4 py-2 w-100 text-center d-block">
-                <i class="fa-brands fa-whatsapp me-2"></i>Ask About This Plot
+                <i class="fa-brands fa-whatsapp me-2"></i>Se renseigner sur ce terrain
               </a>
             </div>
 
@@ -76,11 +76,46 @@
   </div>
 </section>
 
-<!-- CONTACT CTA -->
+<!-- QUESTIONS FRÉQUENTES -->
+<section id="land-faq" class="py-5 land-bg-soft">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold land-accent">Questions fréquentes</h2>
+      <p class="text-muted">Tout ce qu'il faut savoir avant d'acheter un terrain.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="accordion faq-accordion" id="landFaqAccordion">
+          @for (item of faq; track item.question; let i = $index) {
+            <div class="accordion-item mb-2 border rounded overflow-hidden">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button collapsed fw-semibold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#land-faq-' + i"
+                  [attr.aria-controls]="'land-faq-' + i">
+                  {{ item.question }}
+                </button>
+              </h3>
+              <div [id]="'land-faq-' + i" class="accordion-collapse collapse" data-bs-parent="#landFaqAccordion">
+                <div class="accordion-body text-muted">
+                  {{ item.answer }}
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="land-contact" class="py-5 text-center land-bg-solid text-white">
   <div class="container">
-    <h2 class="fw-bold mb-3">Interested in a Plot?</h2>
-    <p class="mb-4">Contact us today for more details or to arrange a site visit.</p>
+    <h2 class="fw-bold mb-3">Intéressé par un terrain ?</h2>
+    <p class="mb-4">Contactez-nous dès aujourd'hui pour plus d'informations ou pour organiser une visite.</p>
     <div class="d-flex justify-content-center flex-wrap gap-3">
       <a href="https://wa.me/237696444653" target="_blank" rel="noopener" class="land-btn-light px-4 py-2">
         <i class="fa-brands fa-whatsapp me-2"></i>+237 696 44 46 53

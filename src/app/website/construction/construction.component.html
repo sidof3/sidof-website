@@ -1,295 +1,56 @@
-<!-- Hero -->
-<section class="con-hero d-flex align-items-center" id="con-hero">
-  <div class="container text-center text-lg-start">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold mb-3">
-          Construction <span class="con-accent">Services</span>
-        </h1>
-        <p class="lead text-muted mb-4">
-          Build in Cameroon with confidence — even from abroad. Sidof manages your
-          project end-to-end, with transparent tracking, written agreements, and
-          professional supervision at every stage.
-        </p>
-        <div class="d-flex flex-wrap gap-3">
-          <a routerLink="/contact" class="con-btn px-4 py-2">Request a Quote</a>
-          <a href="https://wa.me/237696444653" target="_blank" rel="noopener" class="con-btn-outline px-4 py-2">
-            <i class="fa-brands fa-whatsapp me-2"></i>WhatsApp Us
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-6 text-center mt-5 mt-lg-0">
-        <img src="/construction/hero-construction.jpg" alt="Construction site" class="img-fluid con-hero-img">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY CHOOSE US + PRESENTATION VIDEO -->
-<section id="con-why-us" class="py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold con-accent">Why Choose Sidof for Construction</h2>
-      <p class="text-muted">Managing a construction site takes real expertise, organization, and process — that's what we bring.</p>
-    </div>
-
-    <div class="row g-4 mb-5">
-      @for (point of whyUs; track point.title) {
-        <div class="col-md-6 col-lg-3">
-          <div class="why-card h-100 p-4 rounded text-center">
-            <i class="{{ point.icon }} why-icon mb-2"></i>
-            <h6 class="fw-bold mb-2">{{ point.title }}</h6>
-            <p class="text-muted small mb-0">{{ point.description }}</p>
+<main class="construction-page">
+  <section class="con-hero" id="accueil" aria-labelledby="hero-title">
+    <div class="container position-relative">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <p class="con-eyebrow"><i class="fa-solid fa-shield-halved me-2"></i>Votre partenaire de confiance au Cameroun</p>
+          <h1 id="hero-title">Construisez au Cameroun <span>depuis l'étranger</span>, en toute sérénité.</h1>
+          <p class="con-hero-lead">BURMATS transforme votre projet immobilier en une réalité concrète grâce à une gestion professionnelle, un budget transparent et un suivi de chantier à distance.</p>
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <a routerLink="/contact" class="con-btn con-btn-primary">Demander un devis <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            <a href="https://wa.me/237696444653" target="_blank" rel="noopener" class="con-btn con-btn-outline"><i class="fa-brands fa-whatsapp me-2"></i>Parler à un conseiller</a>
+          </div>
+          <div class="hero-trust d-flex flex-wrap gap-3">
+            <span><i class="fa-solid fa-circle-check"></i> Engagement écrit</span>
+            <span><i class="fa-solid fa-circle-check"></i> Prix clair</span>
+            <span><i class="fa-solid fa-circle-check"></i> Suivi à distance</span>
           </div>
         </div>
-      }
-    </div>
-
-    <!-- Presentation Video -->
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="text-center mb-4">
-          <h4 class="fw-bold con-accent">{{ presentationVideo.title }}</h4>
-          <p class="text-muted">{{ presentationVideo.description }}</p>
-        </div>
-        <div class="video-wrapper rounded shadow-sm overflow-hidden">
-          <iframe
-            [src]="videoEmbedUrl"
-            title="Sidof Construction Presentation"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- TRUSTED LOCATIONS -->
-<section id="con-locations" class="py-5 con-bg-soft">
-  <div class="container text-center">
-    <h2 class="fw-bold con-accent mb-2">Trusted by Clients Abroad</h2>
-    <p class="text-muted mb-4">We've already built homes for clients living in:</p>
-    <div class="d-flex flex-wrap justify-content-center gap-3">
-      @for (loc of clientLocations; track loc.country) {
-        <span class="location-badge px-3 py-2 rounded-pill">
-          <span class="me-2">{{ loc.flag }}</span>{{ loc.country }}
-        </span>
-      }
-    </div>
-  </div>
-</section>
-
-<!-- WHAT YOU AVOID WITH SIDOF -->
-<section id="con-avoid" class="py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold con-accent">Building From Abroad, Without the Risks</h2>
-      <p class="text-muted col-lg-8 mx-auto">
-        Your home is a major investment. Entrusting it to someone without professional
-        construction experience — however well-intentioned — carries real risks. Here's what
-        you avoid, and what you gain, when you build with Sidof.
-      </p>
-    </div>
-
-    <div class="row g-4 mb-5">
-      <div class="col-lg-6">
-        <h5 class="fw-bold mb-3 avoid-heading">
-          <i class="fa-solid fa-xmark-circle me-2"></i>What You Avoid
-        </h5>
-        @for (point of avoidPoints; track point.title) {
-          <div class="d-flex gap-3 mb-3">
-            <i class="{{ point.icon }} avoid-icon"></i>
-            <div>
-              <h6 class="fw-bold mb-1">{{ point.title }}</h6>
-              <p class="text-muted small mb-0">{{ point.description }}</p>
-            </div>
-          </div>
-        }
-      </div>
-
-      <div class="col-lg-6">
-        <h5 class="fw-bold mb-3 advantage-heading">
-          <i class="fa-solid fa-circle-check me-2"></i>What You Gain With us
-        </h5>
-        @for (point of sidofAdvantages; track point.title) {
-          <div class="d-flex gap-3 mb-3">
-            <i class="{{ point.icon }} advantage-icon"></i>
-            <div>
-              <h6 class="fw-bold mb-1">{{ point.title }}</h6>
-              <p class="text-muted small mb-0">{{ point.description }}</p>
-            </div>
-          </div>
-        }
-      </div>
-    </div>
-
-    <p class="text-center text-muted fst-italic mb-0">
-      Construction is our passion, and your peace of mind is our mission.
-    </p>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="con-services" class="py-5 con-bg-soft">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold con-accent">Our Construction Services</h2>
-    </div>
-    <div class="row g-4">
-      @for (service of services; track service.title) {
-        <div class="col-md-6 col-lg-4">
-          <div class="service-card h-100 p-4 rounded shadow-sm">
-            <i class="{{ service.icon }} service-icon mb-3"></i>
-            <h5 class="fw-bold mb-2">{{ service.title }}</h5>
-            <p class="text-muted mb-0">{{ service.description }}</p>
-          </div>
-        </div>
-      }
-    </div>
-  </div>
-</section>
-
-<!-- REMOTE MONITORING -->
-<section id="con-remote" class="py-5">
-  <div class="container">
-    <div class="row align-items-center g-4">
-      <div class="col-lg-6">
-        <img src="/construction/remote-monitoring-1.jpg" alt="Remote site monitoring" class="img-fluid rounded">
-      </div>
-      <div class="col-lg-6">
-        <h2 class="fw-bold con-accent mb-3">Follow Your Project From Anywhere</h2>
-        <p class="text-muted mb-3">
-          Living abroad shouldn't mean losing sight of your project. Where available,
-          we equip sites with cameras and a Starlink connection, so you can check progress
-          from your phone or computer, wherever you are.
-        </p>
-        <ul class="con-remote-list text-muted">
-          <li><i class="fa-solid fa-check"></i>Live or recorded site camera access</li>
-          <li><i class="fa-solid fa-check"></i>Regular written progress reports</li>
-          <li><i class="fa-solid fa-check"></i>Direct communication with your project supervisor</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW WE WORK -->
-<section id="con-process" class="py-5 con-bg-soft">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold con-accent">How We Work</h2>
-    </div>
-    <div class="row g-4 text-center">
-      @for (step of process; track step.title; let i = $index) {
-        <div class="col-md-3 col-6">
-          <div class="process-step p-3">
-            <div class="process-number mb-2">{{ i + 1 }}</div>
-            <h6 class="fw-bold">{{ step.title }}</h6>
-            <p class="text-muted small mb-0">{{ step.description }}</p>
-          </div>
-        </div>
-      }
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- FEATURED PROJECTS -->
-<section id="con-projects" class="py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold con-accent">Featured Projects</h2>
-      <p class="text-muted">A look at homes and buildings we've delivered.</p>
-    </div>
-    <div class="row g-4">
-      @for (project of projects; track project.name; let i = $index) {
-        <div class="col-lg-6">
-          <div class="project-card h-100 rounded shadow-sm overflow-hidden">
-
-            <div class="project-main-img-wrap">
-              <img [src]="project.images[activeImageIndex[i]]" [alt]="project.name" class="project-main-img">
-              <span class="project-status-badge" [class.status-ongoing]="project.status === 'Ongoing'">
-                {{ project.status }}
-              </span>
-            </div>
-
-            <div class="project-thumbs d-flex gap-2 p-2">
-              @for (img of project.images; track img; let j = $index) {
-                <img
-                  [src]="img"
-                  [alt]="project.name + ' photo ' + (j + 1)"
-                  class="project-thumb"
-                  [class.active]="j === activeImageIndex[i]"
-                  (click)="setActiveImage(i, j)">
-              }
-            </div>
-
-            <div class="p-4 pt-2">
-              <h5 class="fw-bold mb-1">{{ project.name }}</h5>
-              <p class="text-muted small mb-2">
-                <i class="fa-solid fa-location-dot me-1"></i>{{ project.location }}
-                <span class="mx-2">·</span>
-                <i class="fa-solid fa-ruler-combined me-1"></i>{{ project.size }}
-              </p>
-              <p class="text-muted mb-0">{{ project.description }}</p>
-            </div>
-
-          </div>
-        </div>
-      }
-    </div>
-  </div>
-</section>
-
-<!-- EXECUTION PARTNER -->
-<section id="con-partner" class="py-5 con-bg-soft">
-  <div class="container text-center">
-    <h2 class="fw-bold con-accent mb-3">Built in Partnership With BURMATS BTP</h2>
-    <p class="text-muted col-lg-8 mx-auto mb-0">
-      Construction projects at Sidof are executed on the ground by BURMATS BTP, a specialized
-      construction firm covering all regions of Cameroon — bringing hands-on expertise in
-      structural works, geotechnical assessment, and finishing to every project we manage.
-    </p>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="con-cta" class="py-5 text-center con-bg-solid text-white">
-  <div class="container">
-    <h2 class="fw-bold mb-3">Build in Cameroon With a Professional Partner</h2>
-    <p class="mb-4">Wherever you are, let's bring your project to life — safely, transparently, on schedule.</p>
-    <div class="d-flex justify-content-center flex-wrap gap-3">
-      <a routerLink="/contact" class="con-btn-light px-4 py-2">Start My Project</a>
-      <a href="https://wa.me/237696444653" target="_blank" rel="noopener" class="con-btn-outline-light px-4 py-2">
-        <i class="fa-brands fa-whatsapp me-2"></i>Contact on WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- DIASPORA TESTIMONIAL -->
-<section id="con-testimonial" class="py-5 con-bg-soft">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-7 text-center">
-        <i class="fa-solid fa-quote-left testimonial-quote-icon mb-3"></i>
-        <p class="testimonial-message mb-4">"{{ diasporaTestimonial.message }}"</p>
-        <div class="d-flex align-items-center justify-content-center">
-          <img [src]="diasporaTestimonial.avatarUrl" [alt]="diasporaTestimonial.name" class="rounded-circle me-3 testimonial-avatar">
-          <div class="text-start">
-            <h6 class="fw-bold mb-0">{{ diasporaTestimonial.name }}</h6>
-            <small class="text-muted">
-              <i class="fa-solid fa-location-dot me-1"></i>{{ diasporaTestimonial.location }}
-            </small>
+        <div class="col-lg-5">
+          <div class="hero-visual">
+            <img src="/construction/hero-construction.jpg" alt="Construction d'une maison au Cameroun supervisée par BURMATS" class="con-hero-img">
+            <div class="hero-floating-card"><span class="floating-icon"><i class="fa-solid fa-video"></i></span><div><strong>Votre chantier, sous vos yeux</strong><small>Caméras et connexion Starlink</small></div></div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="con-proof" aria-label="Engagements BURMATS">
+    <div class="container"><div class="row g-4">
+      @for (point of whyUs; track point.title) { <div class="col-md-6 col-lg-3"><div class="proof-item"><i class="{{ point.icon }}"></i><div><strong>{{ point.title }}</strong><span>{{ point.description }}</span></div></div></div> }
+    </div></div>
+  </section>
+
+  <section id="con-why-us" class="con-section" aria-labelledby="why-title">
+    <div class="container"><div class="section-heading text-center"><p class="con-kicker">La tranquillité d'esprit commence par la méthode</p><h2 id="why-title">Un interlocuteur professionnel, pas un intermédiaire improvisé</h2><p>Votre investissement mérite un cadre clair, des responsables identifiés et des preuves d'avancement à chaque étape.</p></div>
+      <div class="row align-items-center g-5"><div class="col-lg-6"><div class="video-frame"><iframe [src]="videoEmbedUrl" title="Présentation de BURMATS, entreprise de construction au Cameroun" allowfullscreen></iframe></div></div><div class="col-lg-6"><div class="story-panel"><span class="panel-label">Notre engagement</span><h3>Vous gardez le contrôle, même à des milliers de kilomètres.</h3><p>{{ presentationVideo.description }}</p><ul class="check-list"><li><i class="fa-solid fa-check"></i> Un responsable dédié pour votre projet</li><li><i class="fa-solid fa-check"></i> Des comptes rendus réguliers et documentés</li><li><i class="fa-solid fa-check"></i> Des décisions validées avec vous</li></ul><a routerLink="/contact" class="text-link">Découvrir notre méthode <i class="fa-solid fa-arrow-right"></i></a></div></div></div>
+    </div>
+  </section>
+
+  <section id="con-remote" class="con-section con-section-dark" aria-labelledby="remote-title"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-6 order-lg-2"><img src="/construction/remote-monitoring-1.jpg" alt="Suivi de chantier par caméra et Starlink au Cameroun" class="section-image"></div><div class="col-lg-6 order-lg-1"><p class="con-kicker light">La technologie au service de votre confiance</p><h2 id="remote-title">Suivez votre chantier en direct, où que vous soyez</h2><p class="dark-copy">Lorsque les conditions techniques le permettent, nous installons des caméras connectées à Starlink sur le chantier. Vous consultez l'avancement depuis votre téléphone ou votre ordinateur.</p><ul class="check-list check-list-light"><li><i class="fa-solid fa-check"></i> Accès aux caméras en direct ou en différé</li><li><i class="fa-solid fa-check"></i> Photos, vidéos et rapports des étapes clés</li><li><i class="fa-solid fa-check"></i> Communication directe avec le responsable</li></ul><a href="https://wa.me/237696444653" target="_blank" rel="noopener" class="con-btn con-btn-gold">Parler de mon projet <i class="fa-brands fa-whatsapp ms-2"></i></a></div></div></div></section>
+
+  <section id="con-locations" class="trust-locations con-section con-section-soft" aria-labelledby="locations-title"><div class="container text-center"><p class="con-kicker">Une confiance qui traverse les frontières</p><h2 id="locations-title">Ils nous font confiance depuis l'étranger</h2><p class="locations-intro">Nous accompagnons des clients résidant en Europe, en Amérique du Nord et au Cameroun pour leurs projets de construction.</p><div class="locations-list">@for (location of clientLocations; track location.country) {<span class="location-badge"><span class="location-flag" aria-hidden="true">{{ location.flag }}</span>{{ location.country }}</span>}</div></div></section>
+
+  <section id="con-avoid" class="con-section" aria-labelledby="security-title"><div class="container"><div class="section-heading text-center"><p class="con-kicker">Construire sans mauvaises surprises</p><h2 id="security-title">La sécurité d'un projet bien encadré</h2><p>Avec BURMATS, vous ne confiez pas votre argent à une personne de votre entourage sans cadre professionnel. Vous confiez votre projet à une équipe structurée.</p></div><div class="row g-4"><div class="col-lg-6"><div class="comparison-card comparison-risk"><h3><i class="fa-solid fa-triangle-exclamation"></i> Les risques de l'informel</h3>@for (point of avoidPoints; track point.title) {<div class="comparison-line"><i class="{{ point.icon }}"></i><div><strong>{{ point.title }}</strong><p>{{ point.description }}</p></div></div>}</div></div><div class="col-lg-6"><div class="comparison-card comparison-gain"><h3><i class="fa-solid fa-circle-check"></i> Ce que BURMATS vous garantit</h3>@for (point of advantages; track point.title) {<div class="comparison-line"><i class="{{ point.icon }}"></i><div><strong>{{ point.title }}</strong><p>{{ point.description }}</p></div></div>}</div></div></div></div></section>
+
+  <section id="con-services" class="con-section con-section-soft" aria-labelledby="services-title"><div class="container"><div class="section-heading"><p class="con-kicker">Une solution de A à Z</p><h2 id="services-title">Nos services de construction au Cameroun</h2><p>De la préparation du terrain à la remise des clés, nous adaptons notre accompagnement à votre projet.</p></div><div class="row g-4">@for (service of services; track service.title) {<div class="col-md-6 col-lg-4"><article class="service-card"><span class="service-number">0{{ $index + 1 }}</span><i class="{{ service.icon }} service-icon"></i><h3>{{ service.title }}</h3><p>{{ service.description }}</p><a routerLink="/contact" [attr.aria-label]="'En savoir plus sur ' + service.title">En savoir plus <i class="fa-solid fa-arrow-right"></i></a></article></div>}</div></div></section>
+
+  <section id="con-process" class="con-section" aria-labelledby="process-title"><div class="container"><div class="section-heading text-center"><p class="con-kicker">Simple, transparent, professionnel</p><h2 id="process-title">Comment nous travaillons</h2></div><div class="process-grid">@for (step of process; track step.title; let i = $index) {<div class="process-step"><span class="process-number">0{{ i + 1 }}</span><h3>{{ step.title }}</h3><p>{{ step.description }}</p></div>}</div></div></section>
+
+  <section id="con-projects" class="con-section con-section-soft" aria-labelledby="projects-title"><div class="container"><div class="section-heading text-center"><p class="con-kicker">Des projets concrets</p><h2 id="projects-title">Nos réalisations au Cameroun</h2><p>Découvrez quelques projets résidentiels réalisés ou suivis par notre équipe.</p></div><div class="row g-4">@for (project of projects; track project.name; let i = $index) {<div class="col-lg-6"><article class="project-card"><div class="project-main-img-wrap"><img [src]="project.images[activeImageIndex[i]]" [alt]="project.name + ', construction à ' + project.location" class="project-main-img"><span class="project-status-badge" [class.status-ongoing]="project.status === 'En cours'">{{ project.status }}</span></div><div class="project-thumbs">@for (img of project.images; track img; let j = $index) {<img [src]="img" [alt]="'Photo ' + (j + 1) + ' de ' + project.name" class="project-thumb" [class.active]="j === activeImageIndex[i]" (click)="setActiveImage(i, j)">}</div><div class="project-content"><h3>{{ project.name }}</h3><p class="project-meta"><i class="fa-solid fa-location-dot"></i>{{ project.location }} <span>•</span> {{ project.size }}</p><p>{{ project.description }}</p></div></article></div>}</div></div></section>
+
+  <section id="con-faq" class="con-section" aria-labelledby="faq-title"><div class="container"><div class="section-heading text-center"><p class="con-kicker">Questions fréquentes</p><h2 id="faq-title">Construire au Cameroun depuis l'étranger</h2></div><div class="accordion faq-accordion" id="faqAccordion">@for (item of faq; track item.question; let i = $index) {<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#faq-' + i" [attr.aria-controls]="'faq-' + i">{{ item.question }}</button></h3><div [id]="'faq-' + i" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">{{ item.answer }}</div></div></div>}</div></div></section>
+
+  <section id="con-cta" class="con-cta" aria-labelledby="cta-title"><div class="container text-center"><p class="con-kicker light">Votre projet commence par une conversation</p><h2 id="cta-title">Construisez au Cameroun avec un partenaire qui vous rend des comptes.</h2><p>Demandez une première étude de votre projet et découvrez comment nous pouvons vous accompagner depuis l'étranger.</p><div class="d-flex justify-content-center flex-wrap gap-3"><a routerLink="/contact" class="con-btn con-btn-light">Demander mon devis <i class="fa-solid fa-arrow-right ms-2"></i></a><a href="https://wa.me/237696444653" target="_blank" rel="noopener" class="con-btn con-btn-outline-light"><i class="fa-brands fa-whatsapp me-2"></i>WhatsApp</a></div></div></section>
+</main>

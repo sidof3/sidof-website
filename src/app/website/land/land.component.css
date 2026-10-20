@@ -138,6 +138,21 @@
   font-size: 1.1rem;
 }
 
+
+.faq-accordion .accordion-button:not(.collapsed) {
+  background-color: #FFFFFF;
+  color: var(--land-green);
+  box-shadow: none;
+}
+
+.faq-accordion .accordion-button:focus {
+  box-shadow: 0 0 0 0.15rem rgba(31, 107, 58, 0.2);
+}
+
+.faq-accordion .accordion-item {
+  background: #FFFFFF;
+}
+
 @media (max-width: 768px) {
   .land-hero {
     min-height: auto;

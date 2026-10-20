@@ -208,5 +208,56 @@
         }
       </div>
     </section>
+
+      <!-- Video Demos Section -->
+  <section id="video-demos" class="mb-5">
+    <h2 class="h3 text-white fw-bold mb-4">
+      <i class="fa-brands fa-youtube me-2 text-pink"></i>Video Demos
+    </h2>
+    <p class="text-secondary micro-text mb-4">
+      Live walkthroughs of the applications I've designed, built, and deployed.
+    </p>
+
+    <div class="row g-4">
+      @for (video of videoDemos; track video.title) {
+        <div class="col-lg-6">
+          <div class="card bg-dark border-secondary text-white h-100">
+
+            @if (video.youtubeId) {
+              <div class="ratio ratio-16x9">
+                <iframe
+                  [src]="getSafeVideoUrl(video.youtubeId)"
+                  [title]="video.title"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            } @else {
+              <div class="video-placeholder d-flex align-items-center justify-content-center">
+                <span class="text-secondary micro-text">
+                  <i class="fa-solid fa-video-slash me-2"></i>Video coming soon
+                </span>
+              </div>
+            }
+
+            <div class="card-body">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <h3 class="h6 fw-bold mb-0">{{ video.title }}</h3>
+              </div>
+              <p class="micro-text text-pink-soft mb-2">{{ video.project }}</p>
+              <p class="text-secondary micro-text mb-0">{{ video.description }}</p>
+            </div>
+
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+
+
   </div>
+
+
 </div>

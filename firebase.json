@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "sidof3-d342a",
     "public": "dist/sidof/browser",
     "ignore": [
       "firebase.json",

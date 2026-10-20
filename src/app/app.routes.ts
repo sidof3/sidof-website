@@ -23,13 +23,15 @@ export const routes: Routes = [
   { path: 'lands', component: LandComponent, title: 'Lands' },
   { path: 'furnished', component: FurnishedComponent, title: 'Furnished' },
   {path: 'construction',component: ConstructionComponent, title: 'Construction'},
+   {path: 'entreprises-de-construction-au-cameroun',component: ConstructionComponent, title: 'Entreprises de construction au Cameroun'},
   {path:'interior-design',component:InteriorDesignComponent,title:'Interior Design'},
   {path: 'software-service', component: SoftwareDevelopmentComponent, title: 'Software Development' },
 
 
 
 
-{ path: 'house-sale', component: HouseSaleComponent, title: 'Duplex For Sale — Odza Cité de la Paix | Sidof' },
+{ path: 'house-sale', component: HouseSaleComponent, title: 'Duplex For Sale — Odza Cité de la Paix ' },
+{ path: 'maison-a-vendre-Odza', component: HouseSaleComponent, title: 'Duplex For Sale — Odza Cité de la Paix ' },
 
   // portfolio details  
   {
