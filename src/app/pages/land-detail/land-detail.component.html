@@ -1,0 +1,113 @@
+@if (view(); as v) {
+<article data-accent="land" class="section">
+    <div class="container-page">
+        <a [routerLink]="lang.url('land')" class="nav-link -ml-3 inline-flex items-center gap-2">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            {{ lang.t().landPage.back }}
+        </a>
+
+        <h1 class="mt-4 text-3xl font-bold sm:text-4xl">{{ v.title }}</h1>
+        <p class="mt-2 text-muted">
+            <i class="fa-solid fa-location-dot mr-2 text-accent" aria-hidden="true"></i>
+            {{ v.land.neighborhood }}, {{ v.land.city }}
+        </p>
+
+        <div class="mt-8 grid gap-8 lg:grid-cols-3">
+            <div class="space-y-10 lg:col-span-2">
+                <!-- Section vidéos : l'élément principal de la fiche -->
+                <section aria-labelledby="videos-title">
+                    <h2 id="videos-title" class="text-xl font-bold">{{ lang.t().landPage.videosHeading }}</h2>
+                    <div class="mt-4 space-y-6">
+                        @for (video of v.land.videos; track $index) {
+                        <app-youtube-facade [url]="video" [title]="v.title" [autoplay]="$first && autoplayFirst" />
+                        }
+                    </div>
+                </section>
+
+                <p class="text-lg text-muted">{{ v.description }}</p>
+
+                <section aria-labelledby="features-title">
+                    <h2 id="features-title" class="text-xl font-bold">{{ lang.t().landPage.featuresHeading }}</h2>
+                    <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+                        @for (feature of v.features; track feature) {
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check mt-1 text-accent" aria-hidden="true"></i>
+                            <span>{{ feature }}</span>
+                        </li>
+                        }
+                    </ul>
+                </section>
+
+                <!-- Section photos : affichée seulement s'il y en a -->
+                @if (v.photos.length) {
+                <section aria-labelledby="photos-title">
+                    <h2 id="photos-title" class="text-xl font-bold">{{ lang.t().landPage.photosHeading }}</h2>
+                    <ul class="mt-4 grid gap-4 sm:grid-cols-2">
+                        @for (photo of v.photos; track photo) {
+                        <li>
+                            <app-image-slot [src]="photo" [alt]="v.imageAlt + ' – ' + ($index + 1)" />
+                        </li>
+                        }
+                    </ul>
+                </section>
+                }
+            </div>
+
+            <aside class="lg:sticky lg:top-24 lg:self-start">
+                <div class="card">
+                    <h2 class="text-xl font-bold">{{ lang.t().landPage.detailsHeading }}</h2>
+                    <dl class="mt-4 space-y-4 text-sm">
+                        <div>
+                            <dt class="text-muted">{{ lang.t().common.price }}</dt>
+                            <dd class="text-xl font-bold text-ink">{{ v.price }}</dd>
+                        </div>
+                        <div>
+                            <dt class="text-muted">{{ lang.t().landPage.totalSurface }}</dt>
+                            <dd class="font-semibold">{{ v.surface }}</dd>
+                        </div>
+                        <div>
+                            <dt class="text-muted">{{ lang.t().landPage.lotsLabel }}</dt>
+                            <dd>
+                                <ul class="space-y-1">
+                                    @for (lot of v.lots; track $index) {
+                                    <li class="font-semibold">{{ lot }}</li>
+                                    }
+                                </ul>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt class="text-muted">{{ lang.t().common.location }}</dt>
+                            <dd class="font-semibold">{{ v.location }}</dd>
+                        </div>
+                    </dl>
+                    @if (v.land.mapUrl) {
+                    <a [href]="v.land.mapUrl" target="_blank" rel="noopener noreferrer" class="btn-outline mt-6 w-full">
+                        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                        {{ lang.t().landPage.viewOnMap }}
+                    </a>
+                    }
+                    <a [href]="whatsapp.link(v.title)" target="_blank" rel="noopener noreferrer"
+                        class="btn-whatsapp mt-3 w-full">
+                        <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+                        {{ lang.t().common.writeOnWhatsapp }}
+                    </a>
+                    <a [href]="'tel:' + company.phone" class="btn-outline mt-3 w-full">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        {{ lang.t().common.call }} {{ company.phoneDisplay }}
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</article>
+} @else {
+<section class="section">
+    <div class="container-page max-w-2xl">
+        <h1 class="text-3xl font-bold">{{ lang.t().notFound.heading }}</h1>
+        <p class="mt-3 text-muted">{{ lang.t().landPage.notFound }}</p>
+        <a [routerLink]="lang.url('land')" class="btn-primary mt-6">{{ lang.t().landPage.back }}</a>
+    </div>
+</section>
+}
+
+<app-cta-band />

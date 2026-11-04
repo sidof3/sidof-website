@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+/* Polices et icônes servies avec le site (installées avec npm). Les @import restent en tout premier. */
+@import '@fontsource/inter/latin-400.css';
+@import '@fontsource/inter/latin-500.css';
+@import '@fontsource/inter/latin-600.css';
+@import '@fontsource/poppins/latin-600.css';
+@import '@fontsource/poppins/latin-700.css';
+@import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
+@import '@fortawesome/fontawesome-free/css/solid.min.css';
+@import '@fortawesome/fontawesome-free/css/brands.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Accent d'une division : <section data-accent="build"> ... </section>
+ * puis utiliser bg-accent, text-accent, border-accent dans la section.
+ */
+[data-accent='build']  { --accent: theme('colors.build'); }
+[data-accent='design'] { --accent: theme('colors.design'); }
+[data-accent='land']   { --accent: theme('colors.land'); }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-ink;
+  }
+
+  img, video {
+    @apply max-w-full;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-brand-600;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  /* Lien d'évitement pour le clavier et les lecteurs d'écran */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:shadow-lg;
+  }
+
+
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors;
+  }
+  .btn-primary  { @apply btn bg-brand-700 text-white hover:bg-brand-800; }
+  .btn-outline  { @apply btn border border-brand-700 text-brand-700 hover:bg-brand-50; }
+  .btn-whatsapp { @apply btn bg-[#25d366] text-ink hover:bg-[#1ebe5b]; }
+
+  .card {
+    @apply rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md;
+  }
+
+    .nav-link {
+    @apply rounded-lg px-3 py-2 text-sm font-medium text-ink hover:bg-brand-50 hover:text-brand-700;
+  }
+}

@@ -1,0 +1,76 @@
+@if (consent.visible()) {
+  <section
+    role="dialog"
+    aria-labelledby="cookie-title"
+    aria-describedby="cookie-text"
+    class="fixed inset-x-0 bottom-0 z-50 p-3 sm:p-4"
+  >
+    <div class="mx-auto max-w-3xl rounded-2xl border border-gray-200 bg-white p-5 shadow-xl">
+      <h2 id="cookie-title" class="font-display text-lg font-semibold">
+        {{ lang.t().cookieBanner.title }}
+      </h2>
+      <p id="cookie-text" class="mt-2 text-sm text-muted">
+        {{ lang.t().cookieBanner.text }}
+        <a [routerLink]="lang.url('cookies')" class="font-medium text-brand-700 underline">
+          {{ lang.t().cookieBanner.policyLink }}
+        </a>
+      </p>
+
+      @if (details()) {
+        <ul class="mt-4 space-y-3">
+          <li class="flex items-start gap-3">
+            <input id="cookie-necessary" type="checkbox" checked disabled class="mt-1 h-5 w-5 accent-brand-700" />
+            <label for="cookie-necessary">
+              <span class="block text-sm font-semibold">{{ lang.t().cookieBanner.necessary.title }}</span>
+              <span class="block text-sm text-muted">{{ lang.t().cookieBanner.necessary.text }}</span>
+            </label>
+          </li>
+          <li class="flex items-start gap-3">
+            <input
+              id="cookie-statistics"
+              type="checkbox"
+              class="mt-1 h-5 w-5 accent-brand-700"
+              [checked]="statistics()"
+              (change)="statistics.set($any($event.target).checked)"
+            />
+            <label for="cookie-statistics">
+              <span class="block text-sm font-semibold">{{ lang.t().cookieBanner.statistics.title }}</span>
+              <span class="block text-sm text-muted">{{ lang.t().cookieBanner.statistics.text }}</span>
+            </label>
+          </li>
+          <li class="flex items-start gap-3">
+            <input
+              id="cookie-marketing"
+              type="checkbox"
+              class="mt-1 h-5 w-5 accent-brand-700"
+              [checked]="marketing()"
+              (change)="marketing.set($any($event.target).checked)"
+            />
+            <label for="cookie-marketing">
+              <span class="block text-sm font-semibold">{{ lang.t().cookieBanner.marketing.title }}</span>
+              <span class="block text-sm text-muted">{{ lang.t().cookieBanner.marketing.text }}</span>
+            </label>
+          </li>
+        </ul>
+      }
+
+      <div class="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+        <button type="button" class="btn-primary" (click)="accept()">
+          {{ lang.t().cookieBanner.accept }}
+        </button>
+        <button type="button" class="btn-primary" (click)="refuse()">
+          {{ lang.t().cookieBanner.refuse }}
+        </button>
+        @if (details()) {
+          <button type="button" class="btn-outline" (click)="save()">
+            {{ lang.t().cookieBanner.save }}
+          </button>
+        } @else {
+          <button type="button" class="btn-outline" (click)="details.set(true)">
+            {{ lang.t().cookieBanner.customize }}
+          </button>
+        }
+      </div>
+    </div>
+  </section>
+}

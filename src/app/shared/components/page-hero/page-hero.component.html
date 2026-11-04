@@ -1,0 +1,23 @@
+<section class="bg-brand-50">
+  <div class="container-page section flex flex-col gap-8 lg:flex-row lg:items-center">
+    <div class="max-w-3xl lg:flex-1">
+      <h1 class="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">{{ title }}</h1>
+      @if (subtitle) {
+        <p class="mt-4 text-lg text-muted">{{ subtitle }}</p>
+      }
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <ng-content />
+      </div>
+    </div>
+    @if (image) {
+      <img
+        [src]="image"
+        [alt]="imageAlt"
+        width="1200"
+        height="800"
+        fetchpriority="high"
+        class="h-auto rounded-2xl object-cover lg:w-1/2"
+      />
+    }
+  </div>
+</section>

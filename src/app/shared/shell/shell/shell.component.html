@@ -1,0 +1,17 @@
+<div class="flex min-h-screen flex-col">
+  <a href="#contenu" class="skip-link" (click)="$event.preventDefault(); content.focus()">
+    {{ lang.t().a11y.skipToContent }}
+  </a>
+
+  <app-header />
+
+  <main #content id="contenu" tabindex="-1" class="flex-1 focus:outline-none">
+    <router-outlet />
+  </main>
+
+  <app-footer />
+  <app-whatsapp-button />
+    <app-cookie-banner />
+
+
+</div>

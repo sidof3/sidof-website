@@ -1,0 +1,30 @@
+<app-page-hero [title]="lang.t().pages.home.h1" [subtitle]="lang.t().home.lead">
+  <a [routerLink]="lang.url('contact')" class="btn-primary">{{ lang.t().common.requestQuote }}</a>
+  <a [href]="whatsapp.link()" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+    <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+    {{ lang.t().common.writeOnWhatsapp }}
+  </a>
+</app-page-hero>
+
+<section class="section">
+  <div class="container-page">
+    <app-section-heading [title]="lang.t().home.servicesHeading" [intro]="lang.t().home.servicesIntro" />
+
+    <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      @for (service of services; track service.key) {
+        <li>
+          <app-service-card
+            [title]="lang.t().services[service.key].title"
+            [text]="lang.t().services[service.key].text"
+            [link]="lang.url(service.page)"
+            [icon]="service.icon"
+            [accent]="service.accent ?? ''"
+            [ctaLabel]="lang.t().common.learnMore"
+          />
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<app-cta-band />

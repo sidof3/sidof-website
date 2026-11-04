@@ -1,0 +1,39 @@
+<app-page-hero [title]="lang.t().pages.software.h1" [subtitle]="lang.t().softwarePage.lead">
+  <a [routerLink]="lang.url('contact')" class="btn-primary">{{ lang.t().common.requestQuote }}</a>
+  <a [href]="whatsapp.link(lang.t().nav.software)" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+    <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+    {{ lang.t().common.writeOnWhatsapp }}
+  </a>
+</app-page-hero>
+
+<section class="section">
+  <div class="container-page">
+    <app-section-heading [title]="lang.t().softwarePage.offersHeading" />
+    <ul class="mt-10 grid gap-6 md:grid-cols-3">
+      @for (offer of offers; track offer.key) {
+        <li>
+          <article class="card h-full">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-xl text-white">
+              <i [class]="'fa-solid ' + offer.icon" aria-hidden="true"></i>
+            </span>
+            <h3 class="mt-4 text-lg font-semibold">{{ lang.t().softwarePage[offer.key].title }}</h3>
+            <p class="mt-2 text-sm text-muted">{{ lang.t().softwarePage[offer.key].text }}</p>
+          </article>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="section bg-gray-50">
+  <div class="container-page">
+    <app-section-heading [title]="lang.t().softwarePage.techHeading" [intro]="lang.t().softwarePage.techText" />
+    <ul class="mt-8 flex flex-wrap gap-3">
+      @for (tech of technologies; track tech) {
+        <li class="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold">{{ tech }}</li>
+      }
+    </ul>
+  </div>
+</section>
+
+<app-cta-band />

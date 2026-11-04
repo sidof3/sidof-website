@@ -1,0 +1,10 @@
+<a
+  [routerLink]="lang.switchUrl()"
+  [attr.lang]="lang.otherLang()"
+  [attr.hreflang]="lang.otherLang()"
+  [attr.title]="lang.t().language.switchAria"
+  class="nav-link inline-flex min-h-[44px] items-center gap-2"
+>
+  <i class="fa-solid fa-globe text-base" aria-hidden="true"></i>
+  <span>{{ lang.t().language.switchTo }}</span>
+</a>

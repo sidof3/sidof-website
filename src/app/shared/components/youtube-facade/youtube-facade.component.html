@@ -1,0 +1,37 @@
+@if (video(); as v) {
+  <div
+    class="mx-auto overflow-hidden rounded-2xl bg-ink"
+    [class.max-w-sm]="v.short"
+    [style.aspect-ratio]="v.short ? '9 / 16' : '16 / 9'"
+  >
+    @if (started() && embedUrl(); as src) {
+      <iframe
+        class="h-full w-full"
+        [src]="src"
+        [title]="title"
+        loading="lazy"
+        allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    } @else {
+      <button
+        type="button"
+        class="group flex h-full w-full flex-col items-center justify-center gap-3 p-4 text-center"
+        (click)="started.set(true)"
+      >
+        <span class="inline-flex h-16 w-16 items-center justify-center rounded-full bg-brand-600 text-2xl text-white group-hover:bg-brand-700">
+          <i class="fa-solid fa-play" aria-hidden="true"></i>
+        </span>
+        <span class="text-base font-semibold text-white">{{ lang.t().common.playVideo }}</span>
+        <span class="text-sm text-white">{{ title }}</span>
+      </button>
+    }
+  </div>
+} @else {
+  <div class="flex aspect-video w-full flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-gray-300 bg-gray-100 p-4 text-center text-sm text-muted">
+    <i class="fa-solid fa-video text-2xl" aria-hidden="true"></i>
+    <span>Vidéo à ajouter</span>
+    <span class="font-medium text-ink">{{ title }}</span>
+  </div>
+}

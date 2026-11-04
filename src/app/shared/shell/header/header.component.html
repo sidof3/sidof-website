@@ -1,0 +1,108 @@
+<header class="sticky top-0 z-40 border-b border-gray-200 bg-white/95 backdrop-blur">
+  <div class="container-page flex h-16 items-center justify-between gap-3">
+    <!-- Logo : texte pour l'instant, à remplacer par le SVG -->
+   
+     <a [routerLink]="lang.url('home')" class="inline-flex items-center" aria-label="SIDOF - Accueil">
+      <img src="/assets/sidof-logo.svg" alt="SIDOF" class="h-10 w-auto object-contain" width="auto" height="40" />
+    </a>
+
+    <!-- Menu desktop -->
+    <nav class="hidden items-center gap-1 lg:flex" [attr.aria-label]="lang.t().a11y.mainNav">
+      @for (item of main; track item) {
+        <a
+          [routerLink]="lang.url(item)"
+          routerLinkActive="bg-brand-50 text-brand-700"
+          ariaCurrentWhenActive="page"
+          class="nav-link"
+        >
+          {{ lang.t().nav[item] }}
+        </a>
+      }
+
+      <div class="relative" data-services-menu>
+        <button
+          type="button"
+          class="nav-link inline-flex items-center gap-2"
+          aria-controls="services-menu"
+          [attr.aria-expanded]="servicesOpen()"
+          (click)="toggleServices()"
+        >
+          {{ lang.t().nav.services }}
+          <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i>
+        </button>
+        @if (servicesOpen()) {
+          <ul
+            id="services-menu"
+            class="absolute left-0 top-full mt-2 w-64 rounded-xl border border-gray-200 bg-white p-2 shadow-lg"
+          >
+            @for (item of services; track item) {
+              <li>
+                <a
+                  [routerLink]="lang.url(item)"
+                  routerLinkActive="bg-brand-50 text-brand-700"
+                  ariaCurrentWhenActive="page"
+                  class="nav-link block"
+                >
+                  {{ lang.t().nav[item] }}
+                </a>
+              </li>
+            }
+          </ul>
+        }
+      </div>
+
+      @for (item of after; track item) {
+        <a
+          [routerLink]="lang.url(item)"
+          routerLinkActive="bg-brand-50 text-brand-700"
+          ariaCurrentWhenActive="page"
+          class="nav-link"
+        >
+          {{ lang.t().nav[item] }}
+        </a>
+      }
+    </nav>
+
+    <div class="flex items-center gap-1 sm:gap-2">
+      <app-language-switch />
+      <a [routerLink]="lang.url('contact')" class="btn-primary hidden sm:inline-flex">
+        {{ lang.t().common.requestQuote }}
+      </a>
+      <button
+        type="button"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-lg text-ink hover:bg-brand-50 lg:hidden"
+        aria-controls="mobile-menu"
+        [attr.aria-expanded]="mobileOpen()"
+        [attr.aria-label]="mobileOpen() ? lang.t().a11y.closeMenu : lang.t().a11y.openMenu"
+        (click)="toggleMobile()"
+      >
+        <i class="fa-solid text-lg" [class.fa-bars]="!mobileOpen()" [class.fa-xmark]="mobileOpen()" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu mobile : toute la liste, à plat -->
+  @if (mobileOpen()) {
+    <nav id="mobile-menu" class="border-t border-gray-200 bg-white lg:hidden" [attr.aria-label]="lang.t().a11y.mainNav">
+      <ul class="container-page flex flex-col py-3">
+        @for (item of all; track item) {
+          <li>
+            <a
+              [routerLink]="lang.url(item)"
+              routerLinkActive="bg-brand-50 text-brand-700"
+              ariaCurrentWhenActive="page"
+              class="nav-link block py-3 text-base"
+            >
+              {{ lang.t().nav[item] }}
+            </a>
+          </li>
+        }
+        <li class="pt-3">
+          <a [routerLink]="lang.url('contact')" class="btn-primary w-full">
+            {{ lang.t().common.requestQuote }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  }
+</header>

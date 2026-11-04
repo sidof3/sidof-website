@@ -1,0 +1,15 @@
+<section class="bg-brand-700 text-white">
+  <div class="container-page section text-center">
+    <h2 class="text-2xl font-bold text-white sm:text-3xl">{{ lang.t().cta.heading }}</h2>
+    <p class="mx-auto mt-3 max-w-xl text-white">{{ lang.t().cta.text }}</p>
+    <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+      <a [href]="whatsapp.link()" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+        <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+        {{ lang.t().common.writeOnWhatsapp }}
+      </a>
+      <a [routerLink]="lang.url('contact')" class="btn bg-white text-brand-800 hover:bg-brand-50">
+        {{ lang.t().common.requestQuote }}
+      </a>
+    </div>
+  </div>
+</section>

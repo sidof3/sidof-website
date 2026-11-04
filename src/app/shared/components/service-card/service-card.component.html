@@ -1,0 +1,16 @@
+<article class="card relative flex h-full flex-col focus-within:ring-2 focus-within:ring-brand-600"
+    [attr.data-accent]="accent || null">
+    <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-xl text-white">
+        <i [class]="'fa-solid ' + icon" aria-hidden="true"></i>
+    </span>
+    <h3 class="mt-4 text-lg font-semibold">
+        <a [routerLink]="link" class="after:absolute after:inset-0">{{ title }}</a>
+    </h3>
+    <p class="mt-2 flex-1 text-sm text-muted">{{ text }}</p>
+    @if (ctaLabel) {
+    <span class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-700" aria-hidden="true">
+        {{ ctaLabel }}
+        <i class="fa-solid fa-arrow-right"></i>
+    </span>
+    }
+</article>

@@ -1,0 +1,85 @@
+<footer class="border-t border-gray-200 bg-gray-50">
+  <div class="container-page grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
+    <!-- Marque et réseaux -->
+    <div>
+      <a [routerLink]="lang.url('home')" class="font-display text-2xl font-bold text-brand-600">
+        {{ lang.t().site.name }}
+      </a>
+      <p class="mt-3 text-sm text-muted">{{ lang.t().site.tagline }}</p>
+
+      <h2 class="mt-6 font-display text-base font-semibold">{{ lang.t().footer.follow }}</h2>
+      <ul class="mt-3 flex flex-wrap gap-2">
+        @for (social of socials; track social.id) {
+        <li>
+          <a [href]="social.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="social.label"
+            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-lg text-ink hover:border-brand-700 hover:text-brand-700">
+            <i [class]="'fa-brands fa-' + social.id" aria-hidden="true"></i>
+          </a>
+        </li>
+        }
+      </ul>
+    </div>
+
+    <!-- Services : liens internes vers toutes les pages de service -->
+    <nav [attr.aria-label]="lang.t().nav.services">
+      <h2 class="font-display text-base font-semibold">{{ lang.t().nav.services }}</h2>
+      <ul class="mt-3 space-y-1">
+        @for (item of services; track item) {
+        <li>
+          <a [routerLink]="lang.url(item)" class="nav-link -ml-3 block">{{ lang.t().nav[item] }}</a>
+        </li>
+        }
+      </ul>
+    </nav>
+
+    <!-- Contact -->
+    <div>
+      <h2 class="font-display text-base font-semibold">{{ lang.t().footer.contact }}</h2>
+      <address class="mt-3 space-y-3 text-sm not-italic text-muted">
+        <p class="flex gap-3">
+          <i class="fa-solid fa-location-dot mt-1 text-brand-700" aria-hidden="true"></i>
+          <span>{{ lang.t().footer.address }}</span>
+        </p>
+        <p>
+          <a [href]="'tel:' + company.phone" class="flex gap-3 hover:text-brand-700">
+            <i class="fa-solid fa-phone mt-1 text-brand-700" aria-hidden="true"></i>
+            <span>{{ company.phoneDisplay }}</span>
+          </a>
+        </p>
+        <p>
+          <a [href]="'mailto:' + company.email" class="flex gap-3 break-all hover:text-brand-700">
+            <i class="fa-solid fa-envelope mt-1 text-brand-700" aria-hidden="true"></i>
+            <span>{{ company.email }}</span>
+          </a>
+        </p>
+      </address>
+      <a [href]="whatsapp.link()" target="_blank" rel="noopener noreferrer" class="btn-whatsapp mt-5">
+        <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+        {{ lang.t().common.writeOnWhatsapp }}
+      </a>
+    </div>
+
+    <!-- Informations -->
+    <nav [attr.aria-label]="lang.t().footer.information">
+      <h2 class="font-display text-base font-semibold">{{ lang.t().footer.information }}</h2>
+      <ul class="mt-3 space-y-1">
+        <li><a [routerLink]="lang.url('about')" class="nav-link -ml-3 block">{{ lang.t().nav.about }}</a></li>
+        <li><a [routerLink]="lang.url('faq')" class="nav-link -ml-3 block">{{ lang.t().nav.faq }}</a></li>
+        <li><a [routerLink]="lang.url('contact')" class="nav-link -ml-3 block">{{ lang.t().nav.contact }}</a></li>
+        @for (page of legalPages; track page) {
+        <li><a [routerLink]="lang.url(page)" class="nav-link -ml-3 block">{{ lang.t().footer[page] }}</a></li>
+        }
+
+        <li>
+          <button type="button" class="nav-link -ml-3 block w-full text-left" (click)="consent.openSettings()">
+            {{ lang.t().footer.manageCookies }}
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="border-t border-gray-200">
+    <p class="container-page py-4 text-sm text-muted">{{ rights() }}</p>
+  </div>
+</footer>
