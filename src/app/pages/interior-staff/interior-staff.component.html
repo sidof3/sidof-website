@@ -1,1 +1,178 @@
-<p>interior-staff works!</p>
+<app-page-hero [title]="lang.t().pages.interior.h1" [subtitle]="t().lead">
+  <a [routerLink]="lang.url('contact')" class="btn-primary">{{ lang.t().common.requestQuote }}</a>
+  <a [href]="whatsapp.link(lang.t().nav.interior)" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+    <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+    {{ lang.t().common.writeOnWhatsapp }}
+  </a>
+</app-page-hero>
+
+<!-- 1. Le service : ce que cherche le visiteur -->
+<section class="section" data-accent="design">
+  <div class="container-page">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-bold sm:text-3xl">{{ t().introHeading }}</h2>
+      <p class="mt-3 text-muted">{{ t().introText1 }}</p>
+      <p class="mt-3 text-muted">{{ t().introText2 }}</p>
+    </div>
+
+    <h2 class="mt-14 text-2xl font-bold sm:text-3xl">{{ t().staffHeading }}</h2>
+    <p class="mt-3 max-w-3xl text-muted">{{ t().staffText }}</p>
+    <ul class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      @for (item of staffItems; track item.key) {
+        <li>
+          <article class="card h-full">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-xl text-white">
+              <i [class]="'fa-solid ' + item.icon" aria-hidden="true"></i>
+            </span>
+            <h3 class="mt-4 text-lg font-semibold">{{ t().services[item.key].title }}</h3>
+            <p class="mt-2 text-sm text-muted">{{ t().services[item.key].text }}</p>
+          </article>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- 2. La finition de la maison -->
+<section class="section bg-gray-50" data-accent="design">
+  <div class="container-page">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-bold sm:text-3xl">{{ t().finishHeading }}</h2>
+      <p class="mt-3 text-muted">{{ t().finishText }}</p>
+    </div>
+    <ul class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      @for (item of finishItems; track item.key) {
+        <li>
+          <article class="card h-full">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-xl text-white">
+              <i [class]="'fa-solid ' + item.icon" aria-hidden="true"></i>
+            </span>
+            <h3 class="mt-4 text-lg font-semibold">{{ t().finishItems[item.key].title }}</h3>
+            <p class="mt-2 text-sm text-muted">{{ t().finishItems[item.key].text }}</p>
+          </article>
+        </li>
+      }
+    </ul>
+
+    <div class="mt-12 max-w-3xl">
+      <h3 class="text-xl font-bold">{{ t().unfinishedHeading }}</h3>
+      <p class="mt-3 text-muted">{{ t().unfinishedText }}</p>
+      <a [routerLink]="lang.url('contact')" class="btn-primary mt-5">{{ lang.t().common.contactUs }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Les formules et les espaces -->
+<section class="section" data-accent="design">
+  <div class="container-page">
+    <h2 class="text-2xl font-bold sm:text-3xl">{{ t().formulasHeading }}</h2>
+    <ul class="mt-8 grid gap-6 md:grid-cols-3">
+      @for (formula of formulas; track formula) {
+        <li>
+          <article class="card h-full">
+            <i class="fa-solid fa-circle-check text-2xl text-accent" aria-hidden="true"></i>
+            <h3 class="mt-4 text-lg font-semibold">{{ t().formulas[formula].title }}</h3>
+            <p class="mt-2 text-sm text-muted">{{ t().formulas[formula].text }}</p>
+          </article>
+        </li>
+      }
+    </ul>
+    <p class="mt-6 text-muted">
+      {{ t().formulaNote }}
+      <a [routerLink]="lang.url('contact')" class="font-semibold text-brand-700 underline">{{ lang.t().common.requestQuote }}</a>
+    </p>
+
+        <div class="mt-14 max-w-3xl">
+      <h2 class="text-2xl font-bold sm:text-3xl">{{ t().pricingHeading }}</h2>
+      <p class="mt-3 text-muted">{{ t().pricingIntro }}</p>
+    </div>
+    <ul class="mt-8 grid gap-6 md:grid-cols-2">
+      @for (offer of pricing(); track offer.id) {
+        <li>
+          <article class="card h-full">
+            <h3 class="text-lg font-semibold">{{ t().pricing[offer.id].title }}</h3>
+            <p class="mt-3 text-2xl font-bold text-ink">
+              @if (offer.from) {
+                <span class="text-base font-medium text-muted">{{ t().priceFrom }}</span>
+              }
+              {{ offer.price }}
+            </p>
+            <p class="mt-2 text-sm text-muted">{{ t().pricing[offer.id].text }}</p>
+          </article>
+        </li>
+      }
+    </ul>
+    <p class="mt-6 text-muted">
+      {{ t().pricingNote }}
+      <a [routerLink]="lang.url('contact')" class="font-semibold text-brand-700 underline">{{ lang.t().common.requestQuote }}</a>
+    </p>
+
+    <div class="mt-14 max-w-3xl">
+      <h2 class="text-2xl font-bold sm:text-3xl">{{ t().spacesHeading }}</h2>
+      <p class="mt-3 text-muted">{{ t().spacesText }}</p>
+    </div>
+    <ul class="mt-6 flex flex-wrap gap-3">
+      @for (space of t().spaces; track space) {
+        <li class="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold">{{ space }}</li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- 4. Les réalisations -->
+<section class="section bg-gray-50" data-accent="design">
+  <div class="container-page">
+    <app-section-heading [title]="t().projectsHeading" [intro]="t().projectsIntro" />
+    <p class="mt-3 text-sm text-muted">{{ lang.t().partners.betoLabel }}</p>
+
+    @if (projects().homes.length) {
+      <h3 class="mt-10 text-xl font-bold">{{ t().homesHeading }}</h3>
+      <ul class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        @for (project of projects().homes; track project.id) {
+          <li>
+            <app-project-card
+              [title]="project.title"
+              [description]="project.description"
+              [place]="project.place"
+              [status]="project.status"
+              [tags]="project.tags"
+              [videos]="project.videos"
+              [photos]="project.photos"
+              [photoAlt]="project.photoAlt"
+            />
+          </li>
+        }
+      </ul>
+    }
+
+    @if (projects().business.length) {
+      <h3 class="mt-12 text-xl font-bold">{{ t().businessHeading }}</h3>
+      <ul class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        @for (project of projects().business; track project.id) {
+          <li>
+            <app-project-card
+              [title]="project.title"
+              [description]="project.description"
+              [place]="project.place"
+              [status]="project.status"
+              [tags]="project.tags"
+              [videos]="project.videos"
+              [photos]="project.photos"
+              [photoAlt]="project.photoAlt"
+            />
+          </li>
+        }
+      </ul>
+    }
+  </div>
+</section>
+
+<!-- 5. Où nous intervenons -->
+<section class="section" data-accent="design">
+  <div class="container-page max-w-3xl">
+    <h2 class="text-2xl font-bold sm:text-3xl">{{ t().areaHeading }}</h2>
+    <p class="mt-3 text-muted">{{ t().areaText }}</p>
+  </div>
+</section>
+
+<app-cta-band />

@@ -135,6 +135,8 @@ export const fr = {
     techHeading: 'Technologies',
     techText: 'Java et Spring Boot pour le cœur des applications, avec d’autres technologies selon votre projet.',
   },
+
+
   landPage: {
     lead: 'Terrains à vendre à Yaoundé, avec le prix, la superficie et la localisation de chaque parcelle. Écrivez-nous pour organiser une visite.',
     listHeading: 'Terrains disponibles',
@@ -152,8 +154,165 @@ export const fr = {
     featuresHeading: 'Caractéristiques',
     photosHeading: 'Photos',
     notFound: 'Ce terrain n’est plus disponible ou n’existe pas.',
-        viewOnMap: 'Voir l’emplacement sur la carte',
+    viewOnMap: 'Voir l’emplacement sur la carte',
   },
+
+
+  interiorPage: {
+    lead: 'Vous cherchez un staffeur à Yaoundé ou au Cameroun ? Sidof réalise le staff, la décoration d’intérieur et tous les travaux de finition de votre maison, jusqu’à la clé en main.',
+    introHeading: 'Un staffeur à Yaoundé et partout au Cameroun',
+    introText1: 'Vous avez besoin d’un staffeur, ou de quelqu’un pour faire les finitions de votre maison ? Sidof s’occupe du staff, de la décoration d’intérieur et de tous les petits détails qui embellissent une maison : c’est ce qu’on appelle la finition.',
+    introText2: 'À Yaoundé, le marché du design d’intérieur et de la décoration en staff est en pleine expansion : salon moderne, meuble TV suspendu, corniches élégantes ou aménagement complet d’une maison ou d’un bureau. Sidof conçoit, coordonne et suit votre projet.',
+    staffHeading: 'Qu’est-ce que le staff ?',
+    staffText: 'Le staff, ou plâtre décoratif (POP), sert à habiller l’intérieur d’une maison ou d’un local. Associé à la décoration, à la peinture et à l’éclairage, il donne à chaque pièce un style moderne et soigné.',
+    services: {
+      livingRoom: { title: 'Salon moderne', text: 'Décors en staff, corniches et éclairage pour un salon élégant.' },
+      tvUnit: { title: 'Meuble TV suspendu', text: 'Meuble TV suspendu en staff, intégré au décor de votre salon.' },
+      cornices: { title: 'Corniches', text: 'Corniches décoratives pour finir plafonds et murs avec élégance.' },
+      fullFitOut: {
+        title: 'Aménagement complet',
+        text: 'Maison, appartement ou bureau : staff, décoration, peinture et éclairage, pièce par pièce.',
+      },
+    },
+    finishHeading: 'Les travaux de finition de votre maison',
+    finishText: 'La finition, ce sont tous les travaux qui rendent une maison belle et prête à vivre une fois le gros œuvre terminé : le crépissage, la plomberie, l’électricité, le staff et la décoration, la peinture et l’éclairage. Nous pouvons tout faire, ou seulement une partie.',
+    finishItems: {
+      plastering: { title: 'Crépissage', text: 'Crépissage de toute la maison.' },
+      plumbing: { title: 'Installation de la plomberie', text: 'Installation de la plomberie de votre maison.' },
+      electricity: { title: 'Installation électrique', text: 'Installation de l’électricité de votre maison.' },
+      staff: { title: 'Staff et décoration d’intérieur', text: 'Corniches, meubles TV suspendus et décors en plâtre décoratif (POP).' },
+      painting: { title: 'Peinture', text: 'Peinture de votre maison, après le staff et la décoration.' },
+      lighting: { title: 'Éclairage', text: 'Éclairage qui accompagne le staff et la décoration.' },
+    },
+    unfinishedHeading: 'Votre maison est construite mais pas finie ?',
+    unfinishedText: 'Un ingénieur ou un maçon a construit votre maison, mais la finition n’est pas faite ou pas terminée ? Contactez-nous : nous reprenons les finitions, du crépissage à l’éclairage, ou seulement le staff et la décoration.',
+    formulasHeading: 'Nos formules',
+    formulas: {
+      turnkey: {
+        title: 'Finition complète clé en main',
+        text: 'Sable, crépissage, plomberie, électricité, staff et décoration, peinture et éclairage : nous finissons toute votre maison.',
+      },
+      withPainting: {
+        title: 'Staff, décoration et peinture',
+        text: 'Le staff et la décoration d’intérieur, suivis de la peinture, avec l’éclairage.',
+      },
+      staffOnly: {
+        title: 'Staff et décoration seulement',
+        text: 'Le staff et la décoration accompagnés de l’éclairage. Vous préférez confier la peinture à une autre équipe ? C’est possible.',
+      },
+    },
+    formulaNote: 'Demandez un devis adapté à votre projet.',
+    spacesHeading: 'Les espaces que nous aménageons',
+    spaces: ['Salon', 'Bureau', 'Véranda', 'Chambres', 'Cuisine', 'Hôtels et restaurants'],
+    spacesText: 'Nous intervenons dans les maisons, duplex et appartements comme dans les entreprises : hôtels, restaurants et bureaux.',
+    projectsHeading: 'Nos réalisations',
+    projectsIntro: 'Particuliers et entreprises : voici quelques-uns de nos chantiers de staff, de décoration d’intérieur et de finition.',
+    homesHeading: 'Maisons et duplex',
+    businessHeading: 'Hôtels, restaurants et entreprises',
+    statusDone: 'Réalisé',
+    statusOngoing: 'En cours',
+    scope: {
+      staff: 'Staff',
+      decoration: 'Décoration',
+      painting: 'Peinture',
+      lighting: 'Éclairage',
+      plastering: 'Crépissage',
+      plumbing: 'Plomberie',
+      electricity: 'Électricité',
+    },
+    areaHeading: 'Où nous intervenons',
+    areaText: 'Basés à Yaoundé, nous avons réalisé des projets à Bastos, Odza, Olembe, Simbock, Nkoabang, Emana et Mfou, ainsi qu’à Bangangté et dans le Grand Nord. Vous cherchez un staffeur au Cameroun ? Nous intervenons partout dans le pays.',
+
+    pricingHeading: 'Prix du staff au m² à Yaoundé',
+    pricingIntro: 'Le prix du staff se calcule au mètre carré. Il dépend du design et de la pièce : un décor de salon ne coûte pas le même prix que les chambres ou la cuisine, qui demandent plus d’attention.',
+    priceFrom: 'À partir de',
+    pricing: {
+      labour: {
+        title: 'Pose du staff, matériel acheté par vous',
+        text: 'Vous achetez le matériel vous-même, nous réalisons le staff et la décoration.',
+      },
+      allIncluded: {
+        title: 'Staff clé en main, matériel et éclairage compris',
+        text: 'Nous réalisons le staff et achetons tout le matériel, y compris l’éclairage (ampoules et luminaires).',
+      },
+    },
+    pricingNote: 'Le prix final dépend de votre design.',
+  },
+
+
+    constructionPage: {
+    lead: 'Vous vivez à l’étranger et souhaitez construire votre maison au Cameroun ? Sidof vous accompagne de A à Z, en toute transparence : plan 3D, devis détaillé, suivi du chantier à distance.',
+    introHeading: 'Construire sa maison au Cameroun depuis l’étranger, en confiance',
+    introText1: 'Que vous viviez au Canada, aux États-Unis, en France, en Belgique, en Suisse ou en Allemagne, construire au pays demande un partenaire de confiance. Sidof prend la responsabilité de votre projet, travaille avec vous dans la transparence et prend ses engagements devant un notaire ou un avocat.',
+    introText2: 'Vous cherchez un constructeur pour bâtir votre maison au Cameroun, sans passer par un intermédiaire ? Nous construisons aussi pour les clients qui vivent au Cameroun.',
+    typesHeading: 'Nous construisons tous les types de maisons',
+       typesText: 'Maison familiale, maison à usage commercial, villa, duplex, triplex, R+2, R+3, maison simple, guest house ou hôtel : quel que soit votre projet, nous le construisons selon votre budget et le design que vous choisissez.',
+    types: ['Maison familiale', 'Maison à usage commercial', 'Villa', 'Duplex', 'Triplex', 'R+2', 'R+3', 'Maison simple', 'Guest house', 'Hôtel'],
+    guestHouseNote: 'Une guest house est une résidence meublée louée à la nuitée, comme dans un hôtel. Nous construisons aussi des guest houses et des hôtels.',
+    priceHeading: 'Un prix adapté à votre projet',
+    priceText: 'Nous n’affichons pas de prix : le coût de votre maison dépend de vos besoins, de votre budget et du design que vous choisissez. Vous recevez une proposition détaillée avec le coût avant de vous engager.',
+    landHeading: 'Pas encore de terrain ?',
+    landText: 'Nous vendons des terrains titrés à Yaoundé. Vous choisissez votre terrain avec nous, puis nous commençons les travaux de construction.',
+    landLink: 'Voir les terrains à vendre',
+    stepsHeading: 'Comment construire votre maison au Cameroun : nos étapes',
+    steps: [
+      {
+        title: 'Premier contact',
+        text: 'Vous nous écrivez sur WhatsApp ou nous appelez. Nous échangeons par appel vidéo (Zoom, Google Meet, WhatsApp) ou par message. Si vous êtes au Cameroun, nous prenons rendez-vous : vous passez au bureau ou nous vous retrouvons sur place.',
+      },
+      {
+        title: 'Votre projet',
+        text: 'Vous nous décrivez le type de maison dont vous avez besoin, le style que vous voulez et vos objectifs.',
+      },
+      {
+        title: 'Visite du terrain',
+        text: 'Nous nous rendons sur votre terrain pour l’étudier et vous proposer un plan adapté à vos objectifs.',
+      },
+      {
+        title: 'Plan 3D',
+        text: 'Nous réalisons le plan 3D de votre maison. Ce plan est payant. Quand vous le validez, vous donnez votre accord pour continuer.',
+      },
+      {
+        title: 'Proposition de projet',
+        text: 'Nous vous remettons une proposition détaillée pour la réalisation de votre maison, avec tous les détails et le coût.',
+      },
+      {
+        title: 'Validation et échéancier de paiement',
+        text: 'Une fois la proposition validée, nous établissons ensemble un échéancier de paiement. Nos engagements sont pris devant un notaire ou un avocat.',
+      },
+      {
+        title: 'Travaux et suivi',
+        text: 'Le chantier démarre. Vous le suivez à distance grâce aux caméras et aux rapports hebdomadaires.',
+      },
+    ],
+    monitorHeading: 'Suivez votre chantier à distance : caméras et rapports hebdomadaires',
+    monitorText: 'Vivre loin du chantier ne veut pas dire le perdre de vue. Nous mettons à votre disposition des caméras de surveillance connectées à Internet par Starlink : vous voyez l’avancée des travaux depuis votre smartphone, où que vous soyez.',
+    monitorItems: [
+      { title: 'Caméras sur le chantier', text: 'Des caméras de surveillance connectées par Starlink, visibles sur votre téléphone.' },
+      { title: 'Rapports hebdomadaires', text: 'Un rapport chaque semaine sur l’avancée de votre projet.' },
+      { title: 'Échanges ouverts', text: 'Nous restons disponibles pour discuter avec vous, en toute transparence.' },
+    ],
+    trustHeading: 'Une construction transparente et sécurisée',
+    trustText: 'Nous avons déjà réalisé des projets pour des clients qui vivent aux États-Unis, au Canada, en France, en Allemagne et en Belgique. Au besoin, nous pouvons vous présenter ces projets pour renforcer votre confiance.',
+    trustItems: [
+      { title: 'Transparence', text: 'Vous êtes informé à chaque étape, de la proposition jusqu’au chantier.' },
+      { title: 'Engagements officiels', text: 'Nos engagements sont pris devant un notaire ou un avocat.' },
+      { title: 'Références', text: 'Des projets réalisés pour la diaspora, que nous pouvons vous présenter.' },
+    ],
+    galleryHeading: 'Nos projets de construction en images',
+    galleryIntro: 'Maisons construites, plans 3D et chantiers : choisissez un projet qui vous inspire, puis écrivez-nous en indiquant votre choix.',
+    galleryAll: 'Tous',
+    galleryCategories: { house: 'Maisons construites', plan: 'Plans 3D', site: 'Chantiers' },
+    galleryChoose: 'Je veux un projet comme celui-ci',
+    galleryClose: 'Fermer',
+    gallerySubject: 'Projet de construction',
+    videosHeading: 'Nos chantiers en vidéo',
+    videosIntro: 'Regardez l’avancée de nos chantiers et de nos maisons terminées.',
+
+    
+  },
+
+
 
   cta: {
     heading: 'Parlons de votre projet',
@@ -223,7 +382,7 @@ export const fr = {
     },
     construction: {
       title: 'Construire une maison au Cameroun depuis l’étranger | Sidof',
-      description: 'Diaspora : faites construire votre maison au Cameroun. Sidof coordonne et suit le chantier réalisé par BURMATS BTP. Devis sur demande.',
+      description: 'Diaspora : construisez votre maison au Cameroun en confiance. Plan 3D, devis détaillé, suivi du chantier par caméras et rapports hebdomadaires.',
       h1: 'Construire au Cameroun pour la diaspora',
     },
     land: {
@@ -256,11 +415,14 @@ export const fr = {
       description: 'Détails de l’appartement meublé : quartier, équipements et tarif. Contactez Sidof pour réserver.',
       h1: 'Appartement meublé à louer à Yaoundé',
     },
+
     interior: {
-      title: 'Design d’intérieur et décoration en staff au Cameroun | Sidof',
-      description: 'Design d’intérieur et décoration en staff (plâtre, POP) : salon moderne, meuble TV suspendu, corniches, aménagement complet de maison ou de bureau.',
+      title: 'Staffeur à Yaoundé : staff, décoration et finition de maison | Sidof',
+      description: 'Besoin d’un staffeur à Yaoundé ou au Cameroun ? Staff (plâtre, POP), décoration d’intérieur, peinture, éclairage et finition de maison clé en main.',
       h1: 'Design d’intérieur et décoration en staff',
     },
+
+
     materials: {
       title: 'Matériaux de construction à Yaoundé : sable et plus | Sidof',
       description: 'Sable et matériaux de construction vendus à Yaoundé. Demandez un prix à Sidof.',

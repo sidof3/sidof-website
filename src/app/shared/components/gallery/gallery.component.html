@@ -1,1 +1,75 @@
-<p>gallery works!</p>
+@if (categories.length) {
+  <div class="flex flex-wrap gap-2" role="group">
+    <button
+      type="button"
+      class="rounded-full border px-4 py-2 text-sm font-semibold"
+      [class]="filter() === '' ? 'border-ink bg-ink text-white' : 'border-gray-200 bg-white text-ink hover:border-ink'"
+      [attr.aria-pressed]="filter() === ''"
+      (click)="filter.set('')"
+    >
+      {{ allLabel }}
+    </button>
+    @for (category of categories; track category.key) {
+      <button
+        type="button"
+        class="rounded-full border px-4 py-2 text-sm font-semibold"
+        [class]="filter() === category.key ? 'border-ink bg-ink text-white' : 'border-gray-200 bg-white text-ink hover:border-ink'"
+        [attr.aria-pressed]="filter() === category.key"
+        (click)="filter.set(category.key)"
+      >
+        {{ category.label }}
+      </button>
+    }
+  </div>
+}
+
+<ul class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  @for (item of visible; track item.id) {
+    <li class="flex flex-col">
+      <button type="button" class="block w-full text-left" [attr.aria-label]="item.alt" (click)="open(item)">
+        <app-image-slot [src]="item.src" [alt]="item.alt" [width]="800" [height]="600" />
+      </button>
+      @if (item.caption) {
+        <p class="mt-2 text-sm text-muted">{{ item.caption }}</p>
+      }
+      <a
+        [href]="link(item)"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 underline"
+      >
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        {{ ctaLabel }}
+      </a>
+    </li>
+  }
+</ul>
+
+<!-- Image en grand -->
+<dialog
+  #viewer
+  class="m-auto max-h-[90vh] w-[calc(100%-2rem)] max-w-4xl overflow-auto rounded-2xl p-0 backdrop:bg-black/70"
+  (close)="selected.set(null)"
+  (click)="onBackdropClick($event)"
+>
+  @if (selected(); as item) {
+    <div class="relative bg-white p-4">
+      <button
+        type="button"
+        class="absolute right-6 top-6 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-lg text-ink shadow"
+        [attr.aria-label]="closeLabel"
+        (click)="close()"
+      >
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <app-image-slot [src]="item.src" [alt]="item.alt" [width]="1600" [height]="1067" [priority]="true" />
+      @if (item.caption) {
+        <p class="mt-3 text-muted">{{ item.caption }}</p>
+      }
+      <a [href]="link(item)" target="_blank" rel="noopener noreferrer" class="btn-whatsapp mt-4">
+        <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+        {{ ctaLabel }}
+      </a>
+    </div>
+  }
+</dialog>

@@ -1,1 +1,130 @@
-<p>construction works!</p>
+<app-page-hero [title]="lang.t().pages.construction.h1" [subtitle]="t().lead">
+  <a [routerLink]="lang.url('contact')" class="btn-primary">{{ lang.t().common.requestQuote }}</a>
+  <a [href]="whatsapp.link(lang.t().nav.construction)" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+    <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+    {{ lang.t().common.writeOnWhatsapp }}
+  </a>
+</app-page-hero>
+
+<!-- 1. Le service -->
+<section class="section" data-accent="build">
+  <div class="container-page">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-bold sm:text-3xl">{{ t().introHeading }}</h2>
+      <p class="mt-3 text-muted">{{ t().introText1 }}</p>
+      <p class="mt-3 text-muted">{{ t().introText2 }}</p>
+    </div>
+
+    <h2 class="mt-14 text-2xl font-bold sm:text-3xl">{{ t().typesHeading }}</h2>
+    <p class="mt-3 max-w-3xl text-muted">{{ t().typesText }}</p>
+    <ul class="mt-6 flex flex-wrap gap-3">
+      @for (type of t().types; track type) {
+        <li class="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold">{{ type }}</li>
+      }
+    </ul>
+
+    <div class="mt-12 max-w-3xl">
+      <h3 class="text-xl font-bold">{{ t().landHeading }}</h3>
+      <p class="mt-3 text-muted">{{ t().landText }}</p>
+      <a [routerLink]="lang.url('land')" class="btn-outline mt-5">{{ t().landLink }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Les étapes -->
+<section class="section bg-gray-50" data-accent="build">
+  <div class="container-page">
+    <h2 class="text-2xl font-bold sm:text-3xl">{{ t().stepsHeading }}</h2>
+    <ol class="mt-8 max-w-3xl space-y-4">
+      @for (step of t().steps; track step.title) {
+        <li class="card flex gap-4">
+          <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent font-bold text-white">
+            {{ $index + 1 }}
+          </span>
+          <div>
+            <h3 class="text-lg font-semibold">{{ step.title }}</h3>
+            <p class="mt-1 text-sm text-muted">{{ step.text }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<!-- 3. Le suivi à distance -->
+<section class="section" data-accent="build">
+  <div class="container-page">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-bold sm:text-3xl">{{ t().monitorHeading }}</h2>
+      <p class="mt-3 text-muted">{{ t().monitorText }}</p>
+    </div>
+    <ul class="mt-8 grid gap-6 md:grid-cols-3">
+      @for (item of t().monitorItems; track item.title) {
+        <li>
+          <article class="card h-full">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-xl text-white">
+              <i [class]="'fa-solid ' + monitorIcons[$index]" aria-hidden="true"></i>
+            </span>
+            <h3 class="mt-4 text-lg font-semibold">{{ item.title }}</h3>
+            <p class="mt-2 text-sm text-muted">{{ item.text }}</p>
+          </article>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- 4. La confiance -->
+<section class="section bg-gray-50" data-accent="build">
+  <div class="container-page">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-bold sm:text-3xl">{{ t().trustHeading }}</h2>
+      <p class="mt-3 text-muted">{{ t().trustText }}</p>
+    </div>
+    <ul class="mt-8 grid gap-6 md:grid-cols-3">
+      @for (item of t().trustItems; track item.title) {
+        <li>
+          <article class="card h-full">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-xl text-white">
+              <i [class]="'fa-solid ' + trustIcons[$index]" aria-hidden="true"></i>
+            </span>
+            <h3 class="mt-4 text-lg font-semibold">{{ item.title }}</h3>
+            <p class="mt-2 text-sm text-muted">{{ item.text }}</p>
+          </article>
+        </li>
+      }
+    </ul>
+    <p class="mt-6 text-sm text-muted">{{ lang.t().partners.burmatsLabel }}</p>
+  </div>
+</section>
+
+<!-- 5. Galerie : maisons construites, plans 3D, chantiers -->
+<section class="section" data-accent="build">
+  <div class="container-page">
+    <app-section-heading [title]="t().galleryHeading" [intro]="t().galleryIntro" />
+    <div class="mt-8">
+      <app-gallery
+        [items]="galleryItems()"
+        [categories]="galleryCategories()"
+        [allLabel]="t().galleryAll"
+        [ctaLabel]="t().galleryChoose"
+        [closeLabel]="t().galleryClose"
+        [subjectPrefix]="t().gallerySubject"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- 6. Vidéos -->
+<section class="section bg-gray-50" data-accent="build">
+  <div class="container-page">
+    <app-section-heading [title]="t().videosHeading" [intro]="t().videosIntro" />
+    <ul class="mt-8 grid gap-6 md:grid-cols-2">
+      @for (video of videos(); track video.id) {
+        <li><app-youtube-facade [url]="video.url" [title]="video.title" /></li>
+      }
+    </ul>
+  </div>
+</section>
+
+<app-cta-band />

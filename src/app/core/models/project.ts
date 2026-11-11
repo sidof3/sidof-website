@@ -12,3 +12,15 @@ export interface Project extends Media {
   url?: string;
   technologies?: string[];
 }
+
+export type GalleryCategory = 'living' | 'bedroom' | 'kitchen' | 'veranda' | 'office' | 'business';
+
+export interface InteriorGalleryEntry {
+  id: string;
+  /** Chemin sous public/images/design/, vide tant qu'il n'y a pas de photo */
+  image: string;
+  /** Texte alternatif : décrire le modèle, avec le lieu si possible */
+  alt: Localized;
+  caption?: Localized;
+  category: GalleryCategory;
+}
