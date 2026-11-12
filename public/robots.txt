@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://website-sidof.web.app/sitemap.xml
+Sitemap: https://website-sidof.firebaseapp.com/sitemap.xml
