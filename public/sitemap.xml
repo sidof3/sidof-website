@@ -5,187 +5,187 @@
 
   <!-- Home -->
   <url>
-    <loc>https://website-sidof.web.app/fr</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en"/>
+    <loc>https://website-sidof.firebaseapp.com/fr</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en"/>
+    <loc>https://website-sidof.firebaseapp.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en"/>
   </url>
 
   <!-- Construction -->
   <url>
-    <loc>https://website-sidof.web.app/fr/construire-au-cameroun</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/construire-au-cameroun"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/build-a-house-in-cameroon"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/construire-au-cameroun</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/construire-au-cameroun"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/build-a-house-in-cameroon"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/build-a-house-in-cameroon</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/construire-au-cameroun"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/build-a-house-in-cameroon"/>
+    <loc>https://website-sidof.firebaseapp.com/en/build-a-house-in-cameroon</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/construire-au-cameroun"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/build-a-house-in-cameroon"/>
   </url>
 
   <!-- Land -->
   <url>
-    <loc>https://website-sidof.web.app/fr/terrains-a-vendre-yaounde</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/terrains-a-vendre-yaounde"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/land-for-sale-yaounde"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/terrains-a-vendre-yaounde</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/terrains-a-vendre-yaounde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/land-for-sale-yaounde"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/land-for-sale-yaounde</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/terrains-a-vendre-yaounde"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/land-for-sale-yaounde"/>
+    <loc>https://website-sidof.firebaseapp.com/en/land-for-sale-yaounde</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/terrains-a-vendre-yaounde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/land-for-sale-yaounde"/>
   </url>
 
   <!-- Houses -->
   <url>
-    <loc>https://website-sidof.web.app/fr/maisons-a-vendre-yaounde</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/maisons-a-vendre-yaounde"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/houses-for-sale-yaounde"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/maisons-a-vendre-yaounde</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/maisons-a-vendre-yaounde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/houses-for-sale-yaounde"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/houses-for-sale-yaounde</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/maisons-a-vendre-yaounde"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/houses-for-sale-yaounde"/>
+    <loc>https://website-sidof.firebaseapp.com/en/houses-for-sale-yaounde</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/maisons-a-vendre-yaounde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/houses-for-sale-yaounde"/>
   </url>
 
   <!-- House rentals -->
   <url>
-    <loc>https://website-sidof.web.app/fr/maisons-a-louer-yaounde</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/maisons-a-louer-yaounde"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/houses-for-rent-yaounde"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/maisons-a-louer-yaounde</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/maisons-a-louer-yaounde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/houses-for-rent-yaounde"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/houses-for-rent-yaounde</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/maisons-a-louer-yaounde"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/houses-for-rent-yaounde"/>
+    <loc>https://website-sidof.firebaseapp.com/en/houses-for-rent-yaounde</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/maisons-a-louer-yaounde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/houses-for-rent-yaounde"/>
   </url>
 
   <!-- Apartments -->
   <url>
-    <loc>https://website-sidof.web.app/fr/appartements-meubles-a-louer-yaounde</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/appartements-meubles-a-louer-yaounde"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/furnished-apartments-for-rent-yaounde"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/appartements-meubles-a-louer-yaounde</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/appartements-meubles-a-louer-yaounde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/furnished-apartments-for-rent-yaounde"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/furnished-apartments-for-rent-yaounde</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/appartements-meubles-a-louer-yaounde"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/furnished-apartments-for-rent-yaounde"/>
+    <loc>https://website-sidof.firebaseapp.com/en/furnished-apartments-for-rent-yaounde</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/appartements-meubles-a-louer-yaounde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/furnished-apartments-for-rent-yaounde"/>
   </url>
 
   <!-- Interior design -->
   <url>
-    <loc>https://website-sidof.web.app/fr/design-interieur-decoration-staff-cameroun</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/design-interieur-decoration-staff-cameroun"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/interior-design-staff-decoration-cameroon"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/design-interieur-decoration-staff-cameroun</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/design-interieur-decoration-staff-cameroun"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/interior-design-staff-decoration-cameroon"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/interior-design-staff-decoration-cameroon</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/design-interieur-decoration-staff-cameroun"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/interior-design-staff-decoration-cameroon"/>
+    <loc>https://website-sidof.firebaseapp.com/en/interior-design-staff-decoration-cameroon</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/design-interieur-decoration-staff-cameroun"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/interior-design-staff-decoration-cameroon"/>
   </url>
 
   <!-- Materials -->
   <url>
-    <loc>https://website-sidof.web.app/fr/materiaux-de-construction-yaounde</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/materiaux-de-construction-yaounde"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/building-materials-yaounde"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/materiaux-de-construction-yaounde</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/materiaux-de-construction-yaounde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/building-materials-yaounde"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/building-materials-yaounde</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/materiaux-de-construction-yaounde"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/building-materials-yaounde"/>
+    <loc>https://website-sidof.firebaseapp.com/en/building-materials-yaounde</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/materiaux-de-construction-yaounde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/building-materials-yaounde"/>
   </url>
 
   <!-- Iranian tiles -->
   <url>
-    <loc>https://website-sidof.web.app/fr/carreaux-iraniens-yaounde</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/carreaux-iraniens-yaounde"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/iranian-tiles-yaounde"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/carreaux-iraniens-yaounde</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/carreaux-iraniens-yaounde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/iranian-tiles-yaounde"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/iranian-tiles-yaounde</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/carreaux-iraniens-yaounde"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/iranian-tiles-yaounde"/>
+    <loc>https://website-sidof.firebaseapp.com/en/iranian-tiles-yaounde</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/carreaux-iraniens-yaounde"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/iranian-tiles-yaounde"/>
   </url>
 
   <!-- Travel -->
   <url>
-    <loc>https://website-sidof.web.app/fr/assistance-voyage-cameroun</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/assistance-voyage-cameroun"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/travel-assistance-cameroon"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/assistance-voyage-cameroun</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/assistance-voyage-cameroun"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/travel-assistance-cameroon"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/travel-assistance-cameroon</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/assistance-voyage-cameroun"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/travel-assistance-cameroon"/>
+    <loc>https://website-sidof.firebaseapp.com/en/travel-assistance-cameroon</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/assistance-voyage-cameroun"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/travel-assistance-cameroon"/>
   </url>
 
   <!-- Software -->
   <url>
-    <loc>https://website-sidof.web.app/fr/creation-site-web-cameroun</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/creation-site-web-cameroun"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/website-development-cameroon"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/creation-site-web-cameroun</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/creation-site-web-cameroun"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/website-development-cameroon"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/website-development-cameroon</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/creation-site-web-cameroun"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/website-development-cameroon"/>
+    <loc>https://website-sidof.firebaseapp.com/en/website-development-cameroon</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/creation-site-web-cameroun"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/website-development-cameroon"/>
   </url>
 
   <!-- Portfolio: English only -->
   <url>
-    <loc>https://website-sidof.web.app/en/portfolio</loc>
+    <loc>https://website-sidof.firebaseapp.com/en/portfolio</loc>
   </url>
 
   <!-- About -->
   <url>
-    <loc>https://website-sidof.web.app/fr/a-propos</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/a-propos"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/about"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/a-propos</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/about"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/about</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/a-propos"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/about"/>
+    <loc>https://website-sidof.firebaseapp.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/a-propos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/about"/>
   </url>
 
   <!-- Blog -->
   <url>
-    <loc>https://website-sidof.web.app/fr/blog</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/blog"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/blog"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/blog</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/blog"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/blog</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/blog"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/blog"/>
+    <loc>https://website-sidof.firebaseapp.com/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/blog"/>
   </url>
 
   <!-- FAQ -->
   <url>
-    <loc>https://website-sidof.web.app/fr/faq</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/faq"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/faq"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/faq</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/faq"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/faq</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/faq"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/faq"/>
+    <loc>https://website-sidof.firebaseapp.com/en/faq</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/faq"/>
   </url>
 
   <!-- Contact -->
   <url>
-    <loc>https://website-sidof.web.app/fr/contact</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/contact"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/contact"/>
+    <loc>https://website-sidof.firebaseapp.com/fr/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/contact"/>
   </url>
   <url>
-    <loc>https://website-sidof.web.app/en/contact</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.web.app/fr/contact"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.web.app/en/contact"/>
+    <loc>https://website-sidof.firebaseapp.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://website-sidof.firebaseapp.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://website-sidof.firebaseapp.com/en/contact"/>
   </url>
 
 </urlset>
