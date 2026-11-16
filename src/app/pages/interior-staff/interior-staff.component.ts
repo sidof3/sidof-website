@@ -14,11 +14,12 @@ import { format } from '../../core/i18n/translations';
 import { StaffPackageCardComponent } from '../../shared/components/staff-package-card/staff-package-card.component';
 import type { StaffPackageId } from '../../core/models/StaffPackage';
 import { StaffEstimatorComponent } from '../../shared/components/staff-estimator/staff-estimator.component';
+import { MediaDialogComponent } from '../../shared/components/media-dialog/media-dialog.component';
 
 @Component({
   selector: 'app-interior-staff',
   standalone: true,
-  imports: [RouterLink, PageHeroComponent, SectionHeadingComponent, ProjectCardComponent, CtaBandComponent, StaffPackageCardComponent, StaffEstimatorComponent],
+  imports: [RouterLink, PageHeroComponent, SectionHeadingComponent, ProjectCardComponent, CtaBandComponent, StaffPackageCardComponent, StaffEstimatorComponent, MediaDialogComponent],
   templateUrl: './interior-staff.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -27,7 +28,7 @@ export class InteriorStaffComponent {
   protected readonly whatsapp = inject(WhatsappService);
   protected readonly t = computed(() => this.lang.t().interiorPage);
 
-      protected readonly staffItems = [
+  protected readonly staffItems = [
     { key: 'ceiling', icon: 'fa-layer-group' },
     { key: 'coveLighting', icon: 'fa-lightbulb' },
     { key: 'falseCeiling', icon: 'fa-border-all' },
@@ -71,7 +72,7 @@ export class InteriorStaffComponent {
     };
   });
 
-    protected readonly pricing = computed(() => {
+  protected readonly pricing = computed(() => {
     const lang = this.lang.lang();
     return STAFF_PRICING.map((offer) => ({
       id: offer.id,
@@ -81,7 +82,7 @@ export class InteriorStaffComponent {
   });
 
 
-     protected readonly sp = computed(() => this.lang.t().interiorPage.staffPricing);
+  protected readonly sp = computed(() => this.lang.t().interiorPage.staffPricing);
 
   protected readonly packages = computed(() => {
     const lang = this.lang.lang();
@@ -99,10 +100,12 @@ export class InteriorStaffComponent {
       imageAlt: pack.imageAlt[lang],
       client: formatPricePerM2({ min: pack.clientMaterials }, lang),
       sidof: formatPricePerM2({ min: pack.sidofMaterials }, lang),
+      gallery: pack.gallery,
+      video: pack.video,
     }));
   });
 
-    @ViewChild('estimator') private estimatorSection?: ElementRef<HTMLElement>;
+  @ViewChild('estimator') private estimatorSection?: ElementRef<HTMLElement>;
 
   /** Formule transmise à l'estimateur quand on clique sur « Estimer mon projet » */
   protected readonly selectedFormula = signal<StaffPackageId>('design');
@@ -112,5 +115,20 @@ export class InteriorStaffComponent {
     this.estimatorSection?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  
+
+    @ViewChild(MediaDialogComponent) private mediaDialog?: MediaDialogComponent;
+
+  protected openMedia(
+    pack: { title: string; imageAlt: string; gallery: string[]; video: string },
+    mode: 'photos' | 'video',
+  ): void {
+    this.mediaDialog?.open({
+      title: pack.title,
+      mode,
+      photos: pack.gallery,
+      photoAlt: pack.imageAlt,
+      video: pack.video,
+    });
+  }
+
 }

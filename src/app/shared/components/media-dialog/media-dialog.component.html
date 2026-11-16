@@ -1,0 +1,32 @@
+<dialog
+  #viewer
+  class="m-auto max-h-[90vh] w-[calc(100%-2rem)] max-w-4xl overflow-auto rounded-2xl p-0 backdrop:bg-black/70"
+  (close)="content.set(null)"
+  (click)="onBackdropClick($event)"
+>
+  @if (content(); as c) {
+    <div class="relative bg-white p-4">
+      <button
+        type="button"
+        class="absolute right-4 top-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-lg text-ink shadow"
+        [attr.aria-label]="closeLabel"
+        (click)="close()"
+      >
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <h2 class="pr-14 text-lg font-bold">{{ c.title }}</h2>
+
+      @if (c.mode === 'video') {
+        <div class="mt-4">
+          <app-youtube-facade [url]="c.video" [title]="c.title" [playNow]="true" />
+        </div>
+      } @else {
+        <ul class="mt-4 grid gap-4 sm:grid-cols-2">
+          @for (photo of c.photos; track $index) {
+            <li><app-image-slot [src]="photo" [alt]="c.photoAlt + ' – ' + ($index + 1)" [width]="1200" [height]="800" /></li>
+          }
+        </ul>
+      }
+    </div>
+  }
+</dialog>

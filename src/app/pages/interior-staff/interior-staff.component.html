@@ -91,9 +91,24 @@
     <ul class="mt-8 grid gap-6 md:grid-cols-3">
       @for (pack of packages(); track pack.id) {
       <li>
-        <app-staff-package-card [title]="pack.title" [text]="pack.text" [intro]="pack.intro" [adds]="pack.adds"
-          [image]="pack.image" [imageAlt]="pack.imageAlt" [clientLabel]="sp().materialsClient"
-          [clientPrice]="pack.client" [sidofLabel]="sp().materialsSidof" [sidofPrice]="pack.sidof" />
+        <app-staff-package-card 
+        [title]="pack.title" 
+        [text]="pack.text" 
+        [intro]="pack.intro" 
+        [adds]="pack.adds"
+        [image]="pack.image"
+        [imageAlt]="pack.imageAlt" 
+        [clientLabel]="sp().materialsClient"
+        [clientPrice]="pack.client" 
+        [sidofLabel]="sp().materialsSidof"
+        [sidofPrice]="pack.sidof"
+        [hasPhotos]="pack.gallery.length > 0"
+        [hasVideo]="!!pack.video"
+        [photosLabel]="sp().viewPhotos"
+        [videoLabel]="sp().viewVideo"
+        (viewPhotos)="openMedia(pack, 'photos')"
+        (viewVideo)="openMedia(pack, 'video')"
+         />
       </li>
       }
     </ul>
@@ -166,4 +181,5 @@
   </div>
 </section>
 
+<app-media-dialog [closeLabel]="lang.t().common.close" />
 <app-cta-band />

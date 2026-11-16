@@ -260,10 +260,12 @@ export const fr = {
           text: 'Tout le travail du plafond et des murs, avec l’éclairage et la peinture. Finition clé en main.',
         },
       },
-            estimateButton: 'Estimer mon projet avec cette formule',
+      estimateButton: 'Estimer mon projet avec cette formule',
+      viewPhotos: 'Voir les photos',
+      viewVideo: 'Voir la vidéo',
     },
-    
-        estimator: {
+
+    estimator: {
       heading: 'Estimez le coût de votre staff',
       intro: 'Répondez à quelques questions : vous obtenez une estimation avant de nous appeler.',
       steps: { house: 'Votre bien', formula: 'La formule', rooms: 'Les pièces', result: 'Votre estimation' },

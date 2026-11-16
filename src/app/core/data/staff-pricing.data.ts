@@ -16,6 +16,8 @@ export const STAFF_PACKAGES: StaffPackage[] = [
       fr: 'Plafond staff simple avec corniche et spots à Yaoundé',
       en: 'Simple staff ceiling with cornice and spotlights in Yaoundé',
     },
+        gallery: [],
+    video: 'LIEN_YOUTUBE_A_REMPLACER',
   },
   {
     id: 'design',
@@ -27,6 +29,8 @@ export const STAFF_PACKAGES: StaffPackage[] = [
       fr: 'Plafond staff design et murs travaillés avec LED à Yaoundé',
       en: 'Staff design ceiling and worked walls with LED in Yaoundé',
     },
+        gallery: [],
+    video: 'LIEN_YOUTUBE_A_REMPLACER',
   },
   {
     id: 'turnkey',
@@ -38,5 +42,7 @@ export const STAFF_PACKAGES: StaffPackage[] = [
       fr: 'Plafond staff design clé en main avec peinture à Yaoundé',
       en: 'Turnkey staff design ceiling with painting in Yaoundé',
     },
+        gallery: [],
+    video: 'LIEN_YOUTUBE_A_REMPLACER',
   },
 ];

@@ -17,6 +17,8 @@ export class YoutubeFacadeComponent {
   protected readonly video = signal(parseYoutube(''));
   protected readonly started = signal(false);
 
+  
+
   /** Lien YouTube : vidéo, lien court ou Short */
   @Input({ required: true }) set url(value: string) {
     this.video.set(parseYoutube(value));
@@ -25,6 +27,13 @@ export class YoutubeFacadeComponent {
   @Input({ required: true }) title!: string;
   /** true : la vidéo se lance seule, sans le son (seule façon que les navigateurs autorisent) */
   @Input() autoplay = false;
+
+    /** true : la lecture démarre tout de suite, avec le son (à utiliser après un clic du visiteur) */
+  @Input() playNow = false;
+
+  ngOnInit(): void {
+    if (this.playNow) this.started.set(true);
+  }
 
   protected readonly embedUrl = computed(() => {
     const video = this.video();

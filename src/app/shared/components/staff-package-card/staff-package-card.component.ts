@@ -26,4 +26,11 @@ export class StaffPackageCardComponent {
     /** Texte du bouton « Estimer mon projet » ; vide = pas de bouton */
   @Input() estimateLabel = '';
   @Output() estimate = new EventEmitter<void>();
+
+    @Input() hasPhotos = false;
+  @Input() hasVideo = false;
+  @Input() photosLabel = '';
+  @Input() videoLabel = '';
+  @Output() viewPhotos = new EventEmitter<void>();
+  @Output() viewVideo = new EventEmitter<void>();
 }

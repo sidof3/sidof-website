@@ -158,7 +158,7 @@ export const en: Translations = {
   },
 
   interiorPage: {
-        lead: 'Looking for a staff ceiling specialist in Yaoundé? Sidof builds your modern staff ceiling, interior decoration and all the finishing work on your house, up to turnkey. Free quote.',
+    lead: 'Looking for a staff ceiling specialist in Yaoundé? Sidof builds your modern staff ceiling, interior decoration and all the finishing work on your house, up to turnkey. Free quote.',
     introHeading: 'Staff ceiling and interior decoration in Yaoundé and across Cameroon',
     introText1: 'Do you need a staff specialist for your ceiling, or someone to finish your house? Sidof handles staff ceilings, interior decoration and all the small details that make a house beautiful: this is what we call finishing.',
     introText2: 'In Yaoundé, the interior design and staff decoration market is booming: a modern staff ceiling, a floating TV unit, elegant cornices or a complete house or office fit-out. Sidof designs, coordinates and follows your project. Free quote and free travel within Yaoundé.',
@@ -227,39 +227,41 @@ export const en: Translations = {
     },
 
     staffPricing: {
-    heading: 'Staff ceiling prices per m² in Yaoundé',
-    intro: 'Each package includes everything in the previous one. The price is per square metre of the room, depending on who buys the materials: you or us. Prices are indicative: the final quote depends on your design.',
-    materialsClient: 'Materials bought by you',
-    materialsSidof: 'Materials bought by Sidof',
-    includesFirst: 'Includes:',
-    includesPrevious: 'Everything in “{name}”, plus:',
-    note: 'The final price depends on your design and the room.',
-    elements: {
-      installation: 'Staff installation',
-      ceilingBasics: 'Staff ceiling: cornices, rosettes, a few small designs and a few spotlights',
-      ceilingDesigns: 'Elaborate designs and shapes on the ceiling',
-      walls: 'Walls worked with models and designs',
-      lighting: 'Complete lighting: spotlights and LED',
-      painting: 'Painting',
+      heading: 'Staff ceiling prices per m² in Yaoundé',
+      intro: 'Each package includes everything in the previous one. The price is per square metre of the room, depending on who buys the materials: you or us. Prices are indicative: the final quote depends on your design.',
+      materialsClient: 'Materials bought by you',
+      materialsSidof: 'Materials bought by Sidof',
+      includesFirst: 'Includes:',
+      includesPrevious: 'Everything in “{name}”, plus:',
+      note: 'The final price depends on your design and the room.',
+      elements: {
+        installation: 'Staff installation',
+        ceilingBasics: 'Staff ceiling: cornices, rosettes, a few small designs and a few spotlights',
+        ceilingDesigns: 'Elaborate designs and shapes on the ceiling',
+        walls: 'Walls worked with models and designs',
+        lighting: 'Complete lighting: spotlights and LED',
+        painting: 'Painting',
+      },
+      packages: {
+        simple: {
+          title: 'Simple staff',
+          text: 'Staff ceiling with cornices and rosettes, without working the walls.',
+        },
+        design: {
+          title: 'Staff design, no painting',
+          text: 'Ceiling and walls worked with designs, shapes and models, with lighting.',
+        },
+        turnkey: {
+          title: 'Turnkey staff design',
+          text: 'All the work on ceiling and walls, with lighting and painting. Turnkey finishing.',
+        },
+      },
+      estimateButton: 'Estimate my project with this package',
+      viewPhotos: 'See the photos',
+      viewVideo: 'Watch the video',
     },
-    packages: {
-      simple: {
-        title: 'Simple staff',
-        text: 'Staff ceiling with cornices and rosettes, without working the walls.',
-      },
-      design: {
-        title: 'Staff design, no painting',
-        text: 'Ceiling and walls worked with designs, shapes and models, with lighting.',
-      },
-      turnkey: {
-        title: 'Turnkey staff design',
-        text: 'All the work on ceiling and walls, with lighting and painting. Turnkey finishing.',
-      },
-    },
-          estimateButton: 'Estimate my project with this package',
-  },
 
-      estimator: {
+    estimator: {
       heading: 'Estimate the cost of your staff work',
       intro: 'Answer a few questions: you get an estimate before calling us.',
       steps: { house: 'Your property', formula: 'The package', rooms: 'The rooms', result: 'Your estimate' },
@@ -459,7 +461,7 @@ export const en: Translations = {
       description: 'Land for sale in Yaoundé with price, area and location. Contact Sidof on WhatsApp to arrange a visit.',
       h1: 'Land for sale in Yaoundé',
     },
-    
+
     landDetail: {
       title: 'Land for Sale in Yaoundé | Sidof',
       description: 'Land details: location, area and price. Contact Sidof to visit it.',
@@ -491,7 +493,7 @@ export const en: Translations = {
     },
 
     interior: {
-           title: 'Staff Ceiling in Yaoundé and Interior Decoration | Sidof',
+      title: 'Staff Ceiling in Yaoundé and Interior Decoration | Sidof',
       description: 'Modern staff ceiling in Yaoundé: cove lighting, LED, wall decoration, false ceiling and house finishing. Free quote, from 8,000 FCFA/m².',
       h1: 'Interior design and staff decoration',
     },

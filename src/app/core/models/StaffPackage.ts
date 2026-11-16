@@ -25,4 +25,8 @@ export interface StaffPackage {
   /** Photo d'un exemple, vide tant qu'il n'y en a pas */
   image: string;
   imageAlt: Localized;
+    /** Autres photos de cette formule (vue de la pièce, détail du plafond, murs…), affichées au clic */
+  gallery: string[];
+  /** Lien YouTube (vidéo ou Short) lu dans la page ; vide = pas de vidéo */
+  video: string;
 }

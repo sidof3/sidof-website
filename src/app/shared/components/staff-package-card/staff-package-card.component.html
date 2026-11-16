@@ -1,5 +1,22 @@
 <article class="card flex h-full flex-col">
-  <app-image-slot [src]="image" [alt]="imageAlt" [width]="800" [height]="600" />
+    <div class="relative">
+    <app-image-slot [src]="image" [alt]="imageAlt" [width]="800" [height]="600" />
+    @if (hasVideo) {
+      <button
+        type="button"
+        class="absolute bottom-3 right-3 inline-flex min-h-[44px] items-center gap-2 rounded-full bg-ink/90 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-ink"
+        (click)="viewVideo.emit()"
+      >
+        <i class="fa-solid fa-play" aria-hidden="true"></i>
+        {{ videoLabel }}
+      </button>
+    }
+  </div>
+  @if (hasPhotos) {
+    <button type="button" class="mt-2 self-start text-sm font-semibold text-brand-700 underline" (click)="viewPhotos.emit()">
+      {{ photosLabel }}
+    </button>
+  }
   <h3 class="mt-4 text-lg font-semibold">{{ title }}</h3>
   <p class="mt-2 text-sm text-muted">{{ text }}</p>
 
