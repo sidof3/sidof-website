@@ -82,3 +82,9 @@
     @apply rounded-lg px-3 py-2 text-sm font-medium text-ink hover:bg-brand-50 hover:text-brand-700;
   }
 }
+
+
+  /* Champs de formulaire : 44 px de haut, 16 px de texte (évite le zoom automatique sur iPhone) */
+  .field {
+    @apply min-h-[44px] w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-base text-ink;
+  }

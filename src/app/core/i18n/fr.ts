@@ -159,16 +159,25 @@ export const fr = {
 
 
   interiorPage: {
-    lead: 'Vous cherchez un staffeur à Yaoundé ou au Cameroun ? Sidof réalise le staff, la décoration d’intérieur et tous les travaux de finition de votre maison, jusqu’à la clé en main.',
-    introHeading: 'Un staffeur à Yaoundé et partout au Cameroun',
-    introText1: 'Vous avez besoin d’un staffeur, ou de quelqu’un pour faire les finitions de votre maison ? Sidof s’occupe du staff, de la décoration d’intérieur et de tous les petits détails qui embellissent une maison : c’est ce qu’on appelle la finition.',
-    introText2: 'À Yaoundé, le marché du design d’intérieur et de la décoration en staff est en pleine expansion : salon moderne, meuble TV suspendu, corniches élégantes ou aménagement complet d’une maison ou d’un bureau. Sidof conçoit, coordonne et suit votre projet.',
-    staffHeading: 'Qu’est-ce que le staff ?',
-    staffText: 'Le staff, ou plâtre décoratif (POP), sert à habiller l’intérieur d’une maison ou d’un local. Associé à la décoration, à la peinture et à l’éclairage, il donne à chaque pièce un style moderne et soigné.',
+
+    lead: 'Vous cherchez un spécialiste du plafond staff à Yaoundé ? Sidof réalise votre plafond staff moderne, la décoration intérieure et tous les travaux de finition de votre maison, jusqu’à la clé en main. Devis gratuit.',
+    introHeading: 'Plafond staff et décoration intérieure à Yaoundé, partout au Cameroun',
+    introText1: 'Vous avez besoin d’un staffeur pour votre plafond staff, ou de quelqu’un pour faire les finitions de votre maison ? Sidof s’occupe du plafond staff, de la décoration intérieure et de tous les petits détails qui embellissent une maison : c’est ce qu’on appelle la finition.',
+    introText2: 'À Yaoundé, le marché du design d’intérieur et de la décoration en staff est en pleine expansion : plafond staff moderne, meuble TV suspendu, corniches élégantes ou aménagement complet d’une maison ou d’un bureau. Sidof conçoit, coordonne et suit votre projet. Devis gratuit et déplacement gratuit dans Yaoundé.',
+    staffHeading: 'Qu’est-ce qu’un plafond en staff ?',
+    staffText: 'Le staff, ou plâtre décoratif (POP), sert à habiller l’intérieur d’une maison ou d’un local, en particulier le plafond : plafond staff moderne avec gorges lumineuses, éclairage LED intégré et spots encastrés, corniches, rosaces et décors muraux. Associé à la décoration, au lissage des murs, à la peinture et à l’éclairage, il donne à chaque pièce un style moderne et soigné.',
+    formulaNote: 'Devis gratuit, déplacement gratuit dans Yaoundé. Demandez un devis adapté à votre projet.',
+    projectsIntro: 'Photos et vidéos avant / après : voici quelques-uns de nos chantiers de plafond staff, de décoration intérieure et de finition.',
+    areaHeading: 'Où nous intervenons : plafond staff à Yaoundé et au Cameroun',
+    areaText: 'Basés à Yaoundé, nous avons réalisé plus de 200 projets de plafond staff et de décoration intérieure à Bastos, Odza, Biyem-Assi, Soa, Mfou, Simbock et Ahala, ainsi qu’à Olembe, Nkoabang, Emana, Bangangté et dans le Grand Nord. Vous cherchez un staffeur au Cameroun ? Nous intervenons partout dans le pays.',
     services: {
-      livingRoom: { title: 'Salon moderne', text: 'Décors en staff, corniches et éclairage pour un salon élégant.' },
+      ceiling: { title: 'Plafond staff moderne', text: 'Plafond staff avec designs et formes, du plafond simple au plafond très travaillé.' },
+      coveLighting: { title: 'Gorges lumineuses et LED', text: 'Éclairage LED intégré, gorges lumineuses et spots encastrés pour un plafond staff qui se remarque.' },
+      falseCeiling: { title: 'Faux plafond', text: 'Faux plafond à Yaoundé : tous types de plafond, selon votre pièce.' },
+      wallDecoration: { title: 'Décoration murale moderne', text: 'Décors muraux en staff et peinture design pour habiller vos murs.' },
+      wallSmoothing: { title: 'Lissage des murs', text: 'Lissage des murs parfait, pour une finition sans défaut.' },
       tvUnit: { title: 'Meuble TV suspendu', text: 'Meuble TV suspendu en staff, intégré au décor de votre salon.' },
-      cornices: { title: 'Corniches', text: 'Corniches décoratives pour finir plafonds et murs avec élégance.' },
+      cornices: { title: 'Corniches et rosaces', text: 'Corniches et rosaces décoratives pour finir plafonds et murs avec élégance.' },
       fullFitOut: {
         title: 'Aménagement complet',
         text: 'Maison, appartement ou bureau : staff, décoration, peinture et éclairage, pièce par pièce.',
@@ -184,6 +193,7 @@ export const fr = {
       painting: { title: 'Peinture', text: 'Peinture de votre maison, après le staff et la décoration.' },
       lighting: { title: 'Éclairage', text: 'Éclairage qui accompagne le staff et la décoration.' },
     },
+
     unfinishedHeading: 'Votre maison est construite mais pas finie ?',
     unfinishedText: 'Un ingénieur ou un maçon a construit votre maison, mais la finition n’est pas faite ou pas terminée ? Contactez-nous : nous reprenons les finitions, du crépissage à l’éclairage, ou seulement le staff et la décoration.',
     formulasHeading: 'Nos formules',
@@ -201,12 +211,11 @@ export const fr = {
         text: 'Le staff et la décoration accompagnés de l’éclairage. Vous préférez confier la peinture à une autre équipe ? C’est possible.',
       },
     },
-    formulaNote: 'Demandez un devis adapté à votre projet.',
+
     spacesHeading: 'Les espaces que nous aménageons',
     spaces: ['Salon', 'Bureau', 'Véranda', 'Chambres', 'Cuisine', 'Hôtels et restaurants'],
     spacesText: 'Nous intervenons dans les maisons, duplex et appartements comme dans les entreprises : hôtels, restaurants et bureaux.',
     projectsHeading: 'Nos réalisations',
-    projectsIntro: 'Particuliers et entreprises : voici quelques-uns de nos chantiers de staff, de décoration d’intérieur et de finition.',
     homesHeading: 'Maisons et duplex',
     businessHeading: 'Hôtels, restaurants et entreprises',
     statusDone: 'Réalisé',
@@ -220,33 +229,99 @@ export const fr = {
       plumbing: 'Plomberie',
       electricity: 'Électricité',
     },
-    areaHeading: 'Où nous intervenons',
-    areaText: 'Basés à Yaoundé, nous avons réalisé des projets à Bastos, Odza, Olembe, Simbock, Nkoabang, Emana et Mfou, ainsi qu’à Bangangté et dans le Grand Nord. Vous cherchez un staffeur au Cameroun ? Nous intervenons partout dans le pays.',
 
-    pricingHeading: 'Prix du staff au m² à Yaoundé',
-    pricingIntro: 'Le prix du staff se calcule au mètre carré. Il dépend du design et de la pièce : un décor de salon ne coûte pas le même prix que les chambres ou la cuisine, qui demandent plus d’attention.',
-    priceFrom: 'À partir de',
-    pricing: {
-      labour: {
-        title: 'Pose du staff, matériel acheté par vous',
-        text: 'Vous achetez le matériel vous-même, nous réalisons le staff et la décoration.',
+    staffPricing: {
+      heading: 'Prix du plafond staff au m² à Yaoundé',
+      intro: 'Chaque formule contient tout ce que contient la précédente. Le prix se calcule au mètre carré de la pièce, selon qui achète le matériel : vous ou nous. Les prix sont indicatifs : le devis final dépend de votre design.',
+      materialsClient: 'Matériel acheté par vous',
+      materialsSidof: 'Matériel acheté par Sidof',
+      includesFirst: 'Comprend :',
+      includesPrevious: 'Tout de la formule « {name} », plus :',
+      note: 'Le prix final dépend de votre design et de la pièce.',
+      elements: {
+        installation: 'Pose du staff',
+        ceilingBasics: 'Plafond staff : corniches, rosaces, quelques petits designs et quelques spots',
+        ceilingDesigns: 'Designs et formes travaillés sur le plafond',
+        walls: 'Murs travaillés avec modèles et designs',
+        lighting: 'Éclairage complet : spots et LED',
+        painting: 'Peinture',
       },
-      allIncluded: {
-        title: 'Staff clé en main, matériel et éclairage compris',
-        text: 'Nous réalisons le staff et achetons tout le matériel, y compris l’éclairage (ampoules et luminaires).',
+      packages: {
+        simple: {
+          title: 'Staff simple',
+          text: 'Plafond staff avec corniches et rosaces, sans travailler les murs.',
+        },
+        design: {
+          title: 'Staff design, sans peinture',
+          text: 'Le plafond et les murs travaillés avec des designs, des formes et des modèles, avec l’éclairage.',
+        },
+        turnkey: {
+          title: 'Staff design clé en main',
+          text: 'Tout le travail du plafond et des murs, avec l’éclairage et la peinture. Finition clé en main.',
+        },
+      },
+            estimateButton: 'Estimer mon projet avec cette formule',
+    },
+    
+        estimator: {
+      heading: 'Estimez le coût de votre staff',
+      intro: 'Répondez à quelques questions : vous obtenez une estimation avant de nous appeler.',
+      steps: { house: 'Votre bien', formula: 'La formule', rooms: 'Les pièces', result: 'Votre estimation' },
+      stepOf: 'Étape {current} sur {total}',
+      houseQuestion: 'Quel type de bien ?',
+      houseTypes: {
+        apartment: 'Appartement',
+        house: 'Maison simple',
+        villa: 'Villa',
+        duplex: 'Duplex',
+        multiStorey: 'Maison à étages (R+2, R+3)',
+        business: 'Commerce ou hôtel',
+      },
+
+      materialsQuestion: 'Qui achète le matériel ?',
+      matClient: 'Je l’achète moi-même',
+      matSidof: 'Sidof l’achète',
+      formulaQuestion: 'Quelle formule ?',
+      roomsQuestion: 'Indiquez la surface de chaque pièce',
+      roomsHint: 'Surface de la pièce en m². Ajoutez ou retirez des pièces, et changez la formule d’une pièce si besoin.',
+      room: 'Pièce',
+      formula: 'Formule',
+      area: 'Surface (m²)',
+      addRoom: 'Ajouter une pièce',
+      remove: 'Retirer',
+      back: 'Retour',
+      next: 'Continuer',
+      restart: 'Recommencer',
+      total: 'Estimation du coût',
+      note: 'Estimation indicative : le devis final dépend de votre design et de la pièce.',
+      empty: 'Indiquez au moins une surface pour voir l’estimation.',
+      send: 'Envoyer cette estimation sur WhatsApp',
+      subject: 'Estimation de staff',
+      messageClient: 'matériel acheté par moi',
+      messageSidof: 'matériel acheté par Sidof',
+      rooms: {
+        living: 'Salon',
+        dining: 'Salle à manger',
+        bedroom: 'Chambre',
+        kitchen: 'Cuisine',
+        veranda: 'Véranda',
+        shower: 'Salle de douche',
+        office: 'Bureau',
+        corridor: 'Couloir',
+        lounge: 'Espace lounge',
+        other: 'Autre pièce',
       },
     },
-    pricingNote: 'Le prix final dépend de votre design.',
   },
 
 
-    constructionPage: {
+  constructionPage: {
     lead: 'Vous vivez à l’étranger et souhaitez construire votre maison au Cameroun ? Sidof vous accompagne de A à Z, en toute transparence : plan 3D, devis détaillé, suivi du chantier à distance.',
     introHeading: 'Construire sa maison au Cameroun depuis l’étranger, en confiance',
     introText1: 'Que vous viviez au Canada, aux États-Unis, en France, en Belgique, en Suisse ou en Allemagne, construire au pays demande un partenaire de confiance. Sidof prend la responsabilité de votre projet, travaille avec vous dans la transparence et prend ses engagements devant un notaire ou un avocat.',
     introText2: 'Vous cherchez un constructeur pour bâtir votre maison au Cameroun, sans passer par un intermédiaire ? Nous construisons aussi pour les clients qui vivent au Cameroun.',
     typesHeading: 'Nous construisons tous les types de maisons',
-       typesText: 'Maison familiale, maison à usage commercial, villa, duplex, triplex, R+2, R+3, maison simple, guest house ou hôtel : quel que soit votre projet, nous le construisons selon votre budget et le design que vous choisissez.',
+    typesText: 'Maison familiale, maison à usage commercial, villa, duplex, triplex, R+2, R+3, maison simple, guest house ou hôtel : quel que soit votre projet, nous le construisons selon votre budget et le design que vous choisissez.',
     types: ['Maison familiale', 'Maison à usage commercial', 'Villa', 'Duplex', 'Triplex', 'R+2', 'R+3', 'Maison simple', 'Guest house', 'Hôtel'],
     guestHouseNote: 'Une guest house est une résidence meublée louée à la nuitée, comme dans un hôtel. Nous construisons aussi des guest houses et des hôtels.',
     priceHeading: 'Un prix adapté à votre projet',
@@ -309,7 +384,7 @@ export const fr = {
     videosHeading: 'Nos chantiers en vidéo',
     videosIntro: 'Regardez l’avancée de nos chantiers et de nos maisons terminées.',
 
-    
+
   },
 
 
@@ -417,8 +492,8 @@ export const fr = {
     },
 
     interior: {
-      title: 'Staffeur à Yaoundé : staff, décoration et finition de maison | Sidof',
-      description: 'Besoin d’un staffeur à Yaoundé ou au Cameroun ? Staff (plâtre, POP), décoration d’intérieur, peinture, éclairage et finition de maison clé en main.',
+      title: 'Plafond staff à Yaoundé et décoration intérieure | Sidof',
+      description: 'Plafond staff moderne à Yaoundé : gorges lumineuses, LED, décoration murale, faux plafond et finition de maison. Devis gratuit, à partir de 8 000 FCFA/m².',
       h1: 'Design d’intérieur et décoration en staff',
     },
 

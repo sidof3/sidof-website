@@ -1,0 +1,152 @@
+<div class="card">
+  <p class="text-sm font-semibold text-muted" aria-live="polite">
+    {{ stepLabel() }} · {{ t().steps[stepKeys[step() - 1]] }}
+  </p>
+  <div class="mt-2 h-2 rounded-full bg-gray-100">
+    <div class="h-2 rounded-full bg-brand-700 transition-all" [style.width.%]="step() * 25"></div>
+  </div>
+
+  @switch (step()) {
+    <!-- 1. Le bien -->
+    @case (1) {
+      <fieldset class="mt-6">
+        <legend class="text-lg font-semibold">{{ t().houseQuestion }}</legend>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          @for (id of houseIds; track id) {
+            <label class="block cursor-pointer">
+              <input type="radio" name="house" class="peer sr-only" [checked]="house() === id" (change)="setHouse(id)" />
+              <span
+                class="flex min-h-[56px] items-center rounded-xl border-2 border-gray-200 px-4 py-3 font-semibold peer-checked:border-brand-700 peer-checked:bg-brand-50 peer-focus-visible:ring-2 peer-focus-visible:ring-brand-600"
+              >
+                {{ t().houseTypes[id] }}
+              </span>
+            </label>
+          }
+        </div>
+      </fieldset>
+    }
+
+    <!-- 2. La formule et le matériel -->
+    @case (2) {
+      <fieldset class="mt-6">
+        <legend class="text-lg font-semibold">{{ t().materialsQuestion }}</legend>
+        <div class="mt-2 flex flex-wrap gap-x-6 gap-y-1">
+          <label class="inline-flex min-h-[44px] items-center gap-2">
+            <input type="radio" name="materials" class="h-5 w-5 accent-brand-700" [checked]="materials() === 'sidof'" (change)="materials.set('sidof')" />
+            {{ t().matSidof }}
+          </label>
+          <label class="inline-flex min-h-[44px] items-center gap-2">
+            <input type="radio" name="materials" class="h-5 w-5 accent-brand-700" [checked]="materials() === 'client'" (change)="materials.set('client')" />
+            {{ t().matClient }}
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mt-6">
+        <legend class="text-lg font-semibold">{{ t().formulaQuestion }}</legend>
+        <div class="mt-4 grid gap-3 md:grid-cols-3">
+          @for (option of formulaOptions(); track option.id) {
+            <label class="block cursor-pointer">
+              <input type="radio" name="formula" class="peer sr-only" [checked]="formulaId() === option.id" (change)="formulaId.set(option.id)" />
+              <span
+                class="block rounded-xl border-2 border-gray-200 px-4 py-3 peer-checked:border-brand-700 peer-checked:bg-brand-50 peer-focus-visible:ring-2 peer-focus-visible:ring-brand-600"
+              >
+                <span class="block font-semibold">{{ option.title }}</span>
+                <span class="mt-1 block text-sm text-muted">{{ option.price }}</span>
+              </span>
+            </label>
+          }
+        </div>
+      </fieldset>
+    }
+
+    <!-- 3. Les pièces et leurs surfaces -->
+    @case (3) {
+      <div class="mt-6">
+        <h3 class="text-lg font-semibold">{{ t().roomsQuestion }}</h3>
+        <p class="mt-1 text-sm text-muted">{{ t().roomsHint }}</p>
+
+        <ul class="mt-4 space-y-4">
+          @for (row of rows(); track row.id) {
+            <li class="grid gap-3 rounded-xl border border-gray-200 p-3 sm:grid-cols-[1fr_1.4fr_7rem_auto] sm:items-end">
+              <div>
+                <label [for]="'room-' + row.id" class="block text-sm text-muted">{{ t().room }}</label>
+                <select [id]="'room-' + row.id" class="field" (change)="updateRow(row.id, { room: $any($event.target).value })">
+                  @for (key of roomKeys; track key) {
+                    <option [value]="key" [selected]="key === row.room">{{ t().rooms[key] }}</option>
+                  }
+                </select>
+              </div>
+              <div>
+                <label [for]="'formula-' + row.id" class="block text-sm text-muted">{{ t().formula }}</label>
+                <select [id]="'formula-' + row.id" class="field" (change)="updateRow(row.id, { formula: $any($event.target).value })">
+                  @for (id of formulaIds; track id) {
+                    <option [value]="id" [selected]="id === (row.formula ?? formulaId())">{{ packages()[id].title }}</option>
+                  }
+                </select>
+              </div>
+              <div>
+                <label [for]="'area-' + row.id" class="block text-sm text-muted">{{ t().area }}</label>
+                <input
+                  [id]="'area-' + row.id"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  class="field"
+                  [value]="row.area || ''"
+                  (input)="setArea(row.id, $any($event.target).value)"
+                />
+              </div>
+              <button type="button" class="btn-outline" (click)="removeRow(row.id)">{{ t().remove }}</button>
+            </li>
+          }
+        </ul>
+
+        <button type="button" class="btn-outline mt-4" (click)="addRow()">
+          <i class="fa-solid fa-plus" aria-hidden="true"></i>
+          {{ t().addRoom }}
+        </button>
+      </div>
+    }
+
+    <!-- 4. Le résultat -->
+    @case (4) {
+      <div class="mt-6" aria-live="polite">
+        @if (lines().length) {
+          <ul class="divide-y divide-gray-200 rounded-xl border border-gray-200">
+            @for (line of lines(); track line.id) {
+              <li class="flex flex-wrap items-center justify-between gap-2 px-4 py-3 text-sm">
+                <span>{{ line.label }}</span>
+                <span class="font-semibold">{{ line.amount }}</span>
+              </li>
+            }
+          </ul>
+          <div class="mt-6 rounded-xl bg-brand-50 p-4">
+            <p class="text-sm text-muted">{{ t().total }}</p>
+            <p class="text-3xl font-bold text-ink">{{ totalLabel() }}</p>
+            <p class="mt-1 text-sm text-muted">{{ t().note }}</p>
+          </div>
+          <a [href]="whatsappUrl()" target="_blank" rel="noopener noreferrer" class="btn-whatsapp mt-4 w-full sm:w-auto">
+            <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+            {{ t().send }}
+          </a>
+        } @else {
+          <p class="text-muted">{{ t().empty }}</p>
+        }
+      </div>
+    }
+  }
+
+  <div class="mt-8 flex flex-wrap gap-3">
+    @if (step() > 1) {
+      <button type="button" class="btn-outline" (click)="back()">{{ t().back }}</button>
+    }
+    @if (step() < 4) {
+      <button type="button" class="btn-primary disabled:opacity-50" [disabled]="!canContinue()" (click)="next()">
+        {{ t().next }}
+      </button>
+    } @else {
+      <button type="button" class="btn-outline" (click)="restart()">{{ t().restart }}</button>
+    }
+  </div>
+</div>

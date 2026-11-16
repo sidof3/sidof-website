@@ -1,0 +1,29 @@
+<article class="card flex h-full flex-col">
+  <app-image-slot [src]="image" [alt]="imageAlt" [width]="800" [height]="600" />
+  <h3 class="mt-4 text-lg font-semibold">{{ title }}</h3>
+  <p class="mt-2 text-sm text-muted">{{ text }}</p>
+
+  <p class="mt-4 text-sm font-semibold">{{ intro }}</p>
+  <ul class="mt-2 flex-1 space-y-2 text-sm">
+    @for (item of adds; track item) {
+      <li class="flex items-start gap-2">
+        <i class="fa-solid fa-circle-check mt-1 text-accent" aria-hidden="true"></i>
+        <span>{{ item }}</span>
+      </li>
+    }
+  </ul>
+
+  <dl class="mt-4 space-y-3 border-t border-gray-200 pt-4">
+    <div>
+      <dt class="text-sm text-muted">{{ clientLabel }}</dt>
+      <dd class="text-xl font-bold text-ink">{{ clientPrice }}</dd>
+    </div>
+    <div>
+      <dt class="text-sm text-muted">{{ sidofLabel }}</dt>
+      <dd class="text-xl font-bold text-ink">{{ sidofPrice }}</dd>
+    </div>
+  </dl>
+    @if (estimateLabel) {
+    <button type="button" class="btn-primary mt-4 w-full" (click)="estimate.emit()">{{ estimateLabel }}</button>
+  }
+</article>

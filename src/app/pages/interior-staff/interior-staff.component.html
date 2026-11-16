@@ -19,15 +19,15 @@
     <p class="mt-3 max-w-3xl text-muted">{{ t().staffText }}</p>
     <ul class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       @for (item of staffItems; track item.key) {
-        <li>
-          <article class="card h-full">
-            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-xl text-white">
-              <i [class]="'fa-solid ' + item.icon" aria-hidden="true"></i>
-            </span>
-            <h3 class="mt-4 text-lg font-semibold">{{ t().services[item.key].title }}</h3>
-            <p class="mt-2 text-sm text-muted">{{ t().services[item.key].text }}</p>
-          </article>
-        </li>
+      <li>
+        <article class="card h-full">
+          <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-xl text-white">
+            <i [class]="'fa-solid ' + item.icon" aria-hidden="true"></i>
+          </span>
+          <h3 class="mt-4 text-lg font-semibold">{{ t().services[item.key].title }}</h3>
+          <p class="mt-2 text-sm text-muted">{{ t().services[item.key].text }}</p>
+        </article>
+      </li>
       }
     </ul>
   </div>
@@ -42,15 +42,15 @@
     </div>
     <ul class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       @for (item of finishItems; track item.key) {
-        <li>
-          <article class="card h-full">
-            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-xl text-white">
-              <i [class]="'fa-solid ' + item.icon" aria-hidden="true"></i>
-            </span>
-            <h3 class="mt-4 text-lg font-semibold">{{ t().finishItems[item.key].title }}</h3>
-            <p class="mt-2 text-sm text-muted">{{ t().finishItems[item.key].text }}</p>
-          </article>
-        </li>
+      <li>
+        <article class="card h-full">
+          <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-xl text-white">
+            <i [class]="'fa-solid ' + item.icon" aria-hidden="true"></i>
+          </span>
+          <h3 class="mt-4 text-lg font-semibold">{{ t().finishItems[item.key].title }}</h3>
+          <p class="mt-2 text-sm text-muted">{{ t().finishItems[item.key].text }}</p>
+        </article>
+      </li>
       }
     </ul>
 
@@ -68,44 +68,49 @@
     <h2 class="text-2xl font-bold sm:text-3xl">{{ t().formulasHeading }}</h2>
     <ul class="mt-8 grid gap-6 md:grid-cols-3">
       @for (formula of formulas; track formula) {
-        <li>
-          <article class="card h-full">
-            <i class="fa-solid fa-circle-check text-2xl text-accent" aria-hidden="true"></i>
-            <h3 class="mt-4 text-lg font-semibold">{{ t().formulas[formula].title }}</h3>
-            <p class="mt-2 text-sm text-muted">{{ t().formulas[formula].text }}</p>
-          </article>
-        </li>
+      <li>
+        <article class="card h-full">
+          <i class="fa-solid fa-circle-check text-2xl text-accent" aria-hidden="true"></i>
+          <h3 class="mt-4 text-lg font-semibold">{{ t().formulas[formula].title }}</h3>
+          <p class="mt-2 text-sm text-muted">{{ t().formulas[formula].text }}</p>
+        </article>
+      </li>
       }
     </ul>
     <p class="mt-6 text-muted">
       {{ t().formulaNote }}
-      <a [routerLink]="lang.url('contact')" class="font-semibold text-brand-700 underline">{{ lang.t().common.requestQuote }}</a>
+      <a [routerLink]="lang.url('contact')" class="font-semibold text-brand-700 underline">{{
+        lang.t().common.requestQuote }}</a>
     </p>
 
-        <div class="mt-14 max-w-3xl">
-      <h2 class="text-2xl font-bold sm:text-3xl">{{ t().pricingHeading }}</h2>
-      <p class="mt-3 text-muted">{{ t().pricingIntro }}</p>
+    <!-- staff parkage price -->
+    <div class="mt-14 max-w-3xl">
+      <h2 class="text-2xl font-bold sm:text-3xl">{{ sp().heading }}</h2>
+      <p class="mt-3 text-muted">{{ sp().intro }}</p>
     </div>
-    <ul class="mt-8 grid gap-6 md:grid-cols-2">
-      @for (offer of pricing(); track offer.id) {
-        <li>
-          <article class="card h-full">
-            <h3 class="text-lg font-semibold">{{ t().pricing[offer.id].title }}</h3>
-            <p class="mt-3 text-2xl font-bold text-ink">
-              @if (offer.from) {
-                <span class="text-base font-medium text-muted">{{ t().priceFrom }}</span>
-              }
-              {{ offer.price }}
-            </p>
-            <p class="mt-2 text-sm text-muted">{{ t().pricing[offer.id].text }}</p>
-          </article>
-        </li>
+    <ul class="mt-8 grid gap-6 md:grid-cols-3">
+      @for (pack of packages(); track pack.id) {
+      <li>
+        <app-staff-package-card [title]="pack.title" [text]="pack.text" [intro]="pack.intro" [adds]="pack.adds"
+          [image]="pack.image" [imageAlt]="pack.imageAlt" [clientLabel]="sp().materialsClient"
+          [clientPrice]="pack.client" [sidofLabel]="sp().materialsSidof" [sidofPrice]="pack.sidof" />
+      </li>
       }
     </ul>
     <p class="mt-6 text-muted">
-      {{ t().pricingNote }}
-      <a [routerLink]="lang.url('contact')" class="font-semibold text-brand-700 underline">{{ lang.t().common.requestQuote }}</a>
+      {{ sp().note }}
+      <a [routerLink]="lang.url('contact')" class="font-semibold text-brand-700 underline">{{
+        lang.t().common.requestQuote }}</a>
     </p>
+    <!-- end staff parkage price -->
+
+    <!-- estimate devis -->
+    <div #estimator class="mt-14 max-w-4xl scroll-mt-24">
+      <h2 class="text-2xl font-bold sm:text-3xl">{{ t().estimator.heading }}</h2>
+      <p class="mb-6 mt-3 text-muted">{{ t().estimator.intro }}</p>
+      <app-staff-estimator [formula]="selectedFormula()" />
+    </div>
+    <!-- end estimate devis -->
 
     <div class="mt-14 max-w-3xl">
       <h2 class="text-2xl font-bold sm:text-3xl">{{ t().spacesHeading }}</h2>
@@ -113,7 +118,7 @@
     </div>
     <ul class="mt-6 flex flex-wrap gap-3">
       @for (space of t().spaces; track space) {
-        <li class="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold">{{ space }}</li>
+      <li class="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold">{{ space }}</li>
       }
     </ul>
   </div>
@@ -126,43 +131,29 @@
     <p class="mt-3 text-sm text-muted">{{ lang.t().partners.betoLabel }}</p>
 
     @if (projects().homes.length) {
-      <h3 class="mt-10 text-xl font-bold">{{ t().homesHeading }}</h3>
-      <ul class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        @for (project of projects().homes; track project.id) {
-          <li>
-            <app-project-card
-              [title]="project.title"
-              [description]="project.description"
-              [place]="project.place"
-              [status]="project.status"
-              [tags]="project.tags"
-              [videos]="project.videos"
-              [photos]="project.photos"
-              [photoAlt]="project.photoAlt"
-            />
-          </li>
-        }
-      </ul>
+    <h3 class="mt-10 text-xl font-bold">{{ t().homesHeading }}</h3>
+    <ul class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      @for (project of projects().homes; track project.id) {
+      <li>
+        <app-project-card [title]="project.title" [description]="project.description" [place]="project.place"
+          [status]="project.status" [tags]="project.tags" [videos]="project.videos" [photos]="project.photos"
+          [photoAlt]="project.photoAlt" />
+      </li>
+      }
+    </ul>
     }
 
     @if (projects().business.length) {
-      <h3 class="mt-12 text-xl font-bold">{{ t().businessHeading }}</h3>
-      <ul class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        @for (project of projects().business; track project.id) {
-          <li>
-            <app-project-card
-              [title]="project.title"
-              [description]="project.description"
-              [place]="project.place"
-              [status]="project.status"
-              [tags]="project.tags"
-              [videos]="project.videos"
-              [photos]="project.photos"
-              [photoAlt]="project.photoAlt"
-            />
-          </li>
-        }
-      </ul>
+    <h3 class="mt-12 text-xl font-bold">{{ t().businessHeading }}</h3>
+    <ul class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      @for (project of projects().business; track project.id) {
+      <li>
+        <app-project-card [title]="project.title" [description]="project.description" [place]="project.place"
+          [status]="project.status" [tags]="project.tags" [videos]="project.videos" [photos]="project.photos"
+          [photoAlt]="project.photoAlt" />
+      </li>
+      }
+    </ul>
     }
   </div>
 </section>

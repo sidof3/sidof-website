@@ -158,16 +158,24 @@ export const en: Translations = {
   },
 
   interiorPage: {
-    lead: 'Looking for a staff plasterer in Yaoundé or Cameroon? Sidof does staff, interior decoration and all the finishing work on your house, up to turnkey.',
-    introHeading: 'Staff decoration in Yaoundé and across Cameroon',
-    introText1: 'Do you need a staff specialist, or someone to finish your house? Sidof handles staff, interior decoration and all the small details that make a house beautiful: this is what we call finishing.',
-    introText2: 'In Yaoundé, the interior design and staff decoration market is booming: a modern living room, a floating TV unit, elegant cornices or a complete house or office fit-out. Sidof designs, coordinates and follows your project.',
-    staffHeading: 'What is staff?',
-    staffText: 'Staff, also called decorative plaster or POP, is used to dress up the interior of a house or business. Combined with decoration, painting and lighting, it gives every room a modern, polished style.',
+        lead: 'Looking for a staff ceiling specialist in Yaoundé? Sidof builds your modern staff ceiling, interior decoration and all the finishing work on your house, up to turnkey. Free quote.',
+    introHeading: 'Staff ceiling and interior decoration in Yaoundé and across Cameroon',
+    introText1: 'Do you need a staff specialist for your ceiling, or someone to finish your house? Sidof handles staff ceilings, interior decoration and all the small details that make a house beautiful: this is what we call finishing.',
+    introText2: 'In Yaoundé, the interior design and staff decoration market is booming: a modern staff ceiling, a floating TV unit, elegant cornices or a complete house or office fit-out. Sidof designs, coordinates and follows your project. Free quote and free travel within Yaoundé.',
+    staffHeading: 'What is a staff ceiling?',
+    staffText: 'Staff, also called decorative plaster or POP, is used to dress up the interior of a house or business, especially the ceiling: modern staff ceilings with cove lighting, integrated LED lighting and recessed spotlights, cornices, rosettes and wall decor. Combined with decoration, wall smoothing, painting and lighting, it gives every room a modern, polished style.',
+    formulaNote: 'Free quote, free travel within Yaoundé. Request a quote tailored to your project.',
+    projectsIntro: 'Before and after photos and videos: a selection of our staff ceiling, interior decoration and finishing projects.',
+    areaHeading: 'Where we work: staff ceilings in Yaoundé and across Cameroon',
+    areaText: 'Based in Yaoundé, we have completed more than 200 staff ceiling and interior decoration projects in Bastos, Odza, Biyem-Assi, Soa, Mfou, Simbock and Ahala, as well as in Olembe, Nkoabang, Emana, Bangangté and the Grand Nord. Looking for a staff specialist in Cameroon? We work throughout the country.',
     services: {
-      livingRoom: { title: 'Modern living room', text: 'Staff decor, cornices and lighting for an elegant living room.' },
+      ceiling: { title: 'Modern staff ceiling', text: 'Staff ceiling with designs and shapes, from a simple ceiling to a highly worked one.' },
+      coveLighting: { title: 'Cove lighting and LED', text: 'Integrated LED lighting, cove lighting and recessed spotlights for a staff ceiling that stands out.' },
+      falseCeiling: { title: 'False ceiling', text: 'False ceilings in Yaoundé: all types of ceiling, to suit your room.' },
+      wallDecoration: { title: 'Modern wall decoration', text: 'Staff wall decor and designer painting to dress up your walls.' },
+      wallSmoothing: { title: 'Wall smoothing', text: 'Perfect wall smoothing for a flawless finish.' },
       tvUnit: { title: 'Floating TV unit', text: 'A floating TV unit in staff, built into your living room decor.' },
-      cornices: { title: 'Cornices', text: 'Decorative cornices to finish ceilings and walls elegantly.' },
+      cornices: { title: 'Cornices and rosettes', text: 'Decorative cornices and rosettes to finish ceilings and walls elegantly.' },
       fullFitOut: {
         title: 'Complete fit-out',
         text: 'House, apartment or office: staff, decoration, painting and lighting, room by room.',
@@ -200,12 +208,10 @@ export const en: Translations = {
         text: 'Staff and decoration with lighting. Prefer to hire another team for the painting? That is possible.',
       },
     },
-    formulaNote: 'Request a quote tailored to your project.',
     spacesHeading: 'The spaces we fit out',
     spaces: ['Living room', 'Office', 'Veranda', 'Bedrooms', 'Kitchen', 'Hotels and restaurants'],
     spacesText: 'We work in houses, duplexes and apartments as well as in businesses: hotels, restaurants and offices.',
     projectsHeading: 'Our projects',
-    projectsIntro: 'Individuals and businesses: a selection of our staff, interior decoration and finishing projects.',
     homesHeading: 'Houses and duplexes',
     businessHeading: 'Hotels, restaurants and businesses',
     statusDone: 'Completed',
@@ -219,23 +225,88 @@ export const en: Translations = {
       plumbing: 'Plumbing',
       electricity: 'Electricity',
     },
-    areaHeading: 'Where we work',
-    areaText: 'Based in Yaoundé, we have completed projects in Bastos, Odza, Olembe, Simbock, Nkoabang, Emana and Mfou, as well as in Bangangté and the Grand Nord. Looking for a staff specialist in Cameroon? We work throughout the country.',
 
-    pricingHeading: 'Staff prices per m² in Yaoundé',
-    pricingIntro: 'Staff is priced per square metre. The price depends on the design and the room: a living room decor does not cost the same as the bedrooms or the kitchen, which need more care.',
-    priceFrom: 'From',
-    pricing: {
-      labour: {
-        title: 'Staff installation, materials bought by you',
-        text: 'You buy the materials yourself, we do the staff and the decoration.',
+    staffPricing: {
+    heading: 'Staff ceiling prices per m² in Yaoundé',
+    intro: 'Each package includes everything in the previous one. The price is per square metre of the room, depending on who buys the materials: you or us. Prices are indicative: the final quote depends on your design.',
+    materialsClient: 'Materials bought by you',
+    materialsSidof: 'Materials bought by Sidof',
+    includesFirst: 'Includes:',
+    includesPrevious: 'Everything in “{name}”, plus:',
+    note: 'The final price depends on your design and the room.',
+    elements: {
+      installation: 'Staff installation',
+      ceilingBasics: 'Staff ceiling: cornices, rosettes, a few small designs and a few spotlights',
+      ceilingDesigns: 'Elaborate designs and shapes on the ceiling',
+      walls: 'Walls worked with models and designs',
+      lighting: 'Complete lighting: spotlights and LED',
+      painting: 'Painting',
+    },
+    packages: {
+      simple: {
+        title: 'Simple staff',
+        text: 'Staff ceiling with cornices and rosettes, without working the walls.',
       },
-      allIncluded: {
-        title: 'Turnkey staff, materials and lighting included',
-        text: 'We do the staff and buy all the materials, including the lighting (bulbs and light fittings).',
+      design: {
+        title: 'Staff design, no painting',
+        text: 'Ceiling and walls worked with designs, shapes and models, with lighting.',
+      },
+      turnkey: {
+        title: 'Turnkey staff design',
+        text: 'All the work on ceiling and walls, with lighting and painting. Turnkey finishing.',
       },
     },
-    pricingNote: 'The final price depends on your design.',
+          estimateButton: 'Estimate my project with this package',
+  },
+
+      estimator: {
+      heading: 'Estimate the cost of your staff work',
+      intro: 'Answer a few questions: you get an estimate before calling us.',
+      steps: { house: 'Your property', formula: 'The package', rooms: 'The rooms', result: 'Your estimate' },
+      stepOf: 'Step {current} of {total}',
+      houseQuestion: 'What type of property?',
+      houseTypes: {
+        apartment: 'Apartment',
+        house: 'Simple house',
+        villa: 'Villa',
+        duplex: 'Duplex',
+        multiStorey: 'Multi-storey house (R+2, R+3)',
+        business: 'Business or hotel',
+      },
+      materialsQuestion: 'Who buys the materials?',
+      matClient: 'I buy them myself',
+      matSidof: 'Sidof buys them',
+      formulaQuestion: 'Which package?',
+      roomsQuestion: 'Enter the area of each room',
+      roomsHint: 'Room area in m². Add or remove rooms, and change the package of a room if needed.',
+      room: 'Room',
+      formula: 'Package',
+      area: 'Area (m²)',
+      addRoom: 'Add a room',
+      remove: 'Remove',
+      back: 'Back',
+      next: 'Continue',
+      restart: 'Start over',
+      total: 'Estimated cost',
+      note: 'Indicative estimate: the final quote depends on your design and the room.',
+      empty: 'Enter at least one area to see the estimate.',
+      send: 'Send this estimate on WhatsApp',
+      subject: 'Staff estimate',
+      messageClient: 'materials bought by me',
+      messageSidof: 'materials bought by Sidof',
+      rooms: {
+        living: 'Living room',
+        dining: 'Dining room',
+        bedroom: 'Bedroom',
+        kitchen: 'Kitchen',
+        veranda: 'Veranda',
+        shower: 'Shower room',
+        office: 'Office',
+        corridor: 'Corridor',
+        lounge: 'Lounge area',
+        other: 'Other room',
+      },
+    },
   },
 
 
@@ -370,49 +441,58 @@ export const en: Translations = {
   },
 
   pages: {
+
     home: {
       title: 'Sidof | Construction, Real Estate and Web Development in Cameroon',
       description: 'Sidof in Yaoundé: construction for the diaspora, land, houses, furnished apartments, interior design, materials, travel assistance and websites.',
       h1: 'Build and invest in Cameroon, wherever you are',
     },
+
     construction: {
       title: 'Build a House in Cameroon from Abroad | Sidof',
       description: 'Diaspora: build your house in Cameroon with confidence. 3D plan, detailed quote, camera site monitoring and weekly progress reports.',
       h1: 'Build in Cameroon from the diaspora',
     },
+
     land: {
       title: 'Land for Sale in Yaoundé | Sidof',
       description: 'Land for sale in Yaoundé with price, area and location. Contact Sidof on WhatsApp to arrange a visit.',
       h1: 'Land for sale in Yaoundé',
     },
+    
     landDetail: {
       title: 'Land for Sale in Yaoundé | Sidof',
       description: 'Land details: location, area and price. Contact Sidof to visit it.',
       h1: 'Land for sale in Yaoundé',
     },
+
     houses: {
       title: 'Houses and Duplexes for Sale in Yaoundé | Sidof',
       description: 'Houses and duplexes for sale in Yaoundé, including the Odza duplex. Prices, photos and direct contact with Sidof.',
       h1: 'Houses and duplexes for sale in Yaoundé',
     },
+
     houseRentals: {
       title: 'Houses for Rent in Yaoundé | Sidof',
       description: 'Houses for rent in Yaoundé, by neighborhood and rent. Contact Sidof to arrange a visit.',
       h1: 'Houses for rent in Yaoundé',
     },
+
     apartments: {
       title: 'Furnished Apartments for Rent in Yaoundé | Sidof',
       description: 'Furnished apartments and villas for rent in Yaoundé, with photos and rates. Book through WhatsApp.',
       h1: 'Furnished apartments for rent in Yaoundé',
     },
+
     apartmentDetail: {
       title: 'Furnished Apartment for Rent in Yaoundé | Sidof',
       description: 'Furnished apartment details: neighborhood, amenities and rate. Contact Sidof to book.',
       h1: 'Furnished apartment for rent in Yaoundé',
     },
+
     interior: {
-      title: 'Staff Decoration and House Finishing in Yaoundé | Sidof',
-      description: 'Looking for a staff plasterer in Yaoundé or Cameroon? Staff (decorative plaster, POP), interior decoration, painting, lighting and turnkey house finishing.',
+           title: 'Staff Ceiling in Yaoundé and Interior Decoration | Sidof',
+      description: 'Modern staff ceiling in Yaoundé: cove lighting, LED, wall decoration, false ceiling and house finishing. Free quote, from 8,000 FCFA/m².',
       h1: 'Interior design and staff decoration',
     },
     materials: {
